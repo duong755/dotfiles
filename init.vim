@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 " theme
 Plug 'joshdick/onedark.vim'
 
@@ -42,6 +42,18 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
+" https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
+
 set encoding=UTF-8
 
 set number
@@ -72,6 +84,8 @@ set wrap
 
 set guifont=DroidSansMono_Nerd_Font:h12
 
+set guicursor=i:ver25-iCursor
+
 syntax enable
 syntax on
 
@@ -82,4 +96,3 @@ colorscheme onedark
 let g:airline_theme = 'onedark'
 
 highlight Normal guibg=NONE ctermbg=NONE
-
