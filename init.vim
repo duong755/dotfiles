@@ -28,6 +28,7 @@ Plug 'tpope/vim-fugitive'
 
 " formatter
 Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier'
 
 " motions
 Plug 'easymotion/vim-easymotion'
