@@ -11,6 +11,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
 
+" outline
+Plug 'liuchengxu/vista.vim'
+
 " comment
 Plug 'preservim/nerdcommenter'
 
