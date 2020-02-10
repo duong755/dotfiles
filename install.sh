@@ -18,3 +18,5 @@ apt install vim
 
 apt install openjdk-8-jdk openjdk-8-jre
 
+sh ./python-install.sh
+sh ./node-install.sh
