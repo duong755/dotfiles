@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 " theme
 Plug 'joshdick/onedark.vim'
 
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 " language
 Plug 'sheerun/vim-polyglot'
 
@@ -11,11 +14,17 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
 
+" navigator
+Plug 'christoomey/vim-tmux-navigator'
+
 " outline
 Plug 'liuchengxu/vista.vim'
 
 " comment
 Plug 'preservim/nerdcommenter'
+
+" multiple cursors
+Plug 'terryma/vim-multiple-cursors'
 
 " statusline
 Plug 'vim-airline/vim-airline'
@@ -48,14 +57,16 @@ call plug#end()
 
 " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
 if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' | 
-    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+  if !has("nvim")
+    au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+    au InsertEnter,InsertChange *
+      \ if v:insertmode == 'i' | 
+      \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+      \ elseif v:insertmode == 'r' |
+      \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+      \ endif
+    au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+  endif
 endif
 
 set encoding=UTF-8
@@ -97,6 +108,22 @@ set termguicolors
 
 colorscheme onedark
 
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:loaded_EditorConfig = 1
+
+" nerdtree
+let g:NERDTreeWinSize = 27
+let g:NERDTreeShowGitStatus = 1
+
+" outline
+let g:vista#renderer#enable_icon = 1
+let g:vista#executive#ctags#support_json_format = 1
+
+" multiple-cursors
+let g:multi_cursor_quit_key="<Esc>"
+
+" airline, airline-theme
 let g:airline_theme = 'onedark'
 
 highlight Normal guibg=NONE ctermbg=NONE

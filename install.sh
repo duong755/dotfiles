@@ -1,22 +1,24 @@
 #!/usr/bin/env sh
 
-add-apt-repository ppa:git-core/ppa
-add-apt-repository ppa:neovim-ppa/unstable
-add-apt-repository ppa:deadsnakes/ppa
-add-apt-repository ppa:jonathonf/vim
-add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo add-apt-repository -y ppa:jonathonf/vim
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
-apt update
-apt upgrade
+sudo apt update
+sudo apt -y upgrade
 
-apt install git
-apt install tree
-apt install xclip
-apt install curl
-apt install neovim
-apt install vim
-
-apt install openjdk-8-jdk openjdk-8-jre
+sudo apt install -y git
+sudo apt install -y tree
+sudo apt install -y xclip # copy to clipboard
+sudo apt install -y universal-ctags # ctags for vista.vim
+sudo apt install -y curl
+sudo apt install -y tmux # tmux for vim-tmux-navigator
+sudo apt install -y neovim
+sudo apt install -y vim
+sudo apt install -y ccls # C/C++ language server
 
 sh ./python-install.sh
 sh ./node-install.sh
+sh ./plug-install.sh
