@@ -14,10 +14,12 @@ sudo apt install -y tree
 sudo apt install -y xclip # copy to clipboard
 sudo apt install -y universal-ctags # ctags for vista.vim
 sudo apt install -y curl
-sudo apt install -y tmux # tmux for vim-tmux-navigator
+sudo apt install -y tmux
 sudo apt install -y neovim
 sudo apt install -y vim
 sudo apt install -y ccls # C/C++ language server
+
+cp ./default.tmux.conf ~/.tmux.conf
 
 sh ./python-install.sh
 sh ./node-install.sh

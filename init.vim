@@ -45,11 +45,12 @@ Plug 'prettier/vim-prettier'
 " motions
 Plug 'easymotion/vim-easymotion'
 
-" js/ts/jsx/tsx
+" js/ts/jsx/tsx/mdx
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'jxnblk/vim-mdx-js'
 
 " Rust
 Plug 'rust-lang/rust.vim'
