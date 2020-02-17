@@ -11,7 +11,6 @@ Plug 'sheerun/vim-polyglot'
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
 Plug 'jistr/vim-nerdtree-tabs'
 
 " navigator
@@ -29,6 +28,9 @@ Plug 'terryma/vim-multiple-cursors'
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" file icon
+Plug 'ryanoasis/vim-devicons'
 
 " autocomplete, intellisense
 Plug 'Shougo/neco-vim'
@@ -57,6 +59,9 @@ Plug 'rust-lang/rust.vim'
 
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
+
+" LaTeX
+Plug 'lervag/vimtex'
 call plug#end()
 
 " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
@@ -115,7 +120,10 @@ set termguicolors
 
 colorscheme onedark
 
-" editorconfig
+" vim-polyglot
+let g:polyglot_disabled = ['latex']
+
+" editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:loaded_EditorConfig = 1
 
@@ -126,7 +134,7 @@ let g:NERDTreeShowGitStatus = 1
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" outline
+" vista
 let g:vista#renderer#enable_icon = 1
 let g:vista#executive#ctags#support_json_format = 1
 
@@ -135,5 +143,13 @@ let g:multi_cursor_quit_key="<Esc>"
 
 " airline, airline-theme
 let g:airline_theme = 'onedark'
+
+" latex
+let g:tex_flavor = 'latex'
+
+" csharp
+let g:OmniSharp_highlight_types = 3
+
+au FileType cs setlocal shiftwidth=4 tabstop=4
 
 highlight Normal guibg=NONE ctermbg=NONE

@@ -1,9 +1,22 @@
 #!/usr/bin/env sh
 
+CURRENT_FILE_PATH=$(realpath "$0")
+CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
+
+NERD_FONTS_LATEST_VERSION=$(wget -qO- https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep -Po -m 1 '(v\d+\.\d+\.\d+)(?!name)')
+
+echo "Downloading latest version of DroidSansMono"
+
+wget -O "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/${NERD_FONTS_LATEST_VERSION}/DroidSansMono.zip" \
+&& echo "Downloaded DroidSansMono. Extracting..." \
+&& unzip -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" -d /usr/local/share/fonts \
+&& rm -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip"
+
+
 if [ ! -d ~/.ctags.d ]; then
   mkdir -p ~/.ctags.d
 fi
-cp ./defaults.ctags ~/.ctags.d/default.ctags
+cp "${CURRENT_DIRECTORY_PATH}/defaults.ctags" ~/.ctags.d/default.ctags
 
 if [ ! -d ~/.vim/plugged ]; then
   mkdir -p ~/.vim/plugged
@@ -16,8 +29,8 @@ VIMPLUG_VIM=~/.vim/autoload/plug.vim
 if [ ! -f "$VIMPLUG_VIM" ]; then
   curl -fLo $VIMPLUG_VIM --create-dirs $VIMPLUG_URL
 fi
-cp ./init.vim ~/.vimrc
-cp ./coc-settings.json ~/.vim/coc-settings.json
+cp "${CURRENT_DIRECTORY_PATH}/init.vim" ~/.vimrc
+cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.vim/coc-settings.json
 
 # for neovim
 VIMPLUG_NVIM=~/.local/share/nvim/site/autoload/plug.vim
@@ -28,8 +41,8 @@ fi
 if [ ! -d ~/.config/nvim ]; then
   mkdir -p ~/.config/nvim
 fi
-cp ./init.vim ~/.config/nvim/init.vim
-cp ./coc-settings.json ~/.config/nvim/coc-settings.json
+cp "${CURRENT_DIRECTORY_PATH}/init.vim" ~/.config/nvim/init.vim
+cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.config/nvim/coc-settings.json
 
 vim +PlugInstall +qall
-vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-snippets coc-html coc-css coc-eslint coc-tsserver coc-angular coc-eslint coc-rls coc-python coc-ccls +qall
+vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-snippets coc-html coc-css coc-eslint coc-tsserver coc-angular coc-eslint coc-rls coc-python coc-ccls coc-vimtex +qall
