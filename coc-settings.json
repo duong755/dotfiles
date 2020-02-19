@@ -3,6 +3,10 @@
   "python.linting.enabled": true,
   "python.linting.pep8Enabled": true,
   "eslint.packageManager": "yarn",
+  "coc.source.OmniSharp.filetypes": [
+    "cs",
+    "cshtml"
+  ],
   "languageserver": {
     "ccls": {
       "command": "ccls",

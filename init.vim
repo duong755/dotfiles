@@ -151,5 +151,6 @@ let g:tex_flavor = 'latex'
 let g:OmniSharp_highlight_types = 3
 
 au FileType cs setlocal shiftwidth=4 tabstop=4
+au BufNewFile,BufRead *.cshtml set filetype=html
 
 highlight Normal guibg=NONE ctermbg=NONE
