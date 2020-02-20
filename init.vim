@@ -54,6 +54,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jxnblk/vim-mdx-js'
 
+" jsonc
+Plug 'neoclide/jsonc.vim'
+
 " Rust
 Plug 'rust-lang/rust.vim'
 
@@ -151,6 +154,8 @@ let g:tex_flavor = 'latex'
 let g:OmniSharp_highlight_types = 3
 
 au FileType cs setlocal shiftwidth=4 tabstop=4
+au BufRead,BufNewFile *.eslintrc set filetype=jsonc
+au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 highlight Normal guibg=NONE ctermbg=NONE

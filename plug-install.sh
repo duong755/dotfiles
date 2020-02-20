@@ -9,10 +9,11 @@ if [ ! -z $FONT ]; then
   NERD_FONTS_LATEST_VERSION=$(wget -qO- https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep -Po -m 1 '(v\d+\.\d+\.\d+)(?!name)')
   echo "Downloading latest version of DroidSansMono..."
 
-  wget -O "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/${NERD_FONTS_LATEST_VERSION}/DroidSansMono.zip" \
-  && echo "Downloaded DroidSansMono. Extracting..." \
-  && unzip -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" -d /usr/local/share/fonts \
-  && rm -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip"
+  wget -O "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/${NERD_FONTS_LATEST_VERSION}/DroidSansMono.zip"
+  echo "Downloaded DroidSansMono. Extracting..."
+
+  unzip -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" -d /usr/local/share/fonts
+  rm -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip"
 fi
 
 if [ ! -d ~/.ctags.d ]; then
