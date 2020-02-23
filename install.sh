@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
 
 sudo add-apt-repository -y ppa:git-core/ppa
