@@ -51,9 +51,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
 
-" motions
-Plug 'easymotion/vim-easymotion'
-
 " js/ts/jsx/tsx/mdx
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -97,9 +94,13 @@ set number
 
 set cursorline
 
+set smartcase
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set smarttab
+set smartindent
 
 set splitbelow
 set splitright
@@ -114,8 +115,6 @@ set incsearch
 set hlsearch
 
 set magic
-
-set smarttab
 
 set wrap
 
@@ -188,5 +187,7 @@ au FileType cs setlocal shiftwidth=4 tabstop=4
 au BufRead,BufNewFile *.eslintrc set filetype=jsonc
 au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
+
+map <F3> :set nohlsearch!<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
