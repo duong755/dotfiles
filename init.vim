@@ -33,6 +33,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 
 " autocomplete, intellisense
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -59,6 +66,9 @@ Plug 'neoclide/jsonc.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+
+" Java
+Plug 'artur-shaik/vim-javacomplete2'
 
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
@@ -149,6 +159,27 @@ let g:airline_theme = 'onedark'
 
 " latex
 let g:tex_flavor = 'latex'
+
+" java
+filetype plugin indent on  
+set omnifunc=syntaxcomplete#Complete
+au FileType java setlocal omnifunc=javacomplete#Complete
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+" deoplete
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_completion_start_length = 2
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = []
+let g:deoplete#file#enable_buffer_path = 1
 
 " csharp
 let g:OmniSharp_highlight_types = 3
