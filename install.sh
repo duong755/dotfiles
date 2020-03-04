@@ -16,6 +16,8 @@ sudo apt install -y git
 sudo apt install -y tree
 sudo apt install -y xclip # copy to clipboard
 sudo apt install -y universal-ctags # ctags for vista.vim
+sudo apt install -y python-pip
+sudo apt install -y python3-pip
 sudo apt install -y curl
 sudo apt install -y tmux
 sudo apt install -y neovim

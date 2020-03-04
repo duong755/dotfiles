@@ -13,6 +13,8 @@ if [ ! -z $FONT ]; then
   echo "Downloaded DroidSansMono. Extracting..."
 
   unzip -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip" -d /usr/local/share/fonts
+  echo "Extracted to /usr/local/share/fonts"
+
   rm -f "${CURRENT_DIRECTORY_PATH}/DroidSansMono.zip"
 fi
 
