@@ -1,37 +1,27 @@
 call plug#begin('~/.vim/plugged')
 " theme
 Plug 'joshdick/onedark.vim'
-
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
-
 " syntax highlight
 Plug 'sheerun/vim-polyglot'
-
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
-
 " navigator
 Plug 'christoomey/vim-tmux-navigator'
-
 " outline
 Plug 'liuchengxu/vista.vim'
-
 " comment
 Plug 'preservim/nerdcommenter'
-
 " multiple cursors
 Plug 'terryma/vim-multiple-cursors'
-
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " file icon
 Plug 'ryanoasis/vim-devicons'
-
 " autocomplete, intellisense
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -43,33 +33,25 @@ endif
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
 " git
 Plug 'tpope/vim-fugitive'
-
 " formatter
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
-
 " js/ts/jsx/tsx/mdx
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jxnblk/vim-mdx-js'
-
 " jsonc
 Plug 'neoclide/jsonc.vim'
-
 " Rust
 Plug 'rust-lang/rust.vim'
-
 " Java
 Plug 'artur-shaik/vim-javacomplete2'
-
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
-
 " LaTeX
 Plug 'lervag/vimtex'
 call plug#end()
@@ -79,7 +61,7 @@ if has("autocmd")
   if !has("nvim")
     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
     au InsertEnter,InsertChange *
-      \ if v:insertmode == 'i' | 
+      \ if v:insertmode == 'i' |
       \   silent execute '!echo -ne "\e[5 q"' | redraw! |
       \ elseif v:insertmode == 'r' |
       \   silent execute '!echo -ne "\e[3 q"' | redraw! |
@@ -143,6 +125,9 @@ let g:loaded_EditorConfig = 1
 let g:NERDTreeWinSize = 24
 let g:NERDTreeShowGitStatus = 1
 
+" tmux navigator
+let g:tmux_navigator_save_on_switch = 2
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 
@@ -160,7 +145,7 @@ let g:airline_theme = 'onedark'
 let g:tex_flavor = 'latex'
 
 " java
-filetype plugin indent on  
+filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 au FileType java setlocal omnifunc=javacomplete#Complete
 nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
@@ -173,7 +158,6 @@ nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 " deoplete
-
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_completion_start_length = 2
 let g:deoplete#sources = {}
@@ -183,7 +167,7 @@ let g:deoplete#file#enable_buffer_path = 1
 " csharp
 let g:OmniSharp_highlight_types = 3
 
-au FileType cs setlocal shiftwidth=4 tabstop=4
+au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
 au BufRead,BufNewFile *.eslintrc set filetype=jsonc
 au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
