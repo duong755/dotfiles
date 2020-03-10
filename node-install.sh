@@ -16,3 +16,4 @@ npm i -g neovim
 npm i -g create-react-app
 npm i -g create-next-app
 npm i -g @angular/cli
+npm i -g neovim
