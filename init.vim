@@ -103,7 +103,7 @@ set wrap
 set autoindent
 set autoread
 
-set guifont=DroidSansMono_Nerd_Font:h12
+set guifont=Ubuntu_Mono_Nerd_Font_Complete:h12
 
 set guicursor=i:ver25-iCursor
 
@@ -140,6 +140,9 @@ let g:multi_cursor_quit_key="<Esc>"
 
 " airline, airline-theme
 let g:airline_theme = 'onedark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
 
 " latex
 let g:tex_flavor = 'latex'
