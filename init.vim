@@ -176,5 +176,6 @@ au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 highlight Normal guibg=NONE ctermbg=NONE
