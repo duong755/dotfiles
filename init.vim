@@ -57,18 +57,18 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
-if has("autocmd")
-  if !has("nvim")
-    au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-    au InsertEnter,InsertChange *
-      \ if v:insertmode == 'i' |
-      \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-      \ elseif v:insertmode == 'r' |
-      \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-      \ endif
-    au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-  endif
-endif
+" if has("autocmd")
+"   if !has("nvim")
+"     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+"     au InsertEnter,InsertChange *
+"       \ if v:insertmode == 'i' |
+"       \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+"       \ elseif v:insertmode == 'r' |
+"       \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+"       \ endif
+"     au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+"   endif
+" endif
 
 set encoding=UTF-8
 
@@ -177,5 +177,21 @@ au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
 inoremap <silent><expr> <C-Space> coc#refresh()
+" Show all diagnostics.
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<CR>
+" Manage extensions.
+nnoremap <silent> <space>e  :<C-u>CocList extensions<CR>
+" Show commands.
+nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
+" Find symbol of current document.
+nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
+" Search workspace symbols.
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
