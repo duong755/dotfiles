@@ -176,22 +176,27 @@ au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
+
+" next buffer
+nnoremap <silent> <space>bn :<C-u>bn<CR>
+" previous buffer
+nnoremap <silent> <space>bp :<C-u>bp<CR>
+
+" keymap for coc.nvim
 inoremap <silent><expr> <C-Space> coc#refresh()
-" Show all diagnostics.
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<CR>
-" Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<CR>
-" Show commands.
 nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
-" Find symbol of current document.
 nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
-" Search workspace symbols.
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
-" Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" keymap for nerdtree and nerdtree tab
+nnoremap <silent> <space>tf  :<C-u>NERDTreeFocus<CR>
+nnoremap <silent> <space>tto :<C-u>NERDTreeTabsOpen<CR>
+nnoremap <silent> <space>ttc :<C-u>NERDTreeTabsClose<CR>
+nnoremap <silent> <space>ttt :<C-u>NERDTreeTabsToggle<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
