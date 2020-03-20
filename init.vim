@@ -1,10 +1,14 @@
 call plug#begin('~/.vim/plugged')
+" selector
+Plug 'junegunn/fzf.vim'
 " theme
 Plug 'joshdick/onedark.vim'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 " syntax highlight
 Plug 'sheerun/vim-polyglot'
+" lint
+Plug 'dense-analysis/ale'
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -23,13 +27,6 @@ Plug 'vim-airline/vim-airline-themes'
 " file icon
 Plug 'ryanoasis/vim-devicons'
 " autocomplete, intellisense
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -48,27 +45,9 @@ Plug 'jxnblk/vim-mdx-js'
 Plug 'neoclide/jsonc.vim'
 " Rust
 Plug 'rust-lang/rust.vim'
-" Java
-Plug 'artur-shaik/vim-javacomplete2'
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
-" LaTeX
-Plug 'lervag/vimtex'
 call plug#end()
-
-" https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
-" if has("autocmd")
-"   if !has("nvim")
-"     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-"     au InsertEnter,InsertChange *
-"       \ if v:insertmode == 'i' |
-"       \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-"       \ elseif v:insertmode == 'r' |
-"       \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-"       \ endif
-"     au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-"   endif
-" endif
 
 set encoding=UTF-8
 
@@ -147,26 +126,6 @@ let g:airline_powerline_fonts = 1
 " latex
 let g:tex_flavor = 'latex'
 
-" java
-filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete
-au FileType java setlocal omnifunc=javacomplete#Complete
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 2
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = []
-let g:deoplete#file#enable_buffer_path = 1
-
 " csharp
 let g:OmniSharp_highlight_types = 3
 
@@ -192,6 +151,7 @@ nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nmap <silent> gd <Plug>(coc-definition)
 
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent> <space>tf  :<C-u>NERDTreeFocus<CR>
