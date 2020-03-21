@@ -54,4 +54,4 @@ cp "${CURRENT_DIRECTORY_PATH}/init.vim" ~/.config/nvim/init.vim
 cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.config/nvim/coc-settings.json
 
 vim +PlugInstall +qall
-vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-snippets coc-html coc-css coc-eslint coc-tsserver coc-angular coc-eslint coc-rls coc-python coc-ccls coc-vimtex +qall
+vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-eslint coc-rls coc-python coc-ccls +qall
