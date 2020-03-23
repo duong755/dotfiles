@@ -1,6 +1,4 @@
 call plug#begin('~/.vim/plugged')
-" selector
-Plug 'junegunn/fzf.vim'
 " theme
 Plug 'joshdick/onedark.vim'
 " editorconfig
@@ -15,8 +13,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 " navigator
 Plug 'christoomey/vim-tmux-navigator'
-" outline
-Plug 'liuchengxu/vista.vim'
 " comment
 Plug 'preservim/nerdcommenter'
 " multiple cursors
@@ -35,12 +31,11 @@ Plug 'tpope/vim-fugitive'
 " formatter
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
-" js/ts/jsx/tsx/mdx
+" js/ts/jsx/tsx
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'jxnblk/vim-mdx-js'
 " jsonc
 Plug 'neoclide/jsonc.vim'
 " Rust
@@ -140,6 +135,11 @@ map <F3> :set nohlsearch!<CR>
 nnoremap <silent> <space>bn :<C-u>bn<CR>
 " previous buffer
 nnoremap <silent> <space>bp :<C-u>bp<CR>
+
+" format
+nnoremap <silent> <C-f>p :<C-u>Prettier<CR>
+nnoremap <silent> <C-f>n :<C-u>Neoformat<CR>
+nnoremap <silent> <C-f>r :<C-u>RustFmt<CR>
 
 " keymap for coc.nvim
 inoremap <silent><expr> <C-Space> coc#refresh()
