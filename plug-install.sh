@@ -22,11 +22,6 @@ if [ ! -f "/usr/local/share/fonts/Ubuntu Mono derivative Powerline.ttf" ]; then
   sudo wget -O "/usr/local/share/fonts/Ubuntu Mono derivative Powerline.ttf" "https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/Ubuntu Mono derivative Powerline.ttf"
 fi
 
-if [ ! -d ~/.ctags.d ]; then
-  mkdir -p ~/.ctags.d
-fi
-cp "${CURRENT_DIRECTORY_PATH}/defaults.ctags" ~/.ctags.d/default.ctags
-
 if [ ! -d ~/.vim/plugged ]; then
   mkdir -p ~/.vim/plugged
 fi

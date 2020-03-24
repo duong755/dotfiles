@@ -130,6 +130,7 @@ au BufRead,BufNewFile *.prettierrc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
+map <silent> <M-h> :<C-u>/%s///<CR>
 
 " next buffer
 nnoremap <silent> <space>bn :<C-u>bn<CR>
