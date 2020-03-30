@@ -124,18 +124,13 @@ let g:tex_flavor = 'latex'
 " csharp
 let g:OmniSharp_highlight_types = 3
 
+au FileType sql :CocDisable
 au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
-au BufRead,BufNewFile *.eslintrc set filetype=jsonc
-au BufRead,BufNewFile *.prettierrc set filetype=jsonc
+au BufRead,BufNewFile *.*rc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
 map <silent> <M-h> :<C-u>/%s///<CR>
-
-" next buffer
-nnoremap <silent> <space>bn :<C-u>bn<CR>
-" previous buffer
-nnoremap <silent> <space>bp :<C-u>bp<CR>
 
 " format
 nnoremap <silent> <C-f>p :<C-u>Prettier<CR>
