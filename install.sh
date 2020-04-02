@@ -21,9 +21,8 @@ sudo apt install -y curl
 sudo apt install -y tmux
 sudo apt install -y neovim
 sudo apt install -y vim
-sudo apt install -y ccls # C/C++ language server
 
-cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
+cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" "~/.tmux.conf"
 
 sh "${CURRENT_DIRECTORY_PATH}/python-install.sh"
 sh "${CURRENT_DIRECTORY_PATH}/node-install.sh"

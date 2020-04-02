@@ -39,3 +39,12 @@ syntax enable
 syntax on
 
 set termguicolors
+
+au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
+au BufRead,BufNewFile *.*rc set filetype=jsonc
+au BufNewFile,BufRead *.cshtml set filetype=html
+
+map <F3> :set nohlsearch!<CR>
+map <silent> <M-h> :<C-u>/%s///<CR>
+
+highlight Normal guibg=NONE ctermbg=NONE
