@@ -41,7 +41,6 @@ syntax on
 set termguicolors
 
 au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
-au BufRead,BufNewFile *.*rc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>

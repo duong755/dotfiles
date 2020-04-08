@@ -126,7 +126,6 @@ let g:OmniSharp_highlight_types = 3
 
 au FileType sql :CocDisable
 au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
-au BufRead,BufNewFile *.*rc set filetype=jsonc
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
@@ -139,13 +138,12 @@ nnoremap <silent> <C-f>r :<C-u>RustFmt<CR>
 
 " keymap for coc.nvim
 inoremap <silent><expr> <C-Space> coc#refresh()
+nnoremap <silent> <space>d  :<C-u>CocDisable<CR>
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<CR>
 nnoremap <silent> <space>e  :<C-u>CocList extensions<CR>
 nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
 nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nmap <silent> gd <Plug>(coc-definition)
 
