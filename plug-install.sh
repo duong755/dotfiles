@@ -37,7 +37,7 @@ cp "${CURRENT_DIRECTORY_PATH}/init.vim" ~/.vimrc
 cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.vim/coc-settings.json
 
 # for neovim
-VIMPLUG_NVIM="~/.local/share/nvim/site/autoload/plug.vim"
+VIMPLUG_NVIM=~/.local/share/nvim/site/autoload/plug.vim
 if [ ! -f "$VIMPLUG_NVIM" ]; then
   curl -fLo $VIMPLUG_NVIM --create-dirs $VIMPLUG_URL
 fi
