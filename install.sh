@@ -29,6 +29,8 @@ sh "${CURRENT_DIRECTORY_PATH}/python-install.sh"
 sh "${CURRENT_DIRECTORY_PATH}/node-install.sh"
 sh "${CURRENT_DIRECTORY_PATH}/plug-install.sh"
 
+cp "${CURRENT_DIRECTORY_PATH}/zshrc" ~/.zshrc
+
 echo "Installing zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then

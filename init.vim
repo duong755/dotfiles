@@ -13,6 +13,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 " navigator
 Plug 'christoomey/vim-tmux-navigator'
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " comment
 Plug 'preservim/nerdcommenter'
 " multiple cursors

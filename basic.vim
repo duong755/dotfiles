@@ -44,6 +44,5 @@ au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
-map <silent> <M-h> :<C-u>/%s///<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
