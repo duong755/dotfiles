@@ -15,7 +15,7 @@ if [ ! -f "/usr/local/share/fonts/Ubuntu Mono Nerd Font Complete Mono.ttf" ]; th
   sudo unzip -f "${CURRENT_DIRECTORY_PATH}/UbuntuMono.zip" -d "/usr/local/share/fonts"
   echo "Extracted to /usr/local/share/fonts"
 
-  rm -f "UbuntuMono.zip"
+  rm -f "${CURRENT_DIRECTORY_PATH}/UbuntuMono.zip"
 fi
 
 if [ ! -f "/usr/local/share/fonts/Ubuntu Mono derivative Powerline.ttf" ]; then
