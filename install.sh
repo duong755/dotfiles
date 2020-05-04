@@ -12,16 +12,16 @@ sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt -y update
 sudo apt -y upgrade
 
-sudo apt install -y git
-sudo apt install -y tree
-sudo apt install -y xclip # copy to clipboard
-sudo apt install -y python-pip
-sudo apt install -y python3-pip
-sudo apt install -y curl
-sudo apt install -y tmux
-sudo apt install -y neovim
-sudo apt install -y vim
-sudo apt install -y zsh
+sudo apt install -y git \
+  tree \
+  xclip \
+  python-pip \
+  python3-pip \
+  curl \
+  tmux \
+  neovim \
+  vim \
+  zsh
 
 cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
 
