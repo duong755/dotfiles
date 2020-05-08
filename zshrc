@@ -84,14 +84,10 @@ export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export EDITOR="/usr/bin/nvim"
 export NEOVIM_CONFIG="${HOME}/.config/nvim/init.vim"
-export PYTHONPATH="/usr/lib/llvm-9/lib/python2.7/site-packages"
+export PYTHONPATH="/usr/lib/llvm-10/lib/python3.7/site-packages"
 
 export PATH="${PATH}:${HOME}/.yarn/bin"
-export PATH="${PATH}:${HOME}/.cargo/bin"
-export PATH="${PATH}:${HOME}/.ngrok2/bin"
-export PATH="${PATH}:/opt/mssql-tools/bin"
 export PATH="${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools"
-export PATH="${PATH}:${GRADLE_USER_HOME}/bin"
 #
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
