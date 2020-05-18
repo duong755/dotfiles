@@ -128,7 +128,7 @@ let g:tex_flavor = 'latex'
 let g:OmniSharp_highlight_types = 3
 
 au FileType sql :CocDisable
-au FileType cs,java,python setlocal shiftwidth=4 tabstop=4
+au FileType cs,java,python,latex,makefile setlocal shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
