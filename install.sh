@@ -12,7 +12,8 @@ sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt -y update
 sudo apt -y upgrade
 
-sudo apt install -y git \
+sudo apt install -y \
+  git \
   tree \
   xclip \
   python-pip \
@@ -21,7 +22,7 @@ sudo apt install -y git \
   tmux \
   neovim \
   vim \
-  zsh
+  fonts-powerline
 
 cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
 
@@ -29,11 +30,3 @@ sh "${CURRENT_DIRECTORY_PATH}/python-install.sh"
 sh "${CURRENT_DIRECTORY_PATH}/node-install.sh"
 sh "${CURRENT_DIRECTORY_PATH}/plug-install.sh"
 
-cp "${CURRENT_DIRECTORY_PATH}/zshrc" ~/.zshrc
-
-echo "Installing zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
-  echo "Installing zsh-autosuggestions"
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
-fi
