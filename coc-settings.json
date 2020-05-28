@@ -17,6 +17,30 @@
           "directory": "/tmp/ccls"
         }
       }
+    },
+    "tex": {
+      "command": "texlab",
+      "filetypes": ["tex", "st"],
+      "rootPatterns": [".git"],
+      "initializationOptions": {
+        "latex.build.executable": "latexmk",
+        "latex.build.args": [
+          "-pdf",
+          "-interaction=nonstopmode",
+          "-recorder",
+          "-file-line-error",
+          "-shell-escape",
+          "-halt-on-error",
+          "-synctex=1",
+          "-pvc",
+          "%f"
+        ],
+        "latex.build.onSave": true,
+        "latex.lint": {
+          "onChange": true,
+          "onSave": true
+        }
+      }
     }
   }
 }
