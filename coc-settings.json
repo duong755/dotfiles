@@ -21,8 +21,8 @@
     "tex": {
       "command": "texlab",
       "filetypes": ["tex", "st"],
-      "rootPatterns": [".git"],
-      "initializationOptions": {
+      "rootPatterns": [".git/"],
+      "settings": {
         "latex.build.executable": "latexmk",
         "latex.build.args": [
           "-pdf",
