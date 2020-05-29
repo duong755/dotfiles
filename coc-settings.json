@@ -36,10 +36,12 @@
           "%f"
         ],
         "latex.build.onSave": true,
-        "latex.lint": {
-          "onChange": true,
-          "onSave": true
-        }
+        "latex.lint.onChange": true,
+        "latex.lint.onSave": true,
+        "latex.forwardSearch.executable": "evince",
+        "latex.forwardSearch.args": [
+          "%f"
+        ]
       }
     }
   }
