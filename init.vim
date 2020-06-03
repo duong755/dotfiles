@@ -128,6 +128,7 @@ let g:tex_flavor = 'latex'
 let g:OmniSharp_highlight_types = 3
 
 au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
+au FileType makefile setlocal expandtab=0
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
