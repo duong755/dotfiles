@@ -11,3 +11,6 @@ python3 -m pip install pynvim
 
 python -m pip install -U msgpack
 python3 -m pip install -U msgpack
+
+python -m pip install -U pygments
+python3 -m pip install -U pygments
