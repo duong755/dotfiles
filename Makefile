@@ -6,6 +6,8 @@ node:
 	sh ./node-install.sh
 python:
 	sh ./python-install.sh
+texlive:
+	sh ./texlive-install.sh
 vim:
 	sh ./plug-install.sh vim all
 neovim:
