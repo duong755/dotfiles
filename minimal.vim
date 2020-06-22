@@ -1,52 +1,23 @@
 call plug#begin('~/.vim/plugged')
-" theme
-Plug 'joshdick/onedark.vim'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 " syntax highlight
 Plug 'sheerun/vim-polyglot'
-" lint
-Plug 'dense-analysis/ale'
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 " navigator
 Plug 'christoomey/vim-tmux-navigator'
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 " comment
 Plug 'preservim/nerdcommenter'
-" multiple cursors
-Plug 'terryma/vim-multiple-cursors'
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " file icon
 Plug 'ryanoasis/vim-devicons'
-" autocomplete, intellisense
-Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " git
 Plug 'tpope/vim-fugitive'
-" formatter
-Plug 'sbdchd/neoformat'
-Plug 'prettier/vim-prettier'
-" js/ts/jsx/tsx
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-" jsonc
-Plug 'neoclide/jsonc.vim'
-" latex
-Plug 'vim-latex/vim-latex'
-" Rust
-Plug 'rust-lang/rust.vim'
-" Csharp
-Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 set encoding=UTF-8
@@ -91,8 +62,6 @@ syntax on
 
 set termguicolors
 
-colorscheme onedark
-
 " vim-polyglot
 let g:polyglot_disabled = ['latex']
 
@@ -110,9 +79,6 @@ let g:tmux_navigator_save_on_switch = 2
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" multiple-cursors
-let g:multi_cursor_quit_key="<Esc>"
-
 " airline, airline-theme
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
@@ -122,14 +88,10 @@ let g:airline_powerline_fonts = 1
 " latex
 let g:tex_flavor = 'latex'
 
-" csharp
-let g:OmniSharp_highlight_types = 3
-
 au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
 au BufNewFile,BufRead *.cls set filetype=tex
 au BufNewFile,BufRead *.sty set filetype=tex
-au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
 
