@@ -1,4 +1,4 @@
-!/usr/bin/env sh
+#!/usr/bin/env sh
 
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
@@ -24,12 +24,7 @@ install() {
       CONFIG_DIR=~/.vim
       VIMPLUG=~/.vim/autoload/plug.vim
       ;;
-    nvim)
-      CONFIG=~/.config/nvim/init.vim
-      CONFIG_DIR=~/.config/nvim
-      VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
-      ;;
-    neovim)
+    nvim | neovim)
       CONFIG=~/.config/nvim/init.vim
       CONFIG_DIR=~/.config/nvim
       VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
@@ -50,15 +45,15 @@ install() {
 
   case $2 in
     all)
-      cp "${CURRENT_DIRECTORY_PATH}/vim/init.vim" "${CONFIG}"
-      cp "${CURRENT_DIRECTORY_PATH}/vim/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
+      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/init.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     minimal)
-      cp "${CURRENT_DIRECTORY_PATH}/vim/minimal.vim" "${CONFIG}"
-      cp "${CURRENT_DIRECTORY_PATH}/vim/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
+      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/minimal.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     plain)
-      cp "${CURRENT_DIRECTORY_PATH}/vim/plain.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/plain.vim" "${CONFIG}"
       ;;
     *)
       echo "Scheme '$1' is not available. Select one of these: all, minimal, plain"
@@ -71,11 +66,7 @@ install() {
       vim +PlugInstall +qall
       vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-rls coc-python coc-ccls +qall
       ;;
-    nvim)
-      vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-rls coc-python coc-ccls +qall
-      ;;
-    neovim)
+    nvim | neovim)
       vim +PlugInstall +qall
       vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-rls coc-python coc-ccls +qall
       ;;
