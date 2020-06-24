@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/plugged')
+" theme
+Plug 'joshdick/onedark.vim'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 " syntax highlight
@@ -61,6 +63,8 @@ syntax enable
 syntax on
 
 set termguicolors
+
+colorscheme onedark
 
 " vim-polyglot
 let g:polyglot_disabled = ['latex']
