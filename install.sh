@@ -24,8 +24,3 @@ sudo apt install -y \
   fonts-powerline
 
 cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
-
-sh "${CURRENT_DIRECTORY_PATH}/python-install.sh"
-sh "${CURRENT_DIRECTORY_PATH}/node-install.sh"
-sh "${CURRENT_DIRECTORY_PATH}/plug-install.sh"
-

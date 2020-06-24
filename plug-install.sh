@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+!/usr/bin/env sh
 
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
@@ -7,10 +7,13 @@ if [ ! -d ~/.vim/plugged ]; then
   mkdir -p ~/.vim/plugged
 fi
 
+if [ ! -d ~/.vim/autoload ]; then
+  mkdir -p ~/.vim/autoload
+fi
+
 VIMPLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-install()
-{
+install() {
   CONFIG=""
   CONFIG_DIR=""
   VIMPLUG=""
@@ -24,12 +27,12 @@ install()
     nvim)
       CONFIG=~/.config/nvim/init.vim
       CONFIG_DIR=~/.config/nvim
-      VIMPLUG_NVIM=~/.local/share/nvim/site/autoload/plug.vim
+      VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
       ;;
     neovim)
       CONFIG=~/.config/nvim/init.vim
       CONFIG_DIR=~/.config/nvim
-      VIMPLUG_NVIM=~/.local/share/nvim/site/autoload/plug.vim
+      VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
       ;;
     *)
       echo "Please select one of these editor: vim, nvim, neovim"
@@ -47,18 +50,18 @@ install()
 
   case $2 in
     all)
-      cp "${CURRENT_DIRECTORY_PATH}/init.vim" "${CONFIG}"
-      cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.config/nvim/coc-settings.json
+      cp "${CURRENT_DIRECTORY_PATH}/vim/init.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/vim/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     minimal)
-      cp "${CURRENT_DIRECTORY_PATH}/minimal.vim" ~/.config/nvim/init.vim
-      cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" ~/.config/nvim/coc-settings.json
+      cp "${CURRENT_DIRECTORY_PATH}/vim/minimal.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/vim/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     plain)
-      cp "${CURRENT_DIRECTORY_PATH}/plain.vim" ~/.config/nvim/init.vim
+      cp "${CURRENT_DIRECTORY_PATH}/vim/plain.vim" "${CONFIG}"
       ;;
     *)
-      echo "Scheme $1 is not available. Select one of these: all, minimal, plain"
+      echo "Scheme '$1' is not available. Select one of these: all, minimal, plain"
       exit 1
       ;;
   esac
