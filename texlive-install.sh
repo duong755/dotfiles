@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 wget -O ~/Downloads/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 

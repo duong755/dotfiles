@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 python -m pip install --upgrade pip
 python3 -m pip install --upgrade pip

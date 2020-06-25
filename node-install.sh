@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # grep -m 1: only match the first
 # grep -P: Perl regex
