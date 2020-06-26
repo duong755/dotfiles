@@ -1,5 +1,9 @@
 all:
-
+	$(MAKE) basic
+	$(MAKE) node
+	$(MAKE) python
+	$(MAKE) vim
+	$(MAKE) neovim
 basic:
 	sh ./install.sh
 node:
@@ -7,16 +11,18 @@ node:
 python:
 	sh ./python-install.sh
 texlive:
-	sh ./texlive-install.sh
+	# more than 7GB
+	# too large, so I excluded this from "all"
+	sh ./tex/texlive-install.sh
 vim:
-	sh ./plug-install.sh vim all
+	sh ./vim-editor/plug-install.sh vim all
 neovim:
-	sh ./plug-install.sh neovim all
+	sh ./vim-editor/plug-install.sh neovim all
 vim-minimal:
-	sh ./plug-install.sh vim minimal
+	sh ./vim-editor/plug-install.sh vim minimal
 neovim-minimal:
-	sh ./plug-install.sh neovim minimal
+	sh ./vim-editor/plug-install.sh neovim minimal
 vim-plain:
-	sh ./plug-install.sh vim plain
+	sh ./vim-editor/plug-install.sh vim plain
 neovim-plain:
-	sh ./plug-install.sh neovim plain
+	sh ./vim-editor/plug-install.sh neovim plain

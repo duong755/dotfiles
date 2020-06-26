@@ -1,16 +1,8 @@
 #!/bin/sh
 
-python -m pip install --upgrade pip
-python3 -m pip install --upgrade pip
-
-python -m pip install pylint
-python3 -m pip install pylint
-
-python -m pip install pynvim
-python3 -m pip install pynvim
-
-python -m pip install -U msgpack
-python3 -m pip install -U msgpack
-
-python -m pip install -U pygments
-python3 -m pip install -U pygments
+pip install -U pip
+pip install -U pylint
+pip install -U pynvim
+pip install -U msgpack
+pip install -U pygments # TeX for minted package
+pip install -U ansible

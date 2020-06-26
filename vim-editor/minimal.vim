@@ -94,6 +94,7 @@ let g:tex_flavor = 'latex'
 
 au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
+au BufNewFile,BufRead *.latexmkrc set filetype=perl
 au BufNewFile,BufRead *.cls set filetype=tex
 au BufNewFile,BufRead *.sty set filetype=tex
 
