@@ -45,15 +45,15 @@ install() {
 
   case $2 in
     all)
-      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/init.vim" "${CONFIG}"
-      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
+      cp "${CURRENT_DIRECTORY_PATH}/init.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     minimal)
-      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/minimal.vim" "${CONFIG}"
-      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
+      cp "${CURRENT_DIRECTORY_PATH}/minimal.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       ;;
     plain)
-      cp "${CURRENT_DIRECTORY_PATH}/vim-editor/plain.vim" "${CONFIG}"
+      cp "${CURRENT_DIRECTORY_PATH}/plain.vim" "${CONFIG}"
       ;;
     *)
       echo "Scheme '$1' is not available. Select one of these: all, minimal, plain"
@@ -64,11 +64,11 @@ install() {
   case $1 in
     vim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-rls coc-python coc-ccls +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls +qall
       ;;
     nvim | neovim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-angular coc-rls coc-python coc-ccls +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls +qall
       ;;
     *)
       ;;
