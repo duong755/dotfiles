@@ -6,3 +6,4 @@ pip install -U pynvim
 pip install -U msgpack
 pip install -U pygments # TeX for minted package
 pip install -U ansible
+pip install -U docker

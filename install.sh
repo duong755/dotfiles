@@ -17,7 +17,9 @@ sudo apt install -y \
   xclip \
   python-pip \
   python3-pip \
+  python-apt \
   curl \
+  jq \
   tmux \
   neovim \
   vim \
