@@ -42,7 +42,7 @@ set termguicolors
 
 au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
-au BufNewFile,BufRead *.latexmkrc set filetype=perl
+au BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 au BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>

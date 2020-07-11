@@ -125,10 +125,10 @@ let g:OmniSharp_highlight_types = 3
 
 au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
-au BufNewFile,BufRead *.cls set filetype=tex
-au BufNewFile,BufRead *.sty set filetype=tex
-au BufNewFile,BufRead *.latexmkrc set filetype=perl
-au BufNewFile,BufRead *.cshtml set filetype=html
+au VimEnter,BufNewFile,BufRead *.cls set filetype=tex
+au VimEnter,BufNewFile,BufRead *.sty set filetype=tex
+au VimEnter,BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
+au VimEnter,BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :set nohlsearch!<CR>
 
