@@ -1,0 +1,14 @@
+[Unit]
+Description=IPFS daemon
+After=network.target
+StartLimitIntervalSec=0s
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=6000ms
+User=ngoquangduong
+ExecStart=/usr/local/bin/ipfs daemon
+
+[Install]
+WantedBy=multi-user.target
