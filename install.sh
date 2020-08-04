@@ -6,7 +6,6 @@ CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo add-apt-repository -y ppa:jonathonf/vim
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
 sudo apt -y update
 sudo apt -y upgrade

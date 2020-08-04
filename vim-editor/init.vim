@@ -123,7 +123,7 @@ let g:tex_flavor = 'latex'
 " csharp
 let g:OmniSharp_highlight_types = 3
 
-au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
+au FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
 au VimEnter,BufNewFile,BufRead *.cls set filetype=tex
 au VimEnter,BufNewFile,BufRead *.sty set filetype=tex

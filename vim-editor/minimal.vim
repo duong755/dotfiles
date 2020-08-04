@@ -92,7 +92,7 @@ let g:airline_powerline_fonts = 1
 " latex
 let g:tex_flavor = 'latex'
 
-au FileType cs,java,python,tex,makefile setlocal shiftwidth=4 tabstop=4
+au FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 au FileType makefile setlocal expandtab=0
 au BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 au BufNewFile,BufRead *.cls set filetype=tex
