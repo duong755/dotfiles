@@ -41,8 +41,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " jsonc
 Plug 'neoclide/jsonc.vim'
-" Rust
-Plug 'rust-lang/rust.vim'
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
 call plug#end()

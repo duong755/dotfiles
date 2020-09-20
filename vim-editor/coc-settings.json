@@ -2,7 +2,7 @@
   "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.pep8Enabled": true,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "coc.source.OmniSharp.filetypes": [
     "cs",
     "cshtml"
