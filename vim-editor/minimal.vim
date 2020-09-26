@@ -1,3 +1,6 @@
+" vim-polyglot
+let g:polyglot_disabled = ['latex']
+
 call plug#begin('~/.vim/plugged')
 " theme
 Plug 'joshdick/onedark.vim'
@@ -66,16 +69,13 @@ set termguicolors
 
 colorscheme onedark
 
-" vim-polyglot
-let g:polyglot_disabled = ['latex']
-
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:loaded_EditorConfig = 1
 
 " nerdtree
 let g:NERDTreeWinSize = 24
-let g:NERDTreeShowGitStatus = 1
+let g:NERDTreeGitStatusEnable = 1
 
 " tmux navigator
 let g:tmux_navigator_save_on_switch = 2
