@@ -14,6 +14,11 @@ texlive:
 	# more than 7GB
 	# too large, so I excluded this from "all"
 	@$(SHELL) ./tex/texlive-install.sh
+tlmgr:
+	sudo env PATH="${PATH}" tlmgr update --list
+tlmgr-update:
+	sudo env PATH="${PATH}" tlmgr update --self \
+	sudo env PATH="${PATH}" tlmgr update --all
 vim:
 	@$(SHELL) ./vim-editor/plug-install.sh vim all
 neovim:
