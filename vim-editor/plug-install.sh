@@ -64,11 +64,11 @@ install() {
   case $1 in
     vim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls coc-git +qall
       ;;
     nvim | neovim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-ccls coc-git +qall
       ;;
     *)
       ;;
