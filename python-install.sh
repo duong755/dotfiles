@@ -1,9 +1,9 @@
 #!/bin/sh
 
-pip install -U pip
-pip install -U pylint
-pip install -U pynvim
-pip install -U msgpack
-pip install -U pygments # TeX for minted package
-pip install -U ansible
-pip install -U docker
+python3 -m pip install -U pip
+python3 -m pip install -U pylint
+python3 -m pip install -U pynvim
+python3 -m pip install -U msgpack
+python3 -m pip install -U pygments # TeX for minted package
+python3 -m pip install -U ansible
+python3 -m pip install -U docker
