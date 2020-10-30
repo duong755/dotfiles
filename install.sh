@@ -19,6 +19,10 @@ sudo apt install -y \
   jq \
   tmux \
   vim \
-  fonts-powerline
+  fonts-powerline \
+  cpanminus
+
+# for latexindent.pl
+sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir
 
 cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
