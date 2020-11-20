@@ -3,7 +3,6 @@ all:
 	@$(MAKE) node
 	@$(MAKE) python
 	@$(MAKE) vim
-	@$(MAKE) neovim
 basic:
 	@$(SHELL) ./install.sh
 node:
@@ -21,13 +20,13 @@ tlmgr-update:
 	sudo env PATH="${PATH}" tlmgr update --all
 vim:
 	@$(SHELL) ./vim-editor/plug-install.sh vim all
-neovim:
-	@$(SHELL) ./vim-editor/plug-install.sh neovim all
 vim-minimal:
 	@$(SHELL) ./vim-editor/plug-install.sh vim minimal
-neovim-minimal:
-	@$(SHELL) ./vim-editor/plug-install.sh neovim minimal
 vim-plain:
 	@$(SHELL) ./vim-editor/plug-install.sh vim plain
+neovim:
+	@$(SHELL) ./vim-editor/plug-install.sh neovim all
+neovim-minimal:
+	@$(SHELL) ./vim-editor/plug-install.sh neovim minimal
 neovim-plain:
 	@$(SHELL) ./vim-editor/plug-install.sh neovim plain
