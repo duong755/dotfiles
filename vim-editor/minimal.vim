@@ -98,7 +98,7 @@ au BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 au BufNewFile,BufRead *.cls set filetype=tex
 au BufNewFile,BufRead *.sty set filetype=tex
 
-map <F3> :set nohlsearch!<CR>
+map <F3> :let @/ = ""<CR>
 
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent> <space>tf  :<C-u>NERDTreeFocus<CR>

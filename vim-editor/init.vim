@@ -128,7 +128,7 @@ au VimEnter,BufNewFile,BufRead *.sty set filetype=tex
 au VimEnter,BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 au VimEnter,BufNewFile,BufRead *.cshtml set filetype=html
 
-map <F3> :set nohlsearch!<CR>
+map <F3> :let @/ = ""<CR>
 
 " format
 nnoremap <silent> <C-f>p :<C-u>Prettier<CR>

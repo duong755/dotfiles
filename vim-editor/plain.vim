@@ -45,6 +45,6 @@ au FileType makefile setlocal expandtab=0
 au BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 au BufNewFile,BufRead *.cshtml set filetype=html
 
-map <F3> :set nohlsearch!<CR>
+map <F3> :let @/ = ""<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
