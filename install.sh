@@ -20,7 +20,8 @@ sudo apt install -y \
   tmux \
   vim \
   fonts-powerline \
-  cpanminus
+  cpanminus \
+  freeglut3
 
 # for latexindent.pl
 sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir

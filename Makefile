@@ -16,8 +16,7 @@ texlive:
 tlmgr:
 	sudo env PATH="${PATH}" tlmgr update --list
 tlmgr-update:
-	sudo env PATH="${PATH}" tlmgr update --self \
-	sudo env PATH="${PATH}" tlmgr update --all
+	sudo env PATH="${PATH}" tlmgr update --self --all
 vim:
 	@$(SHELL) ./vim-editor/plug-install.sh vim all
 vim-minimal:
