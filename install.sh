@@ -21,7 +21,10 @@ sudo apt install -y \
   vim \
   fonts-powerline \
   cpanminus \
-  freeglut3
+  freeglut3 \
+  deja-dup \
+  openjdk-8-jre-headless \
+  openjdk-8-jdk-headless
 
 # for latexindent.pl
 sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir
