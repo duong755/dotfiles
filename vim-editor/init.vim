@@ -46,6 +46,8 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/jsonc.vim'
 " Csharp
 Plug 'OmniSharp/omnisharp-vim'
+" Rust
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set encoding=UTF-8
