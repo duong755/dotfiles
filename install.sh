@@ -16,6 +16,8 @@ sudo apt install -y \
   python3-pip \
   python-apt \
   curl \
+  apt-transport-https \
+  gnupg-agent \
   jq \
   tmux \
   vim \
