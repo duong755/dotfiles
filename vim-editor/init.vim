@@ -133,25 +133,25 @@ au VimEnter,BufNewFile,BufRead *.cshtml set filetype=html
 map <F3> :let @/ = ""<CR>
 
 " format
-nnoremap <silent> <C-f>p :<C-u>Prettier<CR>
-nnoremap <silent> <C-f>n :<C-u>Neoformat<CR>
-nnoremap <silent> <C-f>r :<C-u>RustFmt<CR>
+nnoremap <silent><C-f>p :<C-u>Prettier<CR>
+nnoremap <silent><C-f>n :<C-u>Neoformat<CR>
+nnoremap <silent><C-f>r :<C-u>RustFmt<CR>
 
 " keymap for coc.nvim
 inoremap <silent><expr> <C-Space> coc#refresh()
-nnoremap <silent> <space>d  :<C-u>CocDisable<CR>
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<CR>
-nnoremap <silent> <space>e  :<C-u>CocList extensions<CR>
-nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
-nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><space>d :<C-u>CocDisable<CR>
+nnoremap <silent><space>a :<C-u>CocList diagnostics<CR>
+nnoremap <silent><space>e :<C-u>CocList extensions<CR>
+nnoremap <silent><space>c :<C-u>CocList commands<CR>
+nnoremap <silent><space>o :<C-u>CocList outline<CR>
+nnoremap <silent><space>s :<C-u>CocList -I symbols<CR>
+nnoremap <silent><space>p :<C-u>CocListResume<CR>
 nmap <silent> gd <Plug>(coc-definition)
 
 " keymap for nerdtree and nerdtree tab
-nnoremap <silent> <space>tf  :<C-u>NERDTreeFocus<CR>
-nnoremap <silent> <space>tto :<C-u>NERDTreeTabsOpen<CR>
-nnoremap <silent> <space>ttc :<C-u>NERDTreeTabsClose<CR>
-nnoremap <silent> <space>ttt :<C-u>NERDTreeTabsToggle<CR>
+nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
+nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
+nnoremap <silent>nttc :<C-u>NERDTreeTabsClose<CR>
+nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE

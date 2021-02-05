@@ -1,6 +1,7 @@
 #!/bin/sh
 
 python3 -m pip install -U pip
+python3 -m pip install -U virtualenv
 python3 -m pip install -U pylint
 python3 -m pip install -U pynvim
 python3 -m pip install -U msgpack

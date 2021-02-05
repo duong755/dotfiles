@@ -101,9 +101,9 @@ au BufNewFile,BufRead *.sty set filetype=tex
 map <F3> :let @/ = ""<CR>
 
 " keymap for nerdtree and nerdtree tab
-nnoremap <silent> <space>tf  :<C-u>NERDTreeFocus<CR>
-nnoremap <silent> <space>tto :<C-u>NERDTreeTabsOpen<CR>
-nnoremap <silent> <space>ttc :<C-u>NERDTreeTabsClose<CR>
-nnoremap <silent> <space>ttt :<C-u>NERDTreeTabsToggle<CR>
+nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
+nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
+nnoremap <silent>nttc :<C-u>NERDTreeTabsClose<CR>
+nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
