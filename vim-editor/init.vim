@@ -10,12 +10,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
 " lint
 Plug 'dense-analysis/ale'
+" navigator
+Plug 'christoomey/vim-tmux-navigator'
+" git
+Plug 'tpope/vim-fugitive'
 " nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
-" navigator
-Plug 'christoomey/vim-tmux-navigator'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -32,8 +34,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" git
-Plug 'tpope/vim-fugitive'
 " formatter
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier'
@@ -123,19 +123,14 @@ let g:tex_flavor = 'latex'
 " csharp
 let g:OmniSharp_highlight_types = 3
 
-au FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
-au FileType makefile setlocal expandtab=0
-au VimEnter,BufNewFile,BufRead *.cls set filetype=tex
-au VimEnter,BufNewFile,BufRead *.sty set filetype=tex
-au VimEnter,BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
-au VimEnter,BufNewFile,BufRead *.cshtml set filetype=html
+autocmd FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
+autocmd FileType makefile setlocal expandtab=0
+autocmd VimEnter,BufNewFile,BufRead *.cls set filetype=tex
+autocmd VimEnter,BufNewFile,BufRead *.sty set filetype=tex
+autocmd VimEnter,BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
+autocmd VimEnter,BufNewFile,BufRead *.cshtml set filetype=html
 
 map <F3> :let @/ = ""<CR>
-
-" format
-nnoremap <silent><C-f>p :<C-u>Prettier<CR>
-nnoremap <silent><C-f>n :<C-u>Neoformat<CR>
-nnoremap <silent><C-f>r :<C-u>RustFmt<CR>
 
 " keymap for coc.nvim
 inoremap <silent><expr> <C-Space> coc#refresh()
@@ -146,7 +141,7 @@ nnoremap <silent><space>c :<C-u>CocList commands<CR>
 nnoremap <silent><space>o :<C-u>CocList outline<CR>
 nnoremap <silent><space>s :<C-u>CocList -I symbols<CR>
 nnoremap <silent><space>p :<C-u>CocListResume<CR>
-nmap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gd <Plug>(coc-definition)
 
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
