@@ -30,7 +30,7 @@ install() {
       VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
       ;;
     *)
-      echo "Please select one of these editor: vim, nvim, neovim"
+      echo "Please select one of these editors: vim, nvim, neovim."
       exit 1
       ;;
   esac
@@ -56,7 +56,7 @@ install() {
       cp "${CURRENT_DIRECTORY_PATH}/plain.vim" "${CONFIG}"
       ;;
     *)
-      echo "Scheme '$1' is not available. Select one of these: all, minimal, plain"
+      echo "Scheme '$1' is not available. Select one of these: all, minimal, plain."
       exit 1
       ;;
   esac
@@ -64,11 +64,11 @@ install() {
   case $1 in
     vim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-git +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-git +qall
       ;;
     nvim | neovim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-python coc-git +qall
+      vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-git +qall
       ;;
     *)
       ;;
