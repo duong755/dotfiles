@@ -19,6 +19,11 @@
       "filetypes": ["python"],
       "rootPatterns": ["*.py", "__pycache__/", "requirements.txt"]
     },
+    "rls": {
+      "command": "rls",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml", "Cargo.lock", "rustfmt.toml", "rust-toolchain", "*.rs"]
+    },
     "tex": {
       "command": "texlab",
       "filetypes": ["tex", "st"],
