@@ -11,8 +11,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/standard",
+    "plugin:prettier/react",
+    "plugin:prettier/standard",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:jest/recommended"

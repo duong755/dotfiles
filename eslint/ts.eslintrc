@@ -25,24 +25,14 @@
     "ecmaVersion": 2020,
     "sourceType": "module",
     "import/resolver": {
-      "node": {
+      "typescript": {
         "extensions": [".js", ".ts"]
       }
     }
   },
   "plugins": ["@typescript-eslint", "prettier", "import"],
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "ignoredNodes": ["TemplateLiteral"],
-        "SwitchCase": 1
-      }
-    ],
     "no-var": ["error"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
     "prefer-const": [
       "error",
       {
@@ -50,6 +40,16 @@
         "ignoreReadBeforeAssign": false
       }
     ],
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": ["TemplateLiteral"],
+        "SwitchCase": 1
+      }
+    ],
+    "@typescript-eslint/quotes": ["error", "single"],
+    "@typescript-eslint/semi": ["error", "always"],
     "prettier/prettier": ["error", {}, { "usePretierrc": true }],
     "import/order": ["error", { "newlines-between": "always-and-inside-groups" }],
     "import/no-unresolved": "error"

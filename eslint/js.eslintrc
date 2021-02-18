@@ -10,7 +10,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "prettier/standard",
+    "plugin:prettier/standard",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:jest/recommended"

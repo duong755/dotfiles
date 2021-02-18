@@ -12,9 +12,9 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/react",
-    "prettier/standard",
+    "plugin:prettier/@typescript-eslint",
+    "plugin:prettier/react",
+    "plugin:prettier/standard",
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings"
@@ -32,7 +32,7 @@
     "ecmaVersion": 2020,
     "sourceType": "module",
     "import/resolver": {
-      "node": {
+      "typescript": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
@@ -44,17 +44,6 @@
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "ignoredNodes": ["TemplateLiteral"],
-        "SwitchCase": 1
-      }
-    ],
-    "no-var": ["error"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
     "prefer-const": [
       "error",
       {
@@ -62,6 +51,17 @@
         "ignoreReadBeforeAssign": false
       }
     ],
+    "no-var": ["error"],
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": ["TemplateLiteral"],
+        "SwitchCase": 1
+      }
+    ],
+    "@typescript-eslint/quotes": ["error", "single"],
+    "@typescript-eslint/semi": ["error", "always"],
     "prettier/prettier": ["error", {}, { "usePretierrc": true }],
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
