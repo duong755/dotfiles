@@ -3,10 +3,13 @@ all:
 	@$(MAKE) node
 	@$(MAKE) python
 	@$(MAKE) vim
+	@$(MAKE) node-update
 basic:
 	@$(SHELL) ./install.sh
 node:
-	@$(SHELL) ./node-install.sh
+	@$(SHELL) ./node/install.sh
+node-update:
+	@$(SHELL) ./node/update.sh
 python:
 	@$(SHELL) ./python-install.sh
 texlive:
@@ -14,9 +17,9 @@ texlive:
 	# too large, so I excluded this from "all"
 	@$(SHELL) ./tex/texlive-install.sh
 tlmgr:
-	sudo env PATH="${PATH}" tlmgr update --list
+	@sudo env PATH="${PATH}" tlmgr update --list
 tlmgr-update:
-	sudo env PATH="${PATH}" tlmgr update --self --all
+	@sudo env PATH="${PATH}" tlmgr update --self --all
 vim:
 	@$(SHELL) ./vim-editor/plug-install.sh vim all
 vim-minimal:

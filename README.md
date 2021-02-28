@@ -6,6 +6,7 @@
 - `cd` to the repo.
 - `make basic`: install packages
 - `make node`: install node with nvm latest stable version
+- `make node-update`: install latest version of node, update `g:coc_node_path` in `~/.vimrc`
 - `make python`: install python, pip
 - `make texlive`: install texlive (scheme-full)
 - `make [neo]vim`: install [neo]vim and plugins from `init.vim`
