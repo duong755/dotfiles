@@ -1,3 +1,5 @@
+SHELL=/usr/bin/bash
+
 all:
 	@$(MAKE) basic
 	@$(MAKE) node
