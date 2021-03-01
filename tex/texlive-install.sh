@@ -20,6 +20,10 @@ rm -rf ~/Downloads/install-tl-latest/install-tl-*
 tar -xzf ~/Downloads/install-tl-unx.tar.gz -C ~/Downloads/install-tl-latest
 cp ./tex/installation.profile ~/Downloads/install-tl-latest/installation.profile
 
+echo "Installing texlive-full"
 cd ~/Downloads/install-tl-latest/install-tl-*
 chmod +x ./install-tl
 sudo ./install-tl --scheme=scheme-full --profile=../installation.profile
+
+echo "Installing cpan modules for latexindent.pl"
+sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir

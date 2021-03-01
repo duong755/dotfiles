@@ -27,8 +27,3 @@ sudo apt install -y \
   deja-dup \
   openjdk-8-jre-headless \
   openjdk-8-jdk-headless
-
-# for latexindent.pl
-sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir
-
-cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf

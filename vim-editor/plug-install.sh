@@ -3,6 +3,8 @@
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
 
+cp "${CURRENT_DIRECTORY_PATH}/default.tmux.conf" ~/.tmux.conf
+
 if [ ! -d ~/.vim/plugged ]; then
   mkdir -p ~/.vim/plugged
 fi

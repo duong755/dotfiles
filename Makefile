@@ -6,8 +6,17 @@ all:
 	@$(MAKE) python
 	@$(MAKE) vim
 	@$(MAKE) node-update
-basic:
-	@$(SHELL) ./install.sh
+chore:
+	@$(MAKE) apt-update
+	@$(MAKE) apt-upgrade
+	@$(MAKE) tlmgr-update
+	@$(MAKE) vim-update
+apt:
+	@$(SHELL) ./apt/install.sh
+apt-update:
+	@sudo apt -y update
+apt-upgrade:
+	@sudo apt -y upgrade
 node:
 	@$(SHELL) ./node/install.sh
 node-update:
@@ -34,3 +43,5 @@ neovim-minimal:
 	@$(SHELL) ./vim-editor/plug-install.sh neovim minimal
 neovim-plain:
 	@$(SHELL) ./vim-editor/plug-install.sh neovim plain
+vim-update:
+	@$(SHELL) ./vim-editor/update.sh
