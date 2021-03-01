@@ -10,7 +10,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:prettier/standard",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:jest/recommended"
@@ -20,22 +19,36 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["prettier", "import", "jest"],
+  "plugins": [
+    "prettier",
+    "import",
+    "jest"
+  ],
   "rules": {
     "indent": [
       "error",
       2,
       {
-        "ignoredNodes": ["TemplateLiteral"],
+        "ignoredNodes": [
+          "TemplateLiteral"
+        ],
         "SwitchCase": 1
       }
     ],
-    "no-var": ["error"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
+    "no-var": [
+      "error"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
     "prefer-const": [
       "error",
       {
@@ -43,8 +56,29 @@
         "ignoreReadBeforeAssign": false
       }
     ],
-    "prettier/prettier": ["error", {}, { "usePretierrc": true }],
-    "import/order": ["error", { "newlines-between": "always-and-inside-groups" }],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePretierrc": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
     "import/no-unresolved": "error"
   }
 }

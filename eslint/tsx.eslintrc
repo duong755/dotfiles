@@ -9,12 +9,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:prettier/@typescript-eslint",
+    "plugin:prettier/typescript",
     "plugin:prettier/react",
-    "plugin:prettier/standard",
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings"
@@ -29,15 +27,26 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2021,
     "sourceType": "module",
     "import/resolver": {
       "typescript": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     }
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "import", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "import",
+    "react-hooks"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -51,21 +60,55 @@
         "ignoreReadBeforeAssign": false
       }
     ],
-    "no-var": ["error"],
+    "no-var": [
+      "error"
+    ],
     "@typescript-eslint/indent": [
       "error",
       2,
       {
-        "ignoredNodes": ["TemplateLiteral"],
+        "ignoredNodes": [
+          "TemplateLiteral"
+        ],
         "SwitchCase": 1
       }
     ],
-    "@typescript-eslint/quotes": ["error", "single"],
-    "@typescript-eslint/semi": ["error", "always"],
-    "prettier/prettier": ["error", {}, { "usePretierrc": true }],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double"
+    ],
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never",
+        "enum": "only-multiline",
+        "generics": "never",
+        "tuples": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePretierrc": true
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
-    "import/order": ["error", { "newlines-between": "always-and-inside-groups" }],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
     "import/no-unresolved": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"

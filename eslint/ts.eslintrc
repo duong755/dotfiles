@@ -7,11 +7,9 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/standard",
+    "plugin:prettier/typescript",
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings"
@@ -22,17 +20,26 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": 2021,
     "sourceType": "module",
     "import/resolver": {
       "typescript": {
-        "extensions": [".js", ".ts"]
+        "extensions": [
+          ".js",
+          ".ts"
+        ]
       }
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
   "rules": {
-    "no-var": ["error"],
+    "no-var": [
+      "error"
+    ],
     "prefer-const": [
       "error",
       {
@@ -44,14 +51,46 @@
       "error",
       2,
       {
-        "ignoredNodes": ["TemplateLiteral"],
+        "ignoredNodes": [
+          "TemplateLiteral"
+        ],
         "SwitchCase": 1
       }
     ],
-    "@typescript-eslint/quotes": ["error", "single"],
-    "@typescript-eslint/semi": ["error", "always"],
-    "prettier/prettier": ["error", {}, { "usePretierrc": true }],
-    "import/order": ["error", { "newlines-between": "always-and-inside-groups" }],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double"
+    ],
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never",
+        "enum": "only-multiline",
+        "generics": "never",
+        "tuples": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePretierrc": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
     "import/no-unresolved": "error"
   }
 }
