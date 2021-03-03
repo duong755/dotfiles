@@ -4,7 +4,7 @@
   "bracketSpacing": true,
   "semi": true,
   "tabWidth": 2,
-  "singleQuote": true,
+  "singleQuote": false,
   "useTabs": false,
-  "trailingComma": "none"
+  "trailingComma": "es5"
 }

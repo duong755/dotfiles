@@ -8,4 +8,8 @@ NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | gr
 
 NODE_PATH=${HOME}/.nvm/versions/node/${NODE_VERSION}/bin/node
 
+nvm use $NODE_VERSION
+
+nvm alias default $NODE_VERSION
+
 sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc

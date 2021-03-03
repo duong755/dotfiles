@@ -5,3 +5,5 @@ update() {
   vim +PlugUpdate
   vim +PlugClean
 }
+
+update
