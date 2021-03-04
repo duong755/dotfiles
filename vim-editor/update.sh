@@ -1,9 +1,9 @@
 #!/bin/sh
 
 update() {
-  vim +PlugUpgrade
-  vim +PlugUpdate
-  vim +PlugClean
+  vim +PlugUpgrade +qall
+  vim +PlugUpdate +qall
+  vim +PlugClean +qall
 }
 
 update
