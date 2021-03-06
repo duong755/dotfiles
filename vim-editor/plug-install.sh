@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
@@ -49,9 +49,9 @@ install() {
     all)
       cp "${CURRENT_DIRECTORY_PATH}/init.vim" "${CONFIG}"
       cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
-      source ${HOME}/.nvm/nvm.sh
+      source ~/.nvm/nvm.sh
       NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
-      NODE_PATH=${HOME}/.nvm/versions/node/${NODE_VERSION}/bin/node
+      NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
       nvm use $NODE_VERSION
       nvm alias default $NODE_VERSION
       sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc

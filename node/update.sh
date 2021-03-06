@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
-source ${HOME}/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
 nvm install --lts --default
 
 NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
 
-NODE_PATH=${HOME}/.nvm/versions/node/${NODE_VERSION}/bin/node
+NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
 
 nvm use $NODE_VERSION
 
