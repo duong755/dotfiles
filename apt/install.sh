@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:jonathonf/vim
+sudo add-apt-repository -y ppa:git-core/ppa \
+  ppa:jonathonf/vim \
+  ppa:bamboo-engine/ibus-bamboo
 
 sudo apt -y update
 sudo apt -y upgrade
@@ -15,6 +16,7 @@ sudo apt install -y \
   curl \
   apt-transport-https \
   gnupg-agent \
+  ibus-bamboo \
   jq \
   tmux \
   vim \
