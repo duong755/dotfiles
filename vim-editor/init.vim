@@ -21,6 +21,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" easymotion
+Plug 'easymotion/vim-easymotion'
 " comment
 Plug 'preservim/nerdcommenter'
 " multiple cursors

@@ -16,6 +16,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'christoomey/vim-tmux-navigator'
 " comment
 Plug 'preservim/nerdcommenter'
+" easymotion
+Plug 'easymotion/vim-easymotion'
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
