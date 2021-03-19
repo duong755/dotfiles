@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 
-sudo add-apt-repository -y ppa:git-core/ppa \
+sudo add-apt-repository -y \
+  ppa:git-core/ppa \
   ppa:jonathonf/vim \
+  ppa:neovim-ppa/unstable \
   ppa:bamboo-engine/ibus-bamboo
 
 sudo apt -y update
@@ -20,6 +22,9 @@ sudo apt install -y \
   jq \
   tmux \
   vim \
+  neovim \
+  python-neovim \
+  python3-neovim \
   fonts-powerline \
   cpanminus \
   freeglut3 \

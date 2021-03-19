@@ -16,9 +16,9 @@ fi
 VIMPLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 install() {
-  CONFIG=""
-  CONFIG_DIR=""
-  VIMPLUG=""
+  local CONFIG=""
+  local CONFIG_DIR=""
+  local VIMPLUG=""
 
   case $1 in
     vim)
@@ -32,7 +32,7 @@ install() {
       VIMPLUG=~/.local/share/nvim/site/autoload/plug.vim
       ;;
     *)
-      echo "Please select one of these editors: vim, nvim, neovim."
+      echo "Select one of these editors: vim, nvim, neovim."
       exit 1
       ;;
   esac
@@ -50,11 +50,12 @@ install() {
       cp "${CURRENT_DIRECTORY_PATH}/init.vim" "${CONFIG}"
       cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
       source ~/.nvm/nvm.sh
-      NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
-      NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
-      nvm use $NODE_VERSION
-      nvm alias default $NODE_VERSION
-      sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc
+      local NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
+      local NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
+      nvm use ${NODE_VERSION}
+      nvm alias default ${NODE_VERSION}
+      sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.vimrc
+      sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.config/nvim/init.vim
       ;;
     minimal)
       cp "${CURRENT_DIRECTORY_PATH}/minimal.vim" "${CONFIG}"
@@ -64,7 +65,7 @@ install() {
       cp "${CURRENT_DIRECTORY_PATH}/plain.vim" "${CONFIG}"
       ;;
     *)
-      echo "Scheme '$1' is not available. Select one of these: all, minimal, plain."
+      echo "Scheme '$2' is not available. Select one of these: all, minimal, plain."
       exit 1
       ;;
   esac
@@ -79,6 +80,7 @@ install() {
       vim +CocInstall coc-json coc-emmet coc-highlight coc-pairs coc-html coc-css coc-eslint coc-tsserver coc-git +qall
       ;;
     *)
+      echo "Select one of these editors: vim, nvim, neovim."
       ;;
   esac
 }
