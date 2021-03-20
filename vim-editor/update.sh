@@ -4,14 +4,14 @@ update-vim() {
   vim +PlugUpgrade +qall
   vim +PlugUpdate +qall
   vim +PlugClean +qall
-  vim +CocUpdate +qall
+  vim +CocUpdate
 }
 
 update-neovim() {
   nvim +PlugUpgrade +qall
   nvim +PlugUpdate +qall
   nvim +PlugClean +qall
-  nvim +CocUpdate +qall
+  nvim +CocUpdate
 }
 
 update-vim
