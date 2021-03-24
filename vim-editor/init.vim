@@ -46,8 +46,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 " jsonc
 Plug 'neoclide/jsonc.vim'
-" Csharp
-Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 set encoding=UTF-8
@@ -121,9 +119,6 @@ let g:airline_powerline_fonts = 1
 
 " latex
 let g:tex_flavor = 'latex'
-
-" csharp
-let g:OmniSharp_highlight_types = 3
 
 autocmd FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 autocmd FileType makefile setlocal expandtab=0
