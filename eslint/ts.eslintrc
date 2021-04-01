@@ -65,6 +65,16 @@
       "error",
       "always"
     ],
+    "@typescript-eslint/prefer-nullish-coalescing": [
+      "warning",
+      {
+        "ignoreConditionalTests": true,
+        "ignoreMixedLogicalExpressions": true
+      }
+    ],
+    "@typescript-eslint/prefer-optional-chain": [
+      "warning"
+    ],
     "@typescript-eslint/comma-dangle": [
       "error",
       {
