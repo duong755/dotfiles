@@ -13,3 +13,4 @@ nvm use $NODE_VERSION
 nvm alias default $NODE_VERSION
 
 sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc
+sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.config/nvim/init.vim
