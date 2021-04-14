@@ -1,7 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
+    "es2021": true,
     "node": true,
     "commonjs": true,
     "jest": true
@@ -10,12 +10,12 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:prettier/typescript",
-    "plugin:prettier/react",
     "plugin:import/typescript",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:prettier/typescript",
+    "plugin:prettier/react",
+    "plugin:prettier/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
