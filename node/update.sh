@@ -4,7 +4,7 @@ source ~/.nvm/nvm.sh
 
 nvm install --lts --default
 
-NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
+NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+((iojs\-)?v\d+\.\d+\.\d+)' | grep -Po '(iojs\-)?v\d+\.\d+\.\d+')
 
 NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
 
