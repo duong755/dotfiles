@@ -3,6 +3,7 @@
     "cs",
     "cshtml"
   ],
+  "coc.preferences.formatOnSaveFiletypes": ["go", "scala"],
   "languageserver": {
     "ccls": {
       "command": "ccls",
