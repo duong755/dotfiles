@@ -17,8 +17,8 @@ apt-update:
 	@sudo apt -y update
 apt-upgrade:
 	@sudo apt -y upgrade
-	@sudo apt autoclean
-	@sudo apt autoremove
+	@sudo apt -y autoclean
+	@sudo apt -y autoremove
 node:
 	@$(SHELL) ./node/install.sh
 node-update:
