@@ -146,4 +146,7 @@ nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
 nnoremap <silent>nttc :<C-u>NERDTreeTabsClose<CR>
 nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
 
+" keymap for coc-metals
+nnoremap <silent>mtvp :call CocAction('runCommand', 'metals.tvp')<CR>
+
 highlight Normal guibg=NONE ctermbg=NONE

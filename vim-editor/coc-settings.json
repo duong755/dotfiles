@@ -1,9 +1,11 @@
 {
-  "coc.source.OmniSharp.filetypes": [
-    "cs",
-    "cshtml"
-  ],
   "coc.preferences.formatOnSaveFiletypes": ["go", "scala"],
+  "metals.statusBarEnabled": true,
+  "metals.treeviews.alignment": "left",
+  "metals.treeviews.initialWidth": 24,
+  "metals.showInferredType": true,
+  "metals.showImplicitArguments": true,
+  "metals.showImplicitConversionsAndClasses": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
