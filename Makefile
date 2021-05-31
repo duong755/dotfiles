@@ -1,7 +1,6 @@
 SHELL=/usr/bin/bash
 
 all:
-	@$(MAKE) basic
 	@$(MAKE) node
 	@$(MAKE) python
 	@$(MAKE) vim
