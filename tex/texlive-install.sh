@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 sudo add-apt-repository -y \
   ppa:git-core/ppa \
@@ -10,6 +10,8 @@ sudo apt -y update
 sudo apt -y upgrade
 
 sudo apt install -y \
+  zip \
+  unzip \
   git \
   tree \
   xclip \

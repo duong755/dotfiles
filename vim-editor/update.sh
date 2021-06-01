@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 update-vim() {
   vim +PlugUpgrade +qall
