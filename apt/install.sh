@@ -10,6 +10,7 @@ sudo apt -y update
 sudo apt -y upgrade
 
 sudo apt install -y \
+  software-properties-common \
   zip \
   unzip \
   git \

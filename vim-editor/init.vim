@@ -93,6 +93,7 @@ set termguicolors
 colorscheme onedark
 
 let g:coc_node_path = ''
+let g:coc_disable_startup_warning = 1
 
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
