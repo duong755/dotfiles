@@ -16,5 +16,10 @@ nvm alias default $NEXT_NODE_VERSION
 
 nvm reinstall-packages ${CURRENT_NODE_VERSION}
 
-sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc
-sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.config/nvim/init.vim
+if [ -f ~/.vimrc ]; then
+  sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.vimrc
+fi
+
+if [ -d ~/.config/nvim ] && [ -f ~/.config/nvim/init.vim ]; then
+  sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"$NODE_PATH"';g" ~/.config/nvim/init.vim
+fi
