@@ -31,6 +31,4 @@ sudo apt install -y \
   fonts-powerline \
   cpanminus \
   freeglut3 \
-  deja-dup \
-  openjdk-11-jre-headless \
-  openjdk-11-jdk-headless
+  deja-dup

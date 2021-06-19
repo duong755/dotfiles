@@ -54,8 +54,12 @@ install() {
       local NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
       nvm use ${NODE_VERSION}
       nvm alias default ${NODE_VERSION}
-      sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.vimrc
-      sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.config/nvim/init.vim
+      if [ -f ~/.vimrc ]; then
+        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.vimrc
+      fi
+      if [ -f ~/.config/nvim/init.vim ]; then
+        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.config/nvim/init.vim
+      fi
       ;;
     minimal)
       cp "${CURRENT_DIRECTORY_PATH}/minimal.vim" "${CONFIG}"

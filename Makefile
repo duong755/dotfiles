@@ -14,7 +14,7 @@ chore:
 
 .PHONY: apt
 apt:
-	@$(SHELL) ./apt/install.sh
+	@$(SHELL) ./pkgman/apt.sh
 
 apt-update:
 	@sudo apt -y update
