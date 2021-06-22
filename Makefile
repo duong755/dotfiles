@@ -13,8 +13,20 @@ chore:
 	@$(MAKE) vim-update
 
 .PHONY: apt
-apt:
+apt-all:
 	@$(SHELL) ./pkgman/apt.sh
+
+apt-basic:
+	@$(SHELL) ./pkgman/apt/basic.sh
+
+apt-neovim:
+	@$(SHELL) ./pkgman/apt/neovim.sh
+
+apt-python:
+	@$(SHELL) ./pkgman/apt/python.sh
+
+apt-desktop:
+	@$(SHELL) ./pkgman/apt/desktop.sh
 
 apt-update:
 	@sudo apt -y update

@@ -38,7 +38,7 @@ install() {
   esac
 
   if [ ! -f ${VIMPLUG} ]; then
-    curl -fLo ${VIMPLUG} --create-dirs ${VIMPLUG_URL}
+    wget -qO ${VIMPLUG} ${VIMPLUG_URL}
   fi
 
   if [ ! -d ${CONFIG_DIR} ]; then

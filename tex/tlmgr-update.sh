@@ -1,6 +1,5 @@
-#/bin/sh
+#!/bin/bash
 
-# run this at /root
-wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-chmod +x update-tlmgr-latest.sh
-sudo env PATH="${PATH}" ./update-tlmgr-latest.sh
+wget -O /root/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
+chmod +x /root/update-tlmgr-latest.sh
+sudo env PATH="${PATH}" /root/update-tlmgr-latest.sh

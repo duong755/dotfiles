@@ -13,15 +13,15 @@ echo "Copying latexmkrc..."
 cp ${CURRENT_DIRECTORY_PATH}/latexmkrc ~/.latexmkrc
 
 echo "Downloading texlive installer..."
-wget -O ~/Downloads/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+wget -O /tmp/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
-mkdir -p ~/Downloads/install-tl-latest
-rm -rf ~/Downloads/install-tl-latest/install-tl-*
-tar -xzf ~/Downloads/install-tl-unx.tar.gz -C ~/Downloads/install-tl-latest
-cp ./tex/installation.profile ~/Downloads/install-tl-latest/installation.profile
+mkdir -p /tmp/install-tl-latest
+rm -rf /tmp/install-tl-latest/install-tl-* # remove stale files
+tar -xzf /tmp/install-tl-unx.tar.gz -C /tmp/install-tl-latest
+cp ./tex/installation.profile /tmp/install-tl-latest/installation.profile
 
-echo "Installing texlive-full"
-cd ~/Downloads/install-tl-latest/install-tl-*
+echo "Installing texlive-full..."
+cd /tmp/install-tl-latest/install-tl-*
 chmod +x ./install-tl
 sudo ./install-tl --scheme=scheme-full --profile=../installation.profile
 
