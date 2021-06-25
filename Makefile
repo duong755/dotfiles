@@ -57,23 +57,24 @@ tlmgr:
 tlmgr-update:
 	@sudo env PATH="${PATH}" tlmgr update --self --all
 
+.PHONY: vim
 vim:
-	@$(SHELL) ./vim-editor/plug-install.sh vim all
+	@$(SHELL) ./vim/plug-install.sh vim all
 
 vim-minimal:
-	@$(SHELL) ./vim-editor/plug-install.sh vim minimal
+	@$(SHELL) ./vim/plug-install.sh vim minimal
 
 vim-plain:
-	@$(SHELL) ./vim-editor/plug-install.sh vim plain
+	@$(SHELL) ./vim/plug-install.sh vim plain
 
 neovim:
-	@$(SHELL) ./vim-editor/plug-install.sh neovim all
+	@$(SHELL) ./vim/plug-install.sh neovim all
 
 neovim-minimal:
-	@$(SHELL) ./vim-editor/plug-install.sh neovim minimal
+	@$(SHELL) ./vim/plug-install.sh neovim minimal
 
 neovim-plain:
-	@$(SHELL) ./vim-editor/plug-install.sh neovim plain
+	@$(SHELL) ./vim/plug-install.sh neovim plain
 
 vim-update:
-	@$(SHELL) ./vim-editor/update.sh
+	@$(SHELL) ./vim/update.sh
