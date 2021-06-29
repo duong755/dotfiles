@@ -1,10 +1,17 @@
 SHELL=/bin/bash
+CP=/bin/cp
+MKDIR=/bin/mkdir
 
 all:
 	@$(MAKE) node
 	@$(MAKE) python
 	@$(MAKE) vim
 	@$(MAKE) node-update
+
+root:
+	@sudo $(CP) -r /home/${USER}/.nvm /home/${USER}/.vimrc /home/${USER}/.tmux.conf /root
+	@sudo $(MKDIR) -p /root/.config
+	@sudo $(CP) -r /home/${USER}/.config/coc /root/.config
 
 chore:
 	@$(MAKE) apt-update
