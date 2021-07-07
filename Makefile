@@ -26,6 +26,9 @@ apt-all:
 apt-basic:
 	@$(SHELL) ./pkgman/apt/basic.sh
 
+apt-k8s:
+	@$(SHELL) ./pkgman/apt/k8s.sh
+
 apt-neovim:
 	@$(SHELL) ./pkgman/apt/neovim.sh
 
