@@ -89,17 +89,17 @@
       }
     ],
     "@typescript-eslint/prefer-optional-chain": [
-      "warning"
+      1
     ],
     "@typescript-eslint/comma-dangle": [
-      "error",
+      2,
       {
         "arrays": "only-multiline",
         "objects": "only-multiline",
         "imports": "only-multiline",
         "exports": "only-multiline",
         "functions": "never",
-        "enum": "only-multiline",
+        "enums": "only-multiline",
         "generics": "never",
         "tuples": "never"
       }
