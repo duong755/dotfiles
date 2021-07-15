@@ -49,16 +49,22 @@ install() {
     all)
       cp "${CURRENT_DIRECTORY_PATH}/init.vim" "${CONFIG}"
       cp "${CURRENT_DIRECTORY_PATH}/coc-settings.json" "${CONFIG_DIR}/coc-settings.json"
+      # shellcheck disable=SC1090
       source ~/.nvm/nvm.sh
-      local NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
-      local NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
-      nvm use ${NODE_VERSION}
-      nvm alias default ${NODE_VERSION}
+      local NODE_VERSION
+      NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+(v\d{1,2}\.\d{1,2}\.\d{1,2})' | grep -Po 'v\d{1,2}\.\d{1,2}\.\d{1,2}')
+      local NODE_PATH
+      NODE_PATH=~/.nvm/versions/node/${NODE_VERSION}/bin/node
+
+      nvm use "${NODE_VERSION}"
+      nvm alias default "${NODE_VERSION}"
+
       if [ -f ~/.vimrc ]; then
-        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.vimrc
+        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '$NODE_PATH';g" ~/.vimrc
       fi
+
       if [ -f ~/.config/nvim/init.vim ]; then
-        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '"${NODE_PATH}"';g" ~/.config/nvim/init.vim
+        sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '$NODE_PATH';g" ~/.config/nvim/init.vim
       fi
       ;;
     minimal)
@@ -89,4 +95,4 @@ install() {
   esac
 }
 
-install $1 $2
+install "$1" "$2"
