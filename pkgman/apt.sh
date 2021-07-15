@@ -31,4 +31,5 @@ sudo apt install -y \
   fonts-powerline \
   cpanminus \
   freeglut3 \
-  deja-dup
+  deja-dup \
+  shellcheck

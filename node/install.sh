@@ -9,4 +9,4 @@ echo "Downloading nvm ${NVM_LATEST_VERSION}"
 
 wget -qO- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST_VERSION}/install.sh" | bash
 
-yes | sudo cp -r /home/${USER}/.nvm /root
+yes | sudo cp -r "/home/${USER}/.nvm" /root
