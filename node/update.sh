@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# shellcheck source=~/.nvm/nvm.sh
+# shellcheck disable=SC1090
 source "${HOME}/.nvm/nvm.sh"
 
 CURRENT_NODE_VERSION=$(nvm ls | grep -Po -m 1 '\-\>\s+((iojs\-)?v\d+\.\d+\.\d+)' | grep -Po '(iojs\-)?v\d+\.\d+\.\d+')

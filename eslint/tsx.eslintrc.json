@@ -13,8 +13,6 @@
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:prettier/typescript",
-    "plugin:prettier/react",
     "plugin:prettier/recommended"
   ],
   "globals": {
@@ -82,7 +80,7 @@
       "always"
     ],
     "@typescript-eslint/prefer-nullish-coalescing": [
-      "warning",
+      1,
       {
         "ignoreConditionalTests": true,
         "ignoreMixedLogicalExpressions": true
@@ -113,6 +111,7 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
     "import/order": [
       "error",
       {
