@@ -25,6 +25,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 " git
 Plug 'tpope/vim-fugitive'
+" autocomplete, intellisense
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 
 set encoding=UTF-8
@@ -70,6 +72,9 @@ syntax on
 set termguicolors
 
 colorscheme onedark
+
+let g:coc_node_path = ''
+let g:coc_disable_startup_warning = 1
 
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
