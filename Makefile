@@ -19,7 +19,6 @@ chore:
 	@$(MAKE) tlmgr-update
 	@$(MAKE) vim-update
 
-.PHONY: apt
 apt-all:
 	@$(SHELL) ./pkgman/apt.sh
 
@@ -66,6 +65,9 @@ tlmgr:
 
 tlmgr-update:
 	@sudo env PATH="${PATH}" tlmgr update --self --all
+
+cloud-aws:
+	@$(SHELL) ./cloud/awscli.sh
 
 .PHONY: vim
 vim:
