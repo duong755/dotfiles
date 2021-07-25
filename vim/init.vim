@@ -8,8 +8,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'editorconfig/editorconfig-vim'
 " syntax highlight
 Plug 'sheerun/vim-polyglot'
-" lint
-Plug 'dense-analysis/ale'
 " navigator
 Plug 'christoomey/vim-tmux-navigator'
 " git
@@ -18,15 +16,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 " easymotion
 Plug 'easymotion/vim-easymotion'
 " comment
 Plug 'preservim/nerdcommenter'
-" multiple cursors
-Plug 'terryma/vim-multiple-cursors'
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
