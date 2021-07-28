@@ -83,11 +83,11 @@ install() {
   case $1 in
     vim)
       vim +PlugInstall +qall
-      vim +CocInstall coc-html coc-css coc-emmet coc-pairs coc-highlight coc-eslint coc-tsserver coc-json coc-angular coc-git +qall
+      vim +CocInstall coc-html coc-css coc-tailwindcss coc-emmet coc-pairs coc-highlight coc-eslint coc-tsserver coc-json coc-angular coc-git +qall
       ;;
     nvim | neovim)
       nvim +PlugInstall +qall
-      nvim +CocInstall coc-html coc-css coc-emmet coc-pairs coc-highlight coc-eslint coc-tsserver coc-json coc-angular coc-git +qall
+      nvim +CocInstall coc-html coc-css coc-tailwindcss coc-emmet coc-pairs coc-highlight coc-eslint coc-tsserver coc-json coc-angular coc-git +qall
       ;;
     *)
       echo "Select one of these editors: vim, nvim, neovim."

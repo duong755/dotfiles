@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["go", "scala"],
+  "tailwindCSS.emmetCompletions": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
