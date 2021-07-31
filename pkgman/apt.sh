@@ -16,8 +16,6 @@ sudo apt install -y \
   git \
   tree \
   xclip \
-  python3-pip \
-  python-apt \
   curl \
   apt-transport-https \
   gnupg-agent \
@@ -26,8 +24,10 @@ sudo apt install -y \
   tmux \
   vim \
   neovim \
-  python-neovim \
+  python3-pip \
+  python3-apt \
   python3-neovim \
+  python3-venv \
   fonts-powerline \
   cpanminus \
   freeglut3 \

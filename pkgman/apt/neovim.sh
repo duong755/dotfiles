@@ -8,5 +8,4 @@ sudo apt upgrade -y
 
 sudo apt install -y \
   neovim \
-  python-neovim \
   python3-neovim
