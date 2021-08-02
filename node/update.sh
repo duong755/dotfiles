@@ -24,5 +24,3 @@ fi
 if [ -d ~/.config/nvim ] && [ -f ~/.config/nvim/init.vim ]; then
   sed -i "s;let g:coc_node_path = '.*';let g:coc_node_path = '$NODE_PATH';g" ~/.config/nvim/init.vim
 fi
-
-yes | sudo cp -r "/home/${USER}/.nvm" /root
