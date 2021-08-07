@@ -3,10 +3,6 @@ CP=/bin/cp
 MKDIR=/bin/mkdir
 
 all:
-	@$(MAKE) node
-	@$(MAKE) python
-	@$(MAKE) vim
-	@$(MAKE) node-update
 
 ubuntu-chore:
 	@$(MAKE) ubuntu-update
@@ -15,22 +11,23 @@ ubuntu-chore:
 	@$(MAKE) vim-update
 
 ubuntu-all:
-	@$(SHELL) ./pkgman/ubuntu.sh
+	# For the 1st time only
+	@$(SHELL) ./os/ubuntu.sh
 
 ubuntu-basic:
-	@$(SHELL) ./pkgman/ubuntu/basic.sh
+	@$(SHELL) ./os/ubuntu/basic.sh
 
 ubuntu-k8s:
-	@$(SHELL) ./pkgman/ubuntu/k8s.sh
+	@$(SHELL) ./os/ubuntu/k8s.sh
 
 ubuntu-neovim:
-	@$(SHELL) ./pkgman/ubuntu/neovim.sh
+	@$(SHELL) ./os/ubuntu/neovim.sh
 
 ubuntu-python:
-	@$(SHELL) ./pkgman/ubuntu/python.sh
+	@$(SHELL) ./os/ubuntu/python.sh
 
 ubuntu-desktop:
-	@$(SHELL) ./pkgman/ubuntu/desktop.sh
+	@$(SHELL) ./os/ubuntu/desktop.sh
 
 ubuntu-update:
 	@sudo apt-get -y update
@@ -39,6 +36,24 @@ ubuntu-upgrade:
 	@sudo apt-get -y upgrade
 	@sudo apt-get -y autoclean
 	@sudo apt-get -y autoremove
+
+kali-chore:
+	@$(MAKE) kali-update
+	@$(MAKE) kali-upgrade
+	@$(MAKE) kali-git
+	@$(MAKE) tlmgr-update
+	@$(MAKE) vim-update
+
+kali-update:
+	@sudo apt-get -y update
+
+kali-upgrade:
+	@sudo apt-get -y upgrade
+	@sudo apt-get -y autoclean
+	@sudo apt-get -y autoremove
+
+kali-git:
+	@$(SHELL) ./os/kali/git.sh
 
 .PHONY: node
 node:

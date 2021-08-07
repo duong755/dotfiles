@@ -16,7 +16,10 @@ apt-get install -y \
 
 # git-2.32.0.tar.gz 
 
-GIT_LATEST_VERSION=$(curl -sL https://www.kernel.org/pub/software/scm/git/ | grep -Po "(?<=\")git-\d+\.\d+\.\d+\.tar\.xz" | xargs python3 git.py)
+CURRENT_FILE_PATH=$(realpath $0)
+CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
+
+GIT_LATEST_VERSION=$(curl -sL https://www.kernel.org/pub/software/scm/git/ | grep -Po "(?<=\")git-\d+\.\d+\.\d+\.tar\.xz" | xargs python3 "${CURRENT_DIR_PATH}/pkgman/kali/git.py")
 echo $GIT_LATEST_VERSION
 FILE_NAME="git-${GIT_LATEST_VERSION}.tar.gz"
 echo $FILE_NAME
