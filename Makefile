@@ -8,42 +8,37 @@ all:
 	@$(MAKE) vim
 	@$(MAKE) node-update
 
-root:
-	@sudo $(CP) -r /home/${USER}/.nvm /home/${USER}/.vimrc /home/${USER}/.tmux.conf /root
-	@sudo $(MKDIR) -p /root/.config
-	@sudo $(CP) -r /home/${USER}/.config/coc /root/.config
-
-chore:
-	@$(MAKE) apt-update
-	@$(MAKE) apt-upgrade
+ubuntu-chore:
+	@$(MAKE) ubuntu-update
+	@$(MAKE) ubuntu-upgrade
 	@$(MAKE) tlmgr-update
 	@$(MAKE) vim-update
 
-apt-all:
-	@$(SHELL) ./pkgman/apt.sh
+ubuntu-all:
+	@$(SHELL) ./pkgman/ubuntu.sh
 
-apt-basic:
-	@$(SHELL) ./pkgman/apt/basic.sh
+ubuntu-basic:
+	@$(SHELL) ./pkgman/ubuntu/basic.sh
 
-apt-k8s:
-	@$(SHELL) ./pkgman/apt/k8s.sh
+ubuntu-k8s:
+	@$(SHELL) ./pkgman/ubuntu/k8s.sh
 
-apt-neovim:
-	@$(SHELL) ./pkgman/apt/neovim.sh
+ubuntu-neovim:
+	@$(SHELL) ./pkgman/ubuntu/neovim.sh
 
-apt-python:
-	@$(SHELL) ./pkgman/apt/python.sh
+ubuntu-python:
+	@$(SHELL) ./pkgman/ubuntu/python.sh
 
-apt-desktop:
-	@$(SHELL) ./pkgman/apt/desktop.sh
+ubuntu-desktop:
+	@$(SHELL) ./pkgman/ubuntu/desktop.sh
 
-apt-update:
-	@sudo apt -y update
+ubuntu-update:
+	@sudo apt-get -y update
 
-apt-upgrade:
-	@sudo apt -y upgrade
-	@sudo apt -y autoclean
-	@sudo apt -y autoremove
+ubuntu-upgrade:
+	@sudo apt-get -y upgrade
+	@sudo apt-get -y autoclean
+	@sudo apt-get -y autoremove
 
 .PHONY: node
 node:
