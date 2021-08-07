@@ -1,11 +1,14 @@
-#!/bin/bash
+if [ $UID -ne "0" ]; then
+  echo "Require root user"
+  exit
+fi
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
+apt-get -y update
+apt-get -y upgrade
 
-sudo apt-get remove -y --purge apache* mysql* mariadb* php* dotnet*
+apt-get remove -y --purge apache* mysql* mariadb* php* dotnet*
 
-sudo apt-get install -y \
+apt-get install -y \
   automake \
   autoconf \
   gnupg gnupg-agent \
@@ -18,4 +21,7 @@ sudo apt-get install -y \
   tree \
   xclip \
   jq
+
+# install git
+$0 ./kali/git.sh
 
