@@ -3,10 +3,17 @@ if [ $UID -ne "0" ]; then
   exit
 fi
 
+
+apt-get remove -y --purge apache* mysql* mariadb* libapache* php*
+
 apt-get -y update
 apt-get -y upgrade
 
-apt-get remove -y --purge apache* mysql* mariadb* php* dotnet*
+apt-get -y dist-upgrade
+apt-get remove -y dotnet* aspnetcore*
+
+apt-get autoremove -y
+apt-get autoclean -y
 
 apt-get install -y \
   automake \
@@ -20,8 +27,13 @@ apt-get install -y \
   curl \
   tree \
   xclip \
-  jq
+  jq \
+  rsync
 
 # install git
-$0 ./kali/git.sh
+echo "\nInstalling git...\n"
+CURRENT_FILE_PATH=$(realpath $0)
+CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
+
+bash ./kali/git.sh
 
