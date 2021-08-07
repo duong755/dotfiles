@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $UID -ne "0" ]; then
   echo "Require root user"
   exit
@@ -38,8 +40,8 @@ prepare
 basicpackages
 
 # install git
-echo "\nInstalling git...\n"
-CURRENT_FILE_PATH=$(realpath $0)
+echo "Installing git..."
+CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
 
 bash "${CURRENT_DIR_PATH}"/kali/git.sh
