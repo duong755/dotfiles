@@ -4,10 +4,6 @@
 
 - Download or clone this repo.
 - `cd` to the repo.
-- `make apt`: install packages
-- `make apt-update`: apt update
-- `make apt-upgrade`: apt upgrade
-- `make chore`: apt update, upgrade, tlmgr update, vim plug update
 - `make node`: install node with nvm latest stable version
 - `make node-update`: install latest version of node, update `g:coc_node_path` in `~/.vimrc`
 - `make python`: install python, pip

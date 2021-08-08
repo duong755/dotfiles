@@ -27,12 +27,15 @@ basicpackages() {
     ca-certificates \
     lsb-release \
     gettext \
+    python3-pip \
+    python3-venv \
     openssl \
     curl \
     tree \
     xclip \
     jq \
     rsync \
+    freeglut3 \
     snapd
 }
 

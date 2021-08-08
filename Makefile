@@ -9,6 +9,7 @@ ubuntu-chore:
 	@$(MAKE) ubuntu-upgrade
 	@$(MAKE) tlmgr-update
 	@$(MAKE) vim-update
+	@$(MAKE) python
 
 ubuntu-all:
 	# For the 1st time only
@@ -41,8 +42,8 @@ kali-chore:
 	@$(MAKE) kali-update
 	@$(MAKE) kali-upgrade
 	@$(MAKE) kali-git
-	@$(MAKE) tlmgr-update
 	@$(MAKE) vim-update
+	@$(MAKE) python
 
 kali-update:
 	@sudo apt-get -y update
