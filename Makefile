@@ -81,6 +81,7 @@ cloud-aws:
 
 .PHONY: vim
 vim:
+	@sudo $(SHELL) ./vim/font.sh
 	@$(SHELL) ./vim/plug-install.sh vim all
 
 vim-minimal:
