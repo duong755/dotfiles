@@ -83,22 +83,22 @@ cloud-aws:
 .PHONY: vim
 vim:
 	@sudo $(SHELL) ./vim/font.sh
-	@$(SHELL) ./vim/plug-install.sh vim all
+	@$(SHELL) ./vim/vim-plug/plug-install.sh vim all
 
 vim-minimal:
-	@$(SHELL) ./vim/plug-install.sh vim minimal
+	@$(SHELL) ./vim/vim-plug/plug-install.sh vim minimal
 
 vim-plain:
-	@$(SHELL) ./vim/plug-install.sh vim plain
+	@$(SHELL) ./vim/vim-plug/plug-install.sh vim plain
 
 neovim:
-	@$(SHELL) ./vim/plug-install.sh neovim all
+	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim all
 
 neovim-minimal:
-	@$(SHELL) ./vim/plug-install.sh neovim minimal
+	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim minimal
 
 neovim-plain:
-	@$(SHELL) ./vim/plug-install.sh neovim plain
+	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim plain
 
 vim-update:
-	@$(SHELL) ./vim/update.sh
+	@$(SHELL) ./vim/vim-plug/update.sh
