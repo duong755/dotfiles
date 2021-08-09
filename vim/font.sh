@@ -9,7 +9,7 @@ UBUNTU_NERD_FONT_DOWNLOAD_URL=$(curl -sL https://api.github.com/repos/ryanoasis/
 
 if [ "${UBUNTU_NERD_FONT_DOWNLOAD_URL}" != "" ]; then
   rm -f /tmp/Ubuntu.zip
-  wget -O /tmp/Ubuntu.zip "${UBUNTU_NERD_FONT_DOWNLOAD_URL}"
+  wget -qO /tmp/Ubuntu.zip "${UBUNTU_NERD_FONT_DOWNLOAD_URL}"
   cd /tmp || exit
   unzip -o -qq Ubuntu.zip -d /tmp/Ubuntu
   cp -r /tmp/Ubuntu/* /usr/share/fonts/

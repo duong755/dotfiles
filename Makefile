@@ -1,15 +1,23 @@
 SHELL=/bin/bash
 CP=/bin/cp
 MKDIR=/bin/mkdir
+RM=/bin/rm
+RMRF=/bin/rm -rf
+LN=/bin/ln -sf
 
 all:
 
-ubuntu-chore:
-	@$(MAKE) ubuntu-update
-	@$(MAKE) ubuntu-upgrade
-	@$(MAKE) tlmgr-update
-	@$(MAKE) vim-update
-	@$(MAKE) python
+.PHONY: update
+update:
+	@sudo apt-get -y update
+
+.PHONY: upgrade
+upgrade:
+	@sudo apt-get -y upgrade
+	@sudo apt-get -y autoremove
+	@sudo apt-get -y autoclean
+
+ubuntu-chore: update upgrade tlmgr-update python
 
 ubuntu-all:
 	# For the 1st time only
@@ -30,28 +38,7 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-ubuntu-update:
-	@sudo apt-get -y update
-
-ubuntu-upgrade:
-	@sudo apt-get -y upgrade
-	@sudo apt-get -y autoclean
-	@sudo apt-get -y autoremove
-
-kali-chore:
-	@$(MAKE) kali-update
-	@$(MAKE) kali-upgrade
-	@$(MAKE) kali-git
-	@$(MAKE) vim-update
-	@$(MAKE) python
-
-kali-update:
-	@sudo apt-get -y update
-
-kali-upgrade:
-	@sudo apt-get -y upgrade
-	@sudo apt-get -y autoclean
-	@sudo apt-get -y autoremove
+kali-chore: update upgrade kali-git python
 
 kali-git:
 	@$(SHELL) ./os/kali/git.sh
@@ -80,25 +67,39 @@ tlmgr-update:
 cloud-aws:
 	@$(SHELL) ./cloud/awscli.sh
 
-.PHONY: vim
-vim:
-	@sudo $(SHELL) ./vim/font.sh
+font:
+	@$(SHELL) ./vim/font.sh
+
+### vim-plug
+
+plug-all:
 	@$(SHELL) ./vim/vim-plug/plug-install.sh vim all
-
-vim-minimal:
-	@$(SHELL) ./vim/vim-plug/plug-install.sh vim minimal
-
-vim-plain:
-	@$(SHELL) ./vim/vim-plug/plug-install.sh vim plain
-
-neovim:
 	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim all
 
-neovim-minimal:
+plug-minimal:
+	@$(SHELL) ./vim/vim-plug/plug-install.sh vim minimal
 	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim minimal
 
-neovim-plain:
+plug-plain:
+	@$(SHELL) ./vim/vim-plug/plug-install.sh vim plain
 	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim plain
 
-vim-update:
+plug-update:
 	@$(SHELL) ./vim/vim-plug/update.sh
+
+### vim-pathogen
+
+# TODO
+link-neovim-to-vim:
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
+	@$(RMRF) ~/.config/nvim
+	@$(LN) ~/.vim ~/.config/nvim
+	@$(MAKE) node-update
+
+pathogen-all:
+	@$(SHELL) ./vim/pathogen/pathogen.sh all
+	@$(MAKE) link-neovim-to-vim
+
+pathogen-basic:
+	@$(SHELL) ./vim/pathogen/pathogen.sh basic
+	@$(MAKE) link-neovim-to-vim
