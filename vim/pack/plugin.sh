@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# https://github.com/tpope/vim-pathogen/blob/master/README.markdown
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -sLSo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p ~/.vim/pack/plugins/start
 
 ### list of plugins
 full_repos=()
@@ -18,7 +16,6 @@ full_repos+=('easymotion/vim-easymotion')
 full_repos+=('preservim/nerdcommenter')
 full_repos+=('vim-airline/vim-airline')
 full_repos+=('vim-airline/vim-airline-themes')
-full_repos+=('ryanoasis/vim-devicons')
 full_repos+=('Shougo/neco-vim')
 full_repos+=('neoclide/coc-neco')
 full_repos+=('neoclide/coc.nvim?branch=release')
@@ -44,8 +41,8 @@ basic_repos+=('neoclide/coc.nvim?branch=release')
 
 ### install
 
-pathogen_location=~/.vim/bundle
-cd $pathogen_location || exit
+pack_location=~/.vim/pack/plugins/start
+cd $pack_location || exit
 
 clone_or_pull() {
   local repo

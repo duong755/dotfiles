@@ -1,4 +1,4 @@
-execute pathogen#infect()
+packloadall
 
 syntax on
 filetype plugin indent on
@@ -54,6 +54,9 @@ let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
+
+" devicons
+let g:webdevicons_conceal_nerdtree_brackets = 0
 
 " latex
 let g:tex_flavor = 'latex'

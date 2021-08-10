@@ -89,17 +89,33 @@ plug-update:
 
 ### vim-pathogen
 
-# TODO
 link-neovim-to-vim:
-	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(RMRF) ~/.config/nvim
 	@$(LN) ~/.vim ~/.config/nvim
+	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
+	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
+	@$(CP) ./vim/coc-settings.json ~/.config/nvim
 	@$(MAKE) node-update
 
 pathogen-all:
 	@$(SHELL) ./vim/pathogen/pathogen.sh all
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(MAKE) link-neovim-to-vim
 
 pathogen-basic:
 	@$(SHELL) ./vim/pathogen/pathogen.sh basic
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(MAKE) link-neovim-to-vim
+
+### vim pack
+
+pack-all:
+	@$(SHELL) ./vim/pack/plugin.sh all
+	@$(CP) ./vim/pack/vimrc ~/.vimrc
+	@$(MAKE) link-neovim-to-vim
+
+pack-basic:
+	@$(SHELL) ./vim/pack/plugin.sh basic
+	@$(CP) ./vim/pack/vimrc ~/.vimrc
+	@$(MAKE) link-neovim-to-vim
+
