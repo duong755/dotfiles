@@ -61,17 +61,17 @@ clone_or_pull() {
   branch=$(echo "$repo" | grep --perl-regexp --only-matching "(?<=\?branch=)(.+(?=&)|.+$)")
 
   if [ -n "$plugin" ]; then
-    if [ -d "$pack_location/$plugin" ]; then
+    if [ -d "$pathogen_location/$plugin" ]; then
       echo ""
       echo "Updating $plugin..."
-      /usr/bin/git -C "$pack_location/$plugin" pull
+      /usr/bin/git -C "$pathogen_location/$plugin" pull
     else
       echo ""
       echo "Installing $plugin"
       if [ ! -n "$branch" ]; then
-        /usr/bin/git -C "$pack_location" clone "https://github.com/$onlyrepo"
+        /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo"
       else
-        /usr/bin/git -C "$pack_location" clone "https://github.com/$onlyrepo" -b "$branch"
+        /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo" -b "$branch"
       fi
     fi
   else

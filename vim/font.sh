@@ -7,14 +7,20 @@ fi
 
 UBUNTU_NERD_FONT_DOWNLOAD_URL=$(curl -sL https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq -c '.assets[] | select(.name | contains("Ubuntu.zip")) | .browser_download_url' | grep -Po "https:\/\/.+(?=\"$)")
 
-if [ "${UBUNTU_NERD_FONT_DOWNLOAD_URL}" != "" ]; then
-  rm -f /tmp/Ubuntu.zip
-  wget -qO /tmp/Ubuntu.zip "${UBUNTU_NERD_FONT_DOWNLOAD_URL}"
-  cd /tmp || exit
-  unzip -o -qq Ubuntu.zip -d /tmp/Ubuntu
-  cp -r /tmp/Ubuntu/* /usr/share/fonts/
-  fc-cache -f -v
-else
-  echo "Ubuntu nerd font download url is empty"
-  exit
-fi
+URLS=("$UBUNTU_NERD_FONT_DOWNLOAD_URL")
+
+for url in "${URLS[@]}"; do
+  if [ "$url" != "" ]; then
+    file_name=$(basename "$url")
+    font_family=$(echo "$url" | grep --perl-regexp --only-matching "([^\/]+)(?=\.zip$)")
+    rm -f /tmp/"$file_name"
+    wget -qO /tmp/"$file_name" "$url"
+    cd /tmp || exit
+    unzip -o -qq "$file_name" -d /tmp/"$font_family"
+    cp -r /tmp/"$font_family"/* /usr/share/fonts/
+    fc-cache -f -v
+  else
+    echo "Download url is empty"
+    exit
+  fi
+done
