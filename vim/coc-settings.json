@@ -14,7 +14,7 @@
     },
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod", "go.sum"],
+      "rootPatterns": ["go.mod", "go.sum", "*.go"],
       "filetypes": ["go"]
     },
     "pyls": {
@@ -29,8 +29,8 @@
     },
     "tex": {
       "command": "texlab",
-      "filetypes": ["tex", "st", "cls"],
-      "rootPatterns": ["latexmkrc", ".latexmkrc", ".chktexrc", "chktexrc", "*.tex"],
+      "filetypes": ["tex", "st", "sty", "cls"],
+      "rootPatterns": ["latexmkrc", ".latexmkrc", ".chktexrc", "chktexrc", "*.tex", "indentconfig.yaml"],
       "settings": {
         "latex.build.executable": "latexmk",
         "latex.build.args": [

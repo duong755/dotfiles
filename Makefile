@@ -59,10 +59,10 @@ texlive:
 	@$(SHELL) ./tex/texlive-install.sh
 
 tlmgr:
-	@sudo env PATH="${PATH}" tlmgr update --list
+	@tlmgr update --list
 
 tlmgr-update:
-	@sudo env PATH="${PATH}" tlmgr update --self --all
+	@$(SHELL) ./tex/tlmgr-update.sh
 
 cloud-aws:
 	@$(SHELL) ./cloud/awscli.sh
