@@ -5,7 +5,10 @@ if [ $UID != "0" ];then
   exit
 fi
 
-wget -O /usr/local/texlive/2021/bin/x86_64-linux/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-chmod +x /usr/local/texlive/2021/bin/x86_64-linux/update-tlmgr-latest.sh
-/usr/local/texlive/2021/bin/x86_64-linux/update-tlmgr-latest.sh -- --upgrade
+TEX_HOME=/usr/local/texlive/2021/bin/x86_64-linux
+
+wget -O "$TEX_HOME"/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
+chmod +x "$TEX_HOME"/update-tlmgr-latest.sh
+cd "$TEX_HOME"
+sh ./update-tlmgr-latest.sh -- --upgrade
 tlmgr update --all

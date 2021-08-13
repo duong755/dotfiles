@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $UID = "0" ]; then
+  echo "You should not run pip as root, it might break system packages"
+  exit
+fi
+
 python3 -m pip install -U pip
 python3 -m pip install -U pylint
 python3 -m pip install -U pynvim

@@ -9,15 +9,15 @@ all:
 
 .PHONY: update
 update:
-	@sudo apt-get -y update
+	@apt-get -y update
 
 .PHONY: upgrade
 upgrade:
-	@sudo apt-get -y upgrade
-	@sudo apt-get -y autoremove
-	@sudo apt-get -y autoclean
+	@apt-get -y upgrade
+	@apt-get -y autoremove
+	@apt-get -y autoclean
 
-ubuntu-chore: update upgrade tlmgr-update python
+ubuntu-chore: update upgrade tlmgr-update
 
 ubuntu-all:
 	# For the 1st time only
@@ -38,7 +38,7 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-kali-chore: update upgrade kali-git python
+kali-chore: update upgrade kali-git
 
 kali-git:
 	@$(SHELL) ./os/kali/git.sh
