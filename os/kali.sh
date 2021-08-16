@@ -43,7 +43,6 @@ prepare
 basicpackages
 
 # install git
-echo "Installing git..."
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
 
