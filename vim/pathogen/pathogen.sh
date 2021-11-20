@@ -5,6 +5,11 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -sLSo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 ### list of plugins
+###
+### syntax:
+### owner/repo
+### owner/repo?branch=branch_name
+###
 full_repos=()
 full_repos+=('joshdick/onedark.vim')
 full_repos+=('editorconfig/editorconfig-vim')

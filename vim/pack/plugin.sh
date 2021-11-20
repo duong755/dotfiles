@@ -3,6 +3,11 @@
 mkdir -p ~/.vim/pack/plugins/start
 
 ### list of plugins
+###
+### syntax:
+### owner/repo
+### owner/repo?branch=branch_name
+###
 full_repos=()
 full_repos+=('joshdick/onedark.vim')
 full_repos+=('editorconfig/editorconfig-vim')
