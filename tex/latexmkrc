@@ -1,4 +1,6 @@
 $clean_ext = "aux fdb_latexmk fls log sta synctex.gz toc nav snm out maf mlf mlt mtc slf slt stc dep bbl";
-$pdf_previewer = "start evince";
+$pdf_previewer = "evince";
+# $pdf_previewer = "acroread";
+# $pdf_previewer = "atril";
 $pdf_update_method = 4;
 $max_repeat = 1000;

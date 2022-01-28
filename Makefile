@@ -26,9 +26,6 @@ ubuntu-all:
 ubuntu-basic:
 	@$(SHELL) ./os/ubuntu/basic.sh
 
-ubuntu-k8s:
-	@$(SHELL) ./os/ubuntu/k8s.sh
-
 ubuntu-neovim:
 	@$(SHELL) ./os/ubuntu/neovim.sh
 

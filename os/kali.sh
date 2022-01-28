@@ -12,7 +12,7 @@ prepare() {
   apt-get -y upgrade
 
   apt-get -y dist-upgrade
-  apt-get remove -y dotnet* aspnetcore*
+  apt-get remove -y --purge dotnet* aspnetcore*
 
   apt-get autoremove -y
   apt-get autoclean -y

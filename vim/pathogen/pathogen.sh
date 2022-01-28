@@ -67,17 +67,17 @@ clone_or_pull() {
 
   if [ -n "$plugin" ]; then
     if [ -d "$pathogen_location/$plugin" ]; then
-      echo ""
       echo "Updating $plugin..."
       /usr/bin/git -C "$pathogen_location/$plugin" pull
-    else
       echo ""
-      echo "Installing $plugin"
+    else
+      echo "Installing $plugin..."
       if [ ! -n "$branch" ]; then
         /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo"
       else
         /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo" -b "$branch"
       fi
+      echo ""
     fi
   else
     echo "Cannot extract plugin's name"
@@ -102,7 +102,7 @@ install_and_update_plugins() {
       done
       ;;
     *)
-      echo "No plugins is installed"
+      echo "No plugins are installed"
       exit
       ;;
   esac
