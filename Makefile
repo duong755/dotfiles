@@ -116,3 +116,5 @@ pack-basic:
 	@$(CP) ./vim/pack/vimrc ~/.vimrc
 	@$(MAKE) link-neovim-to-vim
 
+go-latest:
+	@$(SHELL) ./go/version.sh
