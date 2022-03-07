@@ -1,6 +1,8 @@
 {
-  // npm install --save-dev eslint @typescript-eslint/{parser,eslint-plugin} prettier eslint-config-prettier eslint-plugin-{import,prettier}
-  // yarn add --dev eslint @typescript-eslint/{parser,eslint-plugin} prettier eslint-config-prettier eslint-plugin-{import,prettier}
+  // npm install --save-dev eslint @typescript-eslint/{parser,eslint-plugin} prettier eslint-config-prettier eslint-plugin-{import,prettier} eslint-import-resolver-typescript
+
+  // yarn add --dev eslint @typescript-eslint/{parser,eslint-plugin} prettier eslint-config-prettier eslint-plugin-{import,prettier} eslint-import-resolver-typescript
+
   "env": {
     "browser": true,
     "es2021": true,
