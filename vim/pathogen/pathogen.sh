@@ -26,7 +26,7 @@ full_repos+=('vim-airline/vim-airline-themes')
 full_repos+=('ryanoasis/vim-devicons')
 full_repos+=('Shougo/neco-vim')
 full_repos+=('neoclide/coc-neco')
-full_repos+=('neoclide/coc.nvim?branch=release')
+# full_repos+=('neoclide/coc.nvim?branch=release')
 full_repos+=('neoclide/jsonc.vim')
 full_repos+=('sbdchd/neoformat')
 full_repos+=('prettier/vim-prettier')
@@ -45,7 +45,7 @@ basic_repos+=('jistr/vim-nerdtree-tabs')
 basic_repos+=('preservim/nerdcommenter')
 basic_repos+=('vim-airline/vim-airline')
 basic_repos+=('vim-airline/vim-airline-themes')
-basic_repos+=('neoclide/coc.nvim?branch=release')
+# basic_repos+=('neoclide/coc.nvim?branch=release')
 
 ### install
 

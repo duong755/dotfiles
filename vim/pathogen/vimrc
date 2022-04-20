@@ -32,6 +32,7 @@ set guifont=Ubuntu_Mono_Nerd_Font_Complete:h12
 colorscheme onedark
 
 " coc.nvim
+let g:coc_start_at_startup = v:false
 let g:coc_node_path = ''
 let g:coc_disable_startup_warning = 1
 
