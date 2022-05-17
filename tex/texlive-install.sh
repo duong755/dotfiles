@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $UID -ne "0" ]; then
+  echo "Require root user"
+  exit
+fi
+
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIRECTORY_PATH=$(dirname "$CURRENT_FILE_PATH")
 
@@ -23,7 +28,7 @@ cp ./tex/installation.profile /tmp/install-tl-latest/installation.profile
 echo "Installing texlive-full..."
 cd /tmp/install-tl-latest/install-tl-* || exit 1
 chmod +x ./install-tl
-sudo ./install-tl --scheme=scheme-full --profile=../installation.profile
+./install-tl --scheme=scheme-full --profile=../installation.profile
 
 echo "Installing cpan modules for latexindent.pl"
-sudo cpan install Log::Log4perl YAML::Tiny File::HomeDir
+cpan install Log::Log4perl YAML::Tiny File::HomeDir

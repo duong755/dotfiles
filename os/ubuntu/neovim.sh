@@ -1,11 +1,16 @@
 #!/bin/bash
 
-sudo add-apt-repository -y \
+if [ $UID -ne "0" ]; then
+  echo "Require root user"
+  exit
+fi
+
+add-apt-repository -y \
   ppa:neovim-ppa/unstable
 
-sudo apt update -y
-sudo apt upgrade -y
+apt-get update -y
+apt-get upgrade -y
 
-sudo apt install -y \
+apt-get install -y \
   neovim \
   python3-neovim

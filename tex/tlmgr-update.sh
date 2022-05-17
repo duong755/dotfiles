@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $UID != "0" ];then
+if [ $UID -ne "0" ]; then
   echo "Require root user"
   exit
 fi

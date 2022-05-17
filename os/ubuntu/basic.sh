@@ -1,13 +1,18 @@
 #!/bin/bash
 
-sudo add-apt-repository -y \
+if [ $UID -ne "0" ]; then
+  echo "Require root user"
+  exit
+fi
+
+add-apt-repository -y \
   ppa:git-core/ppa \
   ppa:jonathonf/vim
 
-sudo apt -y update
-sudo apt -y upgrade
+apt-get -y update
+apt-get -y upgrade
 
-sudo apt install -y \
+apt-get install -y \
   software-properties-common \
   zip \
   unzip \

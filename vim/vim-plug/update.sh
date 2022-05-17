@@ -1,12 +1,12 @@
 #!/bin/bash
 
-update-vim() {
+function update-vim() {
   vim +PlugUpgrade +qall
   vim +PlugUpdate +qall
   vim +PlugClean +qall
 }
 
-update-neovim() {
+function update-neovim() {
   nvim +PlugUpgrade +qall
   nvim +PlugUpdate +qall
   nvim +PlugClean +qall

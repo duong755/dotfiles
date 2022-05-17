@@ -25,7 +25,7 @@ full_repos+=('vim-airline/vim-airline')
 full_repos+=('vim-airline/vim-airline-themes')
 full_repos+=('ryanoasis/vim-devicons')
 full_repos+=('Shougo/neco-vim')
-full_repos+=('neoclide/coc-neco')
+# full_repos+=('neoclide/coc-neco')
 # full_repos+=('neoclide/coc.nvim?branch=release')
 full_repos+=('neoclide/jsonc.vim')
 full_repos+=('sbdchd/neoformat')
@@ -52,7 +52,7 @@ basic_repos+=('vim-airline/vim-airline-themes')
 pathogen_location=~/.vim/bundle
 cd $pathogen_location || exit
 
-clone_or_pull() {
+function clone_or_pull() {
   local repo
   repo="$1"
 
@@ -73,9 +73,9 @@ clone_or_pull() {
     else
       echo "Installing $plugin..."
       if [ ! -n "$branch" ]; then
-        /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo"
+        /usr/bin/git -C "$pathogen_location" clone --depth 1 "https://github.com/$onlyrepo"
       else
-        /usr/bin/git -C "$pathogen_location" clone "https://github.com/$onlyrepo" -b "$branch"
+        /usr/bin/git -C "$pathogen_location" clone --depth 1 "https://github.com/$onlyrepo" -b "$branch"
       fi
       echo ""
     fi
@@ -84,7 +84,7 @@ clone_or_pull() {
   fi
 }
 
-install_and_update_plugins() {
+function install_and_update_plugins() {
   local repos
   repos=()
 

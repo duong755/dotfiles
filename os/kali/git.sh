@@ -5,7 +5,7 @@ if [ $UID -ne "0" ]; then
   exit
 fi
 
-install_git_dependencies() {
+function install_git_dependencies() {
   apt-get install -y \
     dh-autoreconf \
     libcurl4-gnutls-dev \

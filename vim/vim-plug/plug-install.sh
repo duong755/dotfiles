@@ -15,7 +15,7 @@ fi
 
 VIMPLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-install() {
+function install() {
   local CONFIG=""
   local CONFIG_DIR=""
   local VIMPLUG=""

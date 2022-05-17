@@ -5,20 +5,17 @@ if [ $UID -ne "0" ]; then
   exit
 fi
 
-prepare() {
-  apt-get remove -y --purge mariadb* postgresql* php* libapache* apache2
-
+function prepare() {
   apt-get -y update
   apt-get -y upgrade
 
   apt-get -y dist-upgrade
-  apt-get remove -y --purge dotnet* aspnetcore*
 
   apt-get autoremove -y
   apt-get autoclean -y
 }
 
-basicpackages() {
+function basic_packages() {
   apt-get install -y \
     automake \
     autoconf \
@@ -40,7 +37,7 @@ basicpackages() {
 }
 
 prepare
-basicpackages
+basic_packages
 
 # install git
 CURRENT_FILE_PATH=$(realpath "$0")

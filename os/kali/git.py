@@ -60,12 +60,12 @@ def latest_version(versions: List[Semver]) -> Semver:
     elif versions.__len__() == 1:
         return versions[0]
 
-    max = versions[0]
+    the_latest = versions[0]
     for version in versions:
-        if version.__gt__(max):
-            max = version
+        if version.__gt__(the_latest):
+            the_latest = version
 
-    return max
+    return the_latest
 
 
 def extract_version_str(filename: str) -> Semver:

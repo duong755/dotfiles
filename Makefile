@@ -35,7 +35,10 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-kali-chore: update upgrade kali-git
+kali-chore: update upgrade kali-git-version
+
+kali-git-version:
+	@$(SHELL) ./os/kali/git-version.sh
 
 kali-git:
 	@$(SHELL) ./os/kali/git.sh
@@ -103,16 +106,3 @@ pathogen-basic:
 	@$(SHELL) ./vim/pathogen/pathogen.sh basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(MAKE) link-neovim-to-vim
-
-### vim pack
-
-pack-all:
-	@$(SHELL) ./vim/pack/plugin.sh all
-	@$(CP) ./vim/pack/vimrc ~/.vimrc
-	@$(MAKE) link-neovim-to-vim
-
-pack-basic:
-	@$(SHELL) ./vim/pack/plugin.sh basic
-	@$(CP) ./vim/pack/vimrc ~/.vimrc
-	@$(MAKE) link-neovim-to-vim
-
