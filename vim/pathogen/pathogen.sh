@@ -33,6 +33,9 @@ full_repos+=('prettier/vim-prettier')
 full_repos+=('pangloss/vim-javascript')
 full_repos+=('leafgarland/typescript-vim')
 full_repos+=('peitalin/vim-jsx-typescript')
+full_repos+=('prabirshrestha/asyncomplete.vim')
+full_repos+=('prabirshrestha/vim-lsp')
+full_repos+=('prabirshrestha/asyncomplete-lsp.vim')
 
 basic_repos=()
 basic_repos+=('joshdick/onedark.vim')
@@ -68,7 +71,7 @@ function clone_or_pull() {
   if [ -n "$plugin" ]; then
     if [ -d "$pathogen_location/$plugin" ]; then
       echo "Updating $plugin..."
-      /usr/bin/git -C "$pathogen_location/$plugin" pull
+      /usr/bin/git -C "$pathogen_location/$plugin" pull --no-edit
       echo ""
     else
       echo "Installing $plugin..."
@@ -92,6 +95,11 @@ function install_and_update_plugins() {
   # append element by element instead
   case "$1" in
     full | all)
+      echo "============================"
+      echo "REMEMBER TO INSTALL ccls    "
+      echo "IF YOU WANT TO CODE IN C/C++"
+      echo "============================"
+
       for elem in "${full_repos[@]}"; do
         repos+=("$elem")
       done

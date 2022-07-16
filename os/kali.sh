@@ -33,7 +33,8 @@ function basic_packages() {
     jq \
     rsync \
     freeglut3 \
-    snapd
+    snapd \
+    ccls
 }
 
 prepare

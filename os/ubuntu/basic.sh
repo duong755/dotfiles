@@ -24,4 +24,5 @@ apt-get install -y \
   gnupg-agent \
   jq \
   vim \
-  fonts-powerline
+  fonts-powerline \
+  ccls
