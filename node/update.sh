@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -f "${HOME}/.nvm/nvm.sh" ]; then
+  exit
+fi
+
 # shellcheck disable=SC1090
 source "${HOME}/.nvm/nvm.sh"
 

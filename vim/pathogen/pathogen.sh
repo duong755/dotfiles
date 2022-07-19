@@ -95,10 +95,12 @@ function install_and_update_plugins() {
   # append element by element instead
   case "$1" in
     full | all)
-      echo "============================"
-      echo "REMEMBER TO INSTALL ccls    "
-      echo "IF YOU WANT TO CODE IN C/C++"
-      echo "============================"
+      if ! command -v ccls &> /dev/null; then
+        echo "============================"
+        echo "REMEMBER TO INSTALL ccls    "
+        echo "IF YOU WANT TO CODE IN C/C++"
+        echo "============================"
+      fi
 
       for elem in "${full_repos[@]}"; do
         repos+=("$elem")

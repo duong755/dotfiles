@@ -93,12 +93,38 @@ let g:asyncomplete_auto_completeopt = 1
 set completeopt=menuone,noinsert,noselect,preview
 
 if executable('ccls')
-   au User lsp_setup call lsp#register_server({
+  au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',
       \ 'cmd': {server_info->['ccls']},
       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
       \ 'initialization_options': {},
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
+
+if executable('gopls')
+  au User lsp_setup call lsp#register_server({
+      \ 'name': 'gopls',
+      \ 'cmd': {server_info->['gopls', '-remote=auto']},
+      \ 'allowlist': ['go'],
+      \ })
+  autocmd BufWritePre *.go LspDocumentFormatSync
+endif
+
+if executable('texlab')
+  au User lsp_setup call lsp#register_server({
+      \ 'name': 'texlab',
+      \ 'cmd': {server_info->['texlab']},
+      \ 'whitelist': ['tex']
+      \ })
+endif
+
+if executable('pyls')
+  au User lsp_setup call lsp#register_server({
+      \ 'name': 'pyls',
+      \ 'cmd': {server_info->['pyls']},
+      \ 'whitelist': ['python'],
+      \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
       \ })
 endif
 
