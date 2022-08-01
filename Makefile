@@ -94,7 +94,6 @@ link-neovim-to-vim:
 	@$(LN) ~/.vim ~/.config/nvim
 	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
 	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
-	@$(CP) ./vim/coc-settings.json ~/.config/nvim
 	@$(MAKE) node-update
 
 pathogen-all:

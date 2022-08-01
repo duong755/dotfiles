@@ -285,6 +285,6 @@ load_ssh_private_keys
 source $HOME/.cargo/env
 
 export EDITOR="/usr/bin/vim"
-export MANPATH="$(manpath -g):/usr/local/texlive/2021/texmf-dist/doc/man"
-export INFOPATH="${INFOPATH}:/usr/local/texlive/2021/texmf-dist/doc/info"
-export PATH="/usr/local/texlive/2021/bin/x86_64-linux:/snap/bin:${HOME}/.local/bin:${HOME}/.yarn/bin:${PATH}"
+export MANPATH="$(manpath -g):/usr/local/texlive/2022/texmf-dist/doc/man"
+export INFOPATH="${INFOPATH}:/usr/local/texlive/2022/texmf-dist/doc/info"
+export PATH="/usr/local/texlive/2022/bin/x86_64-linux:/snap/bin:${HOME}/.local/bin:${HOME}/.yarn/bin:${PATH}"
