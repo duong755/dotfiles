@@ -31,10 +31,8 @@ set guifont=Ubuntu_Mono_Nerd_Font_Complete:h12
 
 colorscheme onedark
 
-" coc.nvim
-let g:coc_start_at_startup = v:false
-let g:coc_node_path = ''
-let g:coc_disable_startup_warning = 1
+" vim-lsp
+let g:lsp_diagnostics_echo_cursor = 1
 
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -151,6 +149,20 @@ if executable('pyls')
       \ 'whitelist': ['python'],
       \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
       \ })
+endif
+
+if executable('vim-language-server')
+  augroup LspVim
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'vim-language-server',
+        \ 'cmd': {server_info->['vim-language-server', '--stdio']},
+        \ 'whitelist': ['vim'],
+        \ 'initialization_options': {
+        \   'vimruntime': $VIMRUNTIME,
+        \   'runtimepath': &rtp,
+        \ }})
+  augroup END
 endif
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

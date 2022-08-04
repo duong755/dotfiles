@@ -1,6 +1,4 @@
 {
-  // npm install --save-dev @babel/eslint-parser eslint prettier eslint-config-prettier eslint-plugin-{import,prettier}
-  // yarn add --dev @babel/eslint-parser eslint prettier eslint-config-prettier eslint-plugin-{import,prettier}
   "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
