@@ -53,6 +53,7 @@ let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
+let g:ariline#extensions#ale#enabled = 1
 
 " latex
 let g:tex_flavor = 'latex'
@@ -84,87 +85,9 @@ nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
 
-" vim-lsp
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 1
-
-set completeopt=menuone,noinsert,noselect,preview
-
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'javascript support using typescript-language-server',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
-    \ 'whitelist': ['typescript', 'typescript.tsx', 'typescriptreact', 'javascript', 'javascript.jsx', 'javascriptreact'],
-    \ })
-endif
-
-if executable('css-languageserver')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'css-languageserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-    \ 'whitelist': ['css', 'less', 'sass', 'scss'],
-    \ })
-endif
-
-if executable('html-languageserver')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'html-languageserver',
-    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
-    \ 'whitelist': ['html', 'htm', 'xhtml'],
-  \ })
-endif
-
-if executable('ccls')
-  au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': {},
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
-endif
-
-if executable('gopls')
-  au User lsp_setup call lsp#register_server({
-      \ 'name': 'gopls',
-      \ 'cmd': {server_info->['gopls', '-remote=auto']},
-      \ 'allowlist': ['go'],
-      \ })
-  autocmd BufWritePre *.go LspDocumentFormatSync
-endif
-
-if executable('texlab')
-  au User lsp_setup call lsp#register_server({
-      \ 'name': 'texlab',
-      \ 'cmd': {server_info->['texlab']},
-      \ 'whitelist': ['tex']
-      \ })
-endif
-
-if executable('pyls')
-  au User lsp_setup call lsp#register_server({
-      \ 'name': 'pyls',
-      \ 'cmd': {server_info->['pyls']},
-      \ 'whitelist': ['python'],
-      \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
-      \ })
-endif
-
-if executable('vim-language-server')
-  augroup LspVim
-    autocmd!
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'vim-language-server',
-        \ 'cmd': {server_info->['vim-language-server', '--stdio']},
-        \ 'whitelist': ['vim'],
-        \ 'initialization_options': {
-        \   'vimruntime': $VIMRUNTIME,
-        \   'runtimepath': &rtp,
-        \ }})
-  augroup END
-endif
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\}
