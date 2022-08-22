@@ -54,10 +54,10 @@ python:
 	@$(SHELL) ./python-install.sh
 
 docker-compose-latest:
-	@$(SHELL) ./docker/compose.sh
+	@$(SHELL) ./docker/docker-compose.sh latest
 
 docker-compose-all:
-	@$(SHELL) ./docker-compose/all-versions.sh
+	@$(SHELL) ./docker/docker-compose.sh all
 
 texlive:
 	# more than 7GB
