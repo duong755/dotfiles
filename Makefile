@@ -53,6 +53,12 @@ node-update:
 python:
 	@$(SHELL) ./python-install.sh
 
+docker-compose-latest:
+	@$(SHELL) ./docker/compose.sh
+
+docker-compose-all:
+	@$(SHELL) ./docker-compose/all-versions.sh
+
 texlive:
 	# more than 7GB
 	# too large, so I excluded this from "all"
