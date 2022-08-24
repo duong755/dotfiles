@@ -53,6 +53,12 @@ node-update:
 python:
 	@$(SHELL) ./python-install.sh
 
+docker-compose-latest:
+	@$(SHELL) ./docker/docker-compose.sh latest
+
+docker-compose-all:
+	@$(SHELL) ./docker/docker-compose.sh all
+
 texlive:
 	# more than 7GB
 	# too large, so I excluded this from "all"
@@ -94,7 +100,6 @@ link-neovim-to-vim:
 	@$(LN) ~/.vim ~/.config/nvim
 	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
 	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
-	@$(MAKE) node-update
 
 pathogen-all:
 	@$(SHELL) ./vim/pathogen/pathogen.sh all
