@@ -100,7 +100,6 @@ link-neovim-to-vim:
 	@$(LN) ~/.vim ~/.config/nvim
 	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
 	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
-	@$(MAKE) node-update
 
 pathogen-all:
 	@$(SHELL) ./vim/pathogen/pathogen.sh all
