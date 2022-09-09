@@ -11,9 +11,9 @@ GIT_LATEST_VERSION=$(curl -sL "$REPOSITORY_OF_GIT" | grep -Po "(?<=\")git-\d+\.\
 
 if [ -n "${GIT_LATEST_VERSION}" ]; then
   if [ "${GIT_LOCAL_VERSION}" != "${GIT_LATEST_VERSION}" ]; then
-    echo "There is newer version of git"
+    echo "There is newer version of git: $GIT_LATEST_VERSION > $GIT_LOCAL_VERSION"
   else
-    echo "git is already the latest version"
+    echo "git is already the latest version ($GIT_LOCAL_VERSION)"
   fi
 else
   echo "Cannot get latest version of git"
