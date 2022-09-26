@@ -6,9 +6,9 @@ if [ $UID = "0" ]; then
 fi
 
 python3 -m pip install -U pip
+python3 -m pip install -U pipenv
 python3 -m pip install -U pylint
 python3 -m pip install -U pynvim
 python3 -m pip install -U msgpack
 python3 -m pip install -U pygments # TeX for minted package
-python3 -m pip install -U docker
 python3 -m pip install -U python-language-server

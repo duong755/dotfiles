@@ -23,6 +23,10 @@ set splitright
 set showcmd
 set showmatch
 
+set foldmethod=syntax
+set foldlevel=1
+set foldclose=all
+
 set magic
 set incsearch
 set hlsearch
@@ -66,17 +70,6 @@ autocmd BufNewFile,BufRead *.sty set filetype=tex
 
 map <F3> :let @/ = ""<CR>
 
-" keymap for coc.nvim
-" inoremap <silent><expr> <c-space> coc#refresh()
-" nnoremap <silent><space>d :<c-u>cocdisable<cr>
-" nnoremap <silent><space>a :<c-u>coclist diagnostics<cr>
-" nnoremap <silent><space>e :<c-u>coclist extensions<cr>
-" nnoremap <silent><space>c :<c-u>coclist commands<cr>
-" nnoremap <silent><space>o :<c-u>coclist outline<cr>
-" nnoremap <silent><space>s :<c-u>coclist -i symbols<cr>
-" nnoremap <silent><space>p :<c-u>coclistresume<cr>
-" nnoremap <silent> gd <plug>(coc-definition)
-
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
 nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
@@ -89,5 +82,6 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_linters = {
-\ 'javascript': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
+\ 'python': ['black']
 \}
