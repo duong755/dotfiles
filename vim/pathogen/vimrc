@@ -8,7 +8,6 @@ set number
 set cursorline
 set smartcase
 set autoread
-
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -16,17 +15,11 @@ set smarttab
 set smartindent
 set autoindent
 set wrap
-
 set splitbelow
 set splitright
-
 set showcmd
 set showmatch
-
-set foldmethod=syntax
-set foldlevel=1
-set foldclose=all
-
+set foldmethod=manual
 set magic
 set incsearch
 set hlsearch
@@ -56,11 +49,20 @@ let g:NERDSpaceDelims = 1
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_powerline_fonts = 1
 let g:ariline#extensions#ale#enabled = 1
+let g:airline_powerline_fonts = 0
 
 " latex
 let g:tex_flavor = 'latex'
+
+" ale
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_linters = {
+\ 'javascript': ['eslint', 'prettier'],
+\ 'python': ['black']
+\}
 
 autocmd FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 autocmd FileType makefile setlocal expandtab=0
@@ -72,16 +74,13 @@ map <F3> :let @/ = ""<CR>
 
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
+nnoremap <silent>nto :<C-u>NERDTreeOpen<CR>
+nnoremap <silent>ntc :<C-u>NERDTreeClose<CR>
+nnoremap <silent>nta :<C-u>NERDTreeToggle<CR>
 nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
 nnoremap <silent>nttc :<C-u>NERDTreeTabsClose<CR>
 nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
 
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
-let g:ale_linters = {
-\ 'javascript': ['eslint', 'prettier'],
-\ 'python': ['black']
-\}
+

@@ -96,18 +96,19 @@ plug-update:
 
 ### vim-pathogen
 
-link-neovim-to-vim:
+vimconf:
 	@$(RMRF) ~/.config/nvim
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
+	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
 	@$(LN) ~/.vim ~/.config/nvim
 	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
-	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
 
 pathogen-all:
 	@$(SHELL) ./vim/pathogen/pathogen.sh all
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) link-neovim-to-vim
+	@$(MAKE) vimconf
 
 pathogen-basic:
 	@$(SHELL) ./vim/pathogen/pathogen.sh basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) link-neovim-to-vim
+	@$(MAKE) vimconf

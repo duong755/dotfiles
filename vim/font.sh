@@ -5,7 +5,9 @@ if [ $UID != "0" ]; then
   exit
 fi
 
-UBUNTU_NERD_FONT_DOWNLOAD_URL=$(curl -sL https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq -c '.assets[] | select(.name | contains("Ubuntu.zip")) | .browser_download_url' | grep -Po "https:\/\/.+(?=\"$)")
+LATEST_RELEASE="https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest"
+
+UBUNTU_NERD_FONT_DOWNLOAD_URL=$(curl -sL "$LATEST_RELEASE" | jq -c '.assets[] | select(.name | contains("Ubuntu.zip")) | .browser_download_url' | grep -Po "https:\/\/.+(?=\"$)")
 
 URLS=("$UBUNTU_NERD_FONT_DOWNLOAD_URL")
 
