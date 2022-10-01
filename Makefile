@@ -42,6 +42,7 @@ kali-git-version:
 
 kali-git:
 	@$(SHELL) ./os/kali/git.sh
+	@$(SHELL) ./os/gitconfig.sh
 
 .PHONY: node
 node:
