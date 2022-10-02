@@ -35,13 +35,15 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-kali-chore: update upgrade kali-git-version
+kali-chore: update upgrade kali-git-version git-config
 
 kali-git-version:
 	@$(SHELL) ./os/kali/git-version.sh
 
 kali-git:
 	@$(SHELL) ./os/kali/git.sh
+
+git-config:
 	@$(SHELL) ./os/gitconfig.sh
 
 .PHONY: node
