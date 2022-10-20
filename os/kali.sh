@@ -26,6 +26,7 @@ function basic_packages() {
     gettext \
     python3-pip \
     python3-venv \
+    build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
     openssl \
     curl \
     tree \
