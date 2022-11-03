@@ -11,7 +11,6 @@
     "plugin:import/typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:prettier/typescript",
     "plugin:prettier/recommended"
   ],
   "globals": {
@@ -38,26 +37,35 @@
         "ignoreReadBeforeAssign": false
       }
     ],
+    "indent": "off",
+    "quotes": "off",
     "@typescript-eslint/indent": [
       "error",
       2,
       {
-        "ignoredNodes": ["TemplateLiteral"],
+        "ignoredNodes": ["TemplateLiteral", "PropertyDefinition[decorators]"],
         "SwitchCase": 1
       }
     ],
-    "@typescript-eslint/quotes": [2, "double"],
-    "@typescript-eslint/semi": [2, "always"],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": false,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/prefer-nullish-coalescing": [
-      1,
+      "warn",
       {
         "ignoreConditionalTests": true,
         "ignoreMixedLogicalExpressions": true
       }
     ],
-    "@typescript-eslint/prefer-optional-chain": [1],
+    "@typescript-eslint/prefer-optional-chain": ["warn"],
     "@typescript-eslint/comma-dangle": [
-      2,
+      "error",
       {
         "arrays": "only-multiline",
         "objects": "only-multiline",
