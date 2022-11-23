@@ -1,3 +1,18 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export MANPATH="$(manpath -g):/usr/local/texlive/2022/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
+export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux:$HOME/.cargo/bin:/usr/local/go/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 load_ssh_private_keys() {
     eval $(ssh-agent -s) &> /dev/null
 
@@ -23,7 +38,7 @@ load_ssh_private_keys() {
 }
 load_ssh_private_keys
 
-export EDITOR="/usr/bin/vim"
-export MANPATH="$(manpath -g):/usr/local/texlive/2022/texmf-dist/doc/man"
-export INFOPATH="${INFOPATH}:/usr/local/texlive/2022/texmf-dist/doc/info"
-export PATH="/usr/local/texlive/2022/bin/x86_64-linux:/snap/bin:${HOME}/.local/bin:${HOME}/.yarn/bin:${PATH}"
+alias aws='docker run --pull never --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli:latest'
+alias az='docker run --pull never --rm -it mcr.microsoft.com/azure-cli:latest az'
+alias gcloud='docker run --pull never --rm -it google/cloud-sdk:latest gcloud'
+alias gsutil='docker run --pull never --rm -it google/cloud-sdk:latest gsutil'

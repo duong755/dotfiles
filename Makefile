@@ -80,23 +80,6 @@ cloud-aws:
 font:
 	@$(SHELL) ./vim/font.sh
 
-### vim-plug
-
-plug-all:
-	@$(SHELL) ./vim/vim-plug/plug-install.sh vim all
-	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim all
-
-plug-minimal:
-	@$(SHELL) ./vim/vim-plug/plug-install.sh vim minimal
-	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim minimal
-
-plug-plain:
-	@$(SHELL) ./vim/vim-plug/plug-install.sh vim plain
-	@$(SHELL) ./vim/vim-plug/plug-install.sh neovim plain
-
-plug-update:
-	@$(SHELL) ./vim/vim-plug/update.sh
-
 ### vim-pathogen
 
 vimconf:
