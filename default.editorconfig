@@ -10,3 +10,6 @@ trim_trailing_whitespace = true
 
 [{Makefile,makefile,GNUmakefile}]
 indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false

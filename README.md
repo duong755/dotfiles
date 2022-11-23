@@ -31,16 +31,6 @@ make texlive # install TeX Live (scheme-full, >7GB)
 
 ### Vim
 
-For vim-plug users
-
-```bash
-make plug-all # install every plugins listed in this repo
-make plug-minimal # install some plugins listed in this repo
-make plug-plain # no plugin
-
-make plug-update # update plugin
-```
-
 For vim-pathogen users
 
 ```bash
