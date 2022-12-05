@@ -6,6 +6,18 @@
 - `cd` to the repo.
 - Run `make [target name]`
 
+## Directories
+
+| Directory    | Content                                                                      |
+|:-------------|:-----------------------------------------------------------------------------|
+| `cloud`      | Installation script for cloud SDK(s)                                         |
+| `docker`     | Installation script for Docker Compose                                       |
+| `node`       | Installation/Update script for Node, NVM; ESLint configuration collection    |
+| `python`     | Installation script for pip, pipenv, pyenv                                   |
+| `tex`        | Installation script, configuration files for TeX Live                        |
+| `vim`        | Vim, tmux configuration                                                      |
+| `os`         | OS-dependent scripts                                                         |
+
 ## Targets
 
 This list does not document every targets.

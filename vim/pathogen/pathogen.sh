@@ -111,7 +111,7 @@ function install_and_update_plugins() {
       done
       ;;
     *)
-      echo "No plugins are installed"
+      echo "No plugins will be installed. Choose 'full', 'all', or 'basic'"
       exit
       ;;
   esac

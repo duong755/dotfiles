@@ -85,7 +85,7 @@ font:
 vimconf:
 	@$(RMRF) ~/.config/nvim
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(CP) ./vim/.tmux.conf ~/.tmux.conf
+	@$(CP) ./vim/tmux.conf ~/.tmux.conf
 	@$(LN) ~/.vim ~/.config/nvim
 	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
 
