@@ -46,4 +46,3 @@ CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
 
 bash "${CURRENT_DIR_PATH}"/kali/git.sh
-

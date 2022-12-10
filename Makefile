@@ -7,11 +7,9 @@ LN=/bin/ln -sf
 
 all:
 
-.PHONY: update
 update:
 	@apt-get -y update
 
-.PHONY: upgrade
 upgrade:
 	@apt-get -y upgrade
 	@apt-get -y autoremove
@@ -37,14 +35,14 @@ ubuntu-desktop:
 
 kali-chore: update upgrade kali-git-version git-config
 
-kali-git-version:
-	@$(SHELL) ./os/kali/git-version.sh
+git-version:
+	@$(SHELL) ./git/git-version.sh
 
-kali-git:
-	@$(SHELL) ./os/kali/git.sh
+git-update:
+	@$(SHELL) ./git/git.sh
 
 git-config:
-	@$(SHELL) ./os/gitconfig.sh
+	@$(SHELL) ./git/gitconfig.sh
 
 .PHONY: node
 node:
@@ -53,6 +51,7 @@ node:
 node-update:
 	@$(SHELL) ./node/update.sh
 
+.PHONY: python
 python:
 	@$(SHELL) ./python/python-install.sh
 	@$(SHELL) ./python/env.sh
@@ -73,9 +72,6 @@ tlmgr:
 
 tlmgr-update:
 	@$(SHELL) ./tex/tlmgr-update.sh
-
-cloud-aws:
-	@$(SHELL) ./cloud/awscli.sh
 
 font:
 	@$(SHELL) ./vim/font.sh
