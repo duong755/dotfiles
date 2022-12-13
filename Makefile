@@ -17,7 +17,7 @@ upgrade:
 
 ubuntu-chore: update upgrade tlmgr-update
 
-ubuntu-all:
+ubuntu-init:
 	# For the 1st time only
 	@$(SHELL) ./os/ubuntu.sh
 
@@ -33,7 +33,17 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-kali-chore: update upgrade kali-git-version git-config
+kali-init:
+	@$(SHELL) ./os/kali.sh
+	@$(MAKE) git-update
+
+kali-chore: update upgrade git-version git-config
+
+debian-init:
+	@$(SHELL) ./os/debian.sh
+	@$(MAKE) git-update
+
+debian-chore: update upgrade git-version git-config
 
 git-version:
 	@$(SHELL) ./git/git-version.sh
@@ -42,7 +52,7 @@ git-update:
 	@$(SHELL) ./git/git.sh
 
 git-config:
-	@$(SHELL) ./git/gitconfig.sh
+	@$(SHELL) ./git/git-config.sh
 
 .PHONY: node
 node:

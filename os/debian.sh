@@ -30,9 +30,7 @@ function basic_packages() {
     xclip \
     jq \
     rsync \
-    freeglut3 \
-    snapd \
-    ccls
+    snapd
 }
 
 prepare
