@@ -35,6 +35,7 @@ full_repos+=('pangloss/vim-javascript')
 full_repos+=('leafgarland/typescript-vim')
 full_repos+=('peitalin/vim-jsx-typescript')
 full_repos+=('tpope/vim-fireplace')
+full_repos+=('rust-lang/rust.vim')
 
 basic_repos=()
 basic_repos+=('joshdick/onedark.vim')

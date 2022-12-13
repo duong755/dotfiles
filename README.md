@@ -10,7 +10,7 @@
 
 | Directory    | Content                                                                      |
 |:-------------|:-----------------------------------------------------------------------------|
-| `cloud`      | Installation script for cloud SDK(s)                                         |
+| `git`        | Installation script for git                                                  |
 | `docker`     | Installation script for Docker Compose                                       |
 | `node`       | Installation/Update script for Node, NVM; ESLint configuration collection    |
 | `python`     | Installation script for pip, pipenv, pyenv                                   |
@@ -20,45 +20,40 @@
 
 ## Targets
 
-This list does not document every targets.
+This list does not document all targets. For the entire list, see `Makefile`.
 
-### Node
+<details><summary>Node</summary>
+<p>
 
 ```bash
 make node # install node with nvm (lts version)
 make node-update # install latest version of node, update g:coc_node_path in ~/.vimrc
 ```
 
-### Python
+</p>
+</details>
+
+<details><summary>Python</summary>
+<p>
 
 ```bash
 make python # install python, pip
 ```
 
-### TeX Live
+</p>
+</details>
 
-```bash
-make texlive # install TeX Live (scheme-full, >7GB)
-```
-
-### Vim
-
-For vim-pathogen users
+<details><summary>Vim</summary>
+<p>
 
 ```bash
 make pathogen-all # install/update every plugins listed in this repo
 make pathogen-basic # install/update some plugins listed in this repo
 ```
 
-For vim pack users
-
 ```bash
-make pack-all # install/update every plugins listed in this repo
-make pack-basic # install/update some plugins listed in this repo
+make font # install Ubuntu Nerd Font
 ```
 
-Install font (for NERDTree)
-
-```bash
-make font
-```
+</p>
+</details>
