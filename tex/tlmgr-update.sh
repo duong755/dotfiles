@@ -7,7 +7,7 @@ fi
 
 TEX_HOME=/usr/local/texlive/2022/bin/x86_64-linux
 
-wget -O "$TEX_HOME"/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
+wget -q --show-progress -O "$TEX_HOME"/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
 chmod +x "$TEX_HOME"/update-tlmgr-latest.sh
 cd "$TEX_HOME"
 sh ./update-tlmgr-latest.sh -- --upgrade

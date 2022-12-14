@@ -19,7 +19,7 @@ function get_latest_version() {
   DOWNLOAD_URL=$(wget -qO- "$API_ENDPOINT_LIST_RELEASES" | jq -r --arg NAME "$RELEASE_NAME" '.[0] | { asset: .assets[] | select(.name==$NAME) } | .asset.browser_download_url')
   OUTPUT="$CLI_PLUGINS_DIR/$RELEASE_NAME"
 
-  wget "$DOWNLOAD_URL" -O "$OUTPUT"
+  wget -q "$DOWNLOAD_URL" -O "$OUTPUT"
   chmod +x "$OUTPUT"
   ln -sf "$OUTPUT" "$GLOBAL_BINARY"
 }
@@ -33,7 +33,7 @@ function get_version() {
   DOWNLOAD_URL=$(wget -qO- "$API_ENDPOINT_LIST_RELEASES" | jq -r --arg NAME "$1" '.[0] | { asset: .assets[] | select(.name==$NAME) } | .asset.browser_download_url')
   OUTPUT="$CLI_PLUGINS_DIR/$RELEASE_NAME"
 
-  wget "$DOWNLOAD_URL" -O "$OUTPUT"
+  wget -q "$DOWNLOAD_URL" -O "$OUTPUT"
   chmod +x "$OUTPUT"
   ln -sf "$OUTPUT" "$GLOBAL_BINARY"
 }

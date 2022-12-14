@@ -18,7 +18,7 @@ echo "Copying latexmkrc..."
 cp "${CURRENT_DIRECTORY_PATH}/latexmkrc" ~/.latexmkrc
 
 echo "Downloading texlive installer..."
-wget -O /tmp/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+wget -q --show-progress -O /tmp/install-tl-unx.tar.gz http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
 mkdir -p /tmp/install-tl-latest
 rm -rf /tmp/install-tl-latest/install-tl-* # remove stale files
