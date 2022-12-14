@@ -5,15 +5,54 @@ if [ $UID -ne "0" ]; then
   exit
 fi
 
+function package_manager_warning() {
+  echo "This git installation script supports the following package managers only: apt, dnf, yum"
+  echo "Go to https://git-scm.com/download/linux to see other approaches, or https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+}
+
+if ![ command -v apt-get &> /dev/null ] && ![ command -v dnf &> /dev/null ] && ![ command -v yum &> /dev/null ]; then
+  package_manager_warning
+  exit
+fi
+
 function install_git_dependencies() {
-  apt-get install -y \
-    dh-autoreconf \
-    libcurl4-gnutls-dev \
-    libexpat1-dev \
-    gettext \
-    libz-dev \
-    libssl-dev \
-    asciidoc xmlto docbook2x install-info
+  if command -v apt-get &> /dev/null; then
+    # tested on ubuntu 22.04, debian 11, kali
+    apt-get install -y \
+      dh-autoreconf \
+      libcurl4-gnutls-dev \
+      libexpat1-dev \
+      gettext \
+      libz-dev \
+      libssl-dev \
+      asciidoc xmlto docbook2x install-info
+  elif command -v dnf &> /dev/null; then
+    # tested on fedora 37
+    dnf install -y \
+      dh-autoreconf \
+      curl-devel \
+      expat-devel \
+      gettext-devel \
+      openssl-devel \
+      perl-devel \
+      zlib-devel \
+      asciidoc xmlto docbook2X
+    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2texi
+  elif command -v yum &> /dev/null; then
+    # no test yet
+    yum install -y \
+      dh-autoreconf \
+      curl-devel \
+      expat-devel \
+      gettext-devel \
+      openssl-devel \
+      perl-devel \
+      zlib-devel \
+      asciidoc xmlto docbook2X getopt
+    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2texi
+  else
+    package_manager_warning
+  fi
 }
 
 # git-x.y.z.tar.gz
@@ -28,9 +67,9 @@ GIT_LATEST_VERSION=$(curl -sL "$REPOSITORY_OF_GIT" | grep -Po "(?<=\")git-\d+\.\
 if [ -n "${GIT_LATEST_VERSION}" ]; then
   if [ "${GIT_LOCAL_VERSION}" != "${GIT_LATEST_VERSION}" ]; then
     FILE_NAME="git-${GIT_LATEST_VERSION}.tar.gz"
-    wget -O /tmp/"$FILE_NAME" "$REPOSITORY_OF_GIT/$FILE_NAME"
+    wget -q --show-progress -O "/tmp/$FILE_NAME" "$REPOSITORY_OF_GIT/$FILE_NAME"
 
-    chmod 0755 "/tmp/${FILE_NAME}"
+    chmod 0755 "/tmp/$FILE_NAME"
 
     echo "Installing git's dependencies..."
     install_git_dependencies
