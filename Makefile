@@ -7,6 +7,9 @@ LN=/bin/ln -sf
 
 all:
 
+common:
+	@$(CP) ./wgetrc ~/.wgetrc
+
 update:
 	@apt-get -y update
 
