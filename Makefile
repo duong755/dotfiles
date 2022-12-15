@@ -11,15 +11,15 @@ all:
 common:
 	@$(CP) ./wgetrc ~/.wgetrc
 
-update:
+apt-update:
 	@apt-get -y update
 
-upgrade:
+apt-upgrade:
 	@apt-get -y upgrade
 	@apt-get -y autoremove
 	@apt-get -y autoclean
 
-ubuntu-chore: update upgrade tlmgr-update
+ubuntu-chore: apt-update apt-upgrade
 
 ubuntu-init:
 	# For the 1st time only
@@ -41,13 +41,13 @@ kali-init:
 	@$(SHELL) ./os/kali.sh
 	@$(MAKE) git-update
 
-kali-chore: update upgrade git-version git-config
+kali-chore: apt-update apt-upgrade git-version git-config
 
 debian-init:
 	@$(SHELL) ./os/debian.sh
 	@$(MAKE) git-update
 
-debian-chore: update upgrade git-version git-config
+debian-chore: apt-update apt-upgrade git-version git-config
 
 git-version:
 	@$(SHELL) ./git/git-version.sh
@@ -58,14 +58,12 @@ git-update:
 git-config:
 	@$(SHELL) ./git/git-config.sh
 
-.PHONY: node
 node:
 	@$(SHELL) ./node/install.sh
 
 node-update:
 	@$(SHELL) ./node/update.sh
 
-.PHONY: python
 python:
 	@$(SHELL) ./python/python-install.sh
 	@$(SHELL) ./python/env.sh
@@ -105,6 +103,14 @@ vim-basic: __editor__
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 
+neovim-stable:
+	@$(SHELL) ./neovim/install.sh stable
+
+neovim-nightly:
+	@$(SHELL) ./neovim/install.sh nightly
+
 neovim-all: __editor__
 	@$(SHELL) ./neovim/vim-plug.sh
 	@$(NEOVIM) +PlugUpdate +qall
+
+.PHONY: python node
