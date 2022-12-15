@@ -22,24 +22,6 @@ apt-upgrade:
 	@apt-get -y autoremove
 	@apt-get -y autoclean
 
-ubuntu-chore: apt-update apt-upgrade
-
-ubuntu-init:
-	# For the 1st time only
-	@$(SHELL) ./os/ubuntu.sh
-
-ubuntu-basic:
-	@$(SHELL) ./os/ubuntu/basic.sh
-
-ubuntu-neovim:
-	@$(SHELL) ./os/ubuntu/neovim.sh
-
-ubuntu-python:
-	@$(SHELL) ./os/ubuntu/python.sh
-
-ubuntu-desktop:
-	@$(SHELL) ./os/ubuntu/desktop.sh
-
 debian-init:
 	@$(SHELL) ./os/debian.sh
 	@$(MAKE) git-update

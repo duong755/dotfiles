@@ -13,8 +13,10 @@ function prepare() {
   apt-get autoclean -y
 }
 
-function basic_packages() {
+function install_packages() {
   apt-get install -y \
+    software-properties-common \
+    apt-transport-https \
     automake \
     autoconf \
     gnupg gnupg-agent \
@@ -23,9 +25,11 @@ function basic_packages() {
     lsb-release \
     gettext \
     python3-pip \
+    python3-apt \
     build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
     openssl \
-    curl \
+    zip unzip gunzip \
+    curl wget \
     tree \
     xclip \
     jq \
@@ -34,5 +38,4 @@ function basic_packages() {
 }
 
 prepare
-basic_packages
-
+install_packages
