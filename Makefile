@@ -1,9 +1,10 @@
 SHELL=/bin/bash
 CP=/bin/cp
 MKDIR=/bin/mkdir
-RM=/bin/rm
+RM=/bin/rm -f
 RMRF=/bin/rm -rf
 LN=/bin/ln -sf
+NEOVIM=/usr/bin/nvim
 
 all:
 
@@ -91,30 +92,19 @@ font:
 
 ### vim and neovim
 
-vim-conf:
-	@$(CP) ./vim/vimrc ~/.vimrc
-	@$(CP) ./vim/tmux.conf ~/.tmux.conf
+__editor__:
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
+	@$(CP) ./neovim/init.lua ~/.config/nvim/init.lua
+	@$(CP) ./tmux.conf ~/.tmux.conf
 
-vim-all:
+vim-all: __editor__
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim all
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) vim-conf
 
-vim-basic:
+vim-basic: __editor__
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) vim-conf
 
-neovim-conf:
-	@$(CP) ./vim/vimrc ~/.config/nvim/init.vim
-	@$(CP) ./vim/tmux.conf ~/.tmux.conf
-
-neovim-all:
-	@$(SHELL) ./vim/pathogen/pathogen.sh neovim all
-	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
-	@$(MAKE) neovim-conf
-
-neovim-basic:
-	@$(SHELL) ./vim/pathogen/pathogen.sh neovim basic
-	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
-	@$(MAKE) neovim-conf
+neovim-all: __editor__
+	@$(SHELL) ./neovim/vim-plug.sh
+	@$(NEOVIM) +PlugUpdate +qall
