@@ -89,21 +89,32 @@ tlmgr-update:
 font:
 	@$(SHELL) ./vim/font.sh
 
-### vim-pathogen
+### vim and neovim
 
-vimconf:
-	@$(RMRF) ~/.config/nvim
+vim-conf:
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(CP) ./vim/tmux.conf ~/.tmux.conf
-	@$(LN) ~/.vim ~/.config/nvim
-	@$(LN) ~/.vimrc ~/.config/nvim/init.vim
 
-pathogen-all:
-	@$(SHELL) ./vim/pathogen/pathogen.sh all
+vim-all:
+	@$(SHELL) ./vim/pathogen/pathogen.sh vim all
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) vimconf
+	@$(MAKE) vim-conf
 
-pathogen-basic:
-	@$(SHELL) ./vim/pathogen/pathogen.sh basic
+vim-basic:
+	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(MAKE) vimconf
+	@$(MAKE) vim-conf
+
+neovim-conf:
+	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
+	@$(CP) ./vim/tmux.conf ~/.tmux.conf
+
+neovim-all:
+	@$(SHELL) ./vim/pathogen/pathogen.sh neovim all
+	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
+	@$(MAKE) neovim-conf
+
+neovim-basic:
+	@$(SHELL) ./vim/pathogen/pathogen.sh neovim basic
+	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
+	@$(MAKE) neovim-conf
