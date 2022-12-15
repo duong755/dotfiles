@@ -92,7 +92,7 @@ font:
 ### vim and neovim
 
 vim-conf:
-	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
+	@$(CP) ./vim/vimrc ~/.vimrc
 	@$(CP) ./vim/tmux.conf ~/.tmux.conf
 
 vim-all:
@@ -106,7 +106,7 @@ vim-basic:
 	@$(MAKE) vim-conf
 
 neovim-conf:
-	@$(CP) ./vim/pathogen/vimrc ~/.config/nvim/init.vim
+	@$(CP) ./vim/vimrc ~/.config/nvim/init.vim
 	@$(CP) ./vim/tmux.conf ~/.tmux.conf
 
 neovim-all:
