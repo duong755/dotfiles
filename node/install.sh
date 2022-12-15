@@ -7,4 +7,4 @@ NVM_LATEST_VERSION=$(wget -qO- https://api.github.com/repos/nvm-sh/nvm/releases/
 
 echo "Downloading nvm ${NVM_LATEST_VERSION}"
 
-wget -qO- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST_VERSION}/install.sh" | bash
+wget -qO- --show-progress "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST_VERSION}/install.sh" | bash
