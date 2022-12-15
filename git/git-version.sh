@@ -1,12 +1,13 @@
 #!/bin/bash
 
+set -eux
 # git-x.y.z.tar.gz
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
 
 REPOSITORY_OF_GIT="https://www.kernel.org/pub/software/scm/git"
 
-GIT_LOCAL_VERSION=$(if command -v git &> /dev/null; then `git --version | grep -Po -m 1 "\d+\.\d+\.\d+"`; else echo ""; fi)
+GIT_LOCAL_VERSION=$(if command -v git &> /dev/null; then echo `git --version | grep -Po -m 1 "\d+\.\d+\.\d+"`; else echo ""; fi)
 GIT_LATEST_VERSION=$(curl -sL "$REPOSITORY_OF_GIT" | grep -Po "(?<=\")git-\d+\.\d+\.\d+\.tar\.gz" | xargs python3 "${CURRENT_DIR_PATH}"/git.py)
 
 if [ -n "${GIT_LATEST_VERSION}" ]; then

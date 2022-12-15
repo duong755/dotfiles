@@ -22,17 +22,29 @@ apt-upgrade:
 	@apt-get -y autoremove
 	@apt-get -y autoclean
 
+dnf-upgrade:
+	@dnf -y upgrade
+	@dnf -y autoremove
+	@dnf clean all
+
 debian-init:
 	@$(SHELL) ./os/debian.sh
 	@$(MAKE) git-update
 
-debian-chore: apt-update apt-upgrade git-version git-config
+debian-chore: apt-update apt-upgrade git-version
+
+fedora-init:
+	@$(SHELL) ./os/fedora.sh
+	@$(MAKE) git-update
+
+fedora-chore: dnf-upgrade git-version
 
 git-version:
 	@$(SHELL) ./git/git-version.sh
 
 git-update:
 	@$(SHELL) ./git/git.sh
+	@$(MAKE) git-config
 
 git-config:
 	@$(SHELL) ./git/git-config.sh
