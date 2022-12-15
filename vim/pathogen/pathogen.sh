@@ -106,7 +106,7 @@ function clone_or_pull() {
 
 function install_and_update_plugins() {
   # param $1: editor. Examples: vim, nvim, neovim
-  # param $2: github repository. Examples: tpope/vim-fugitive, editorconfig/editorconfig-vim
+  # param $2: pack of github repositories. Supported values: all, full, basic
   local repos
   repos=()
 

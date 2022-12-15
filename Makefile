@@ -40,12 +40,6 @@ ubuntu-python:
 ubuntu-desktop:
 	@$(SHELL) ./os/ubuntu/desktop.sh
 
-kali-init:
-	@$(SHELL) ./os/kali.sh
-	@$(MAKE) git-update
-
-kali-chore: apt-update apt-upgrade git-version git-config
-
 debian-init:
 	@$(SHELL) ./os/debian.sh
 	@$(MAKE) git-update
@@ -78,14 +72,15 @@ docker-compose-all:
 	@$(SHELL) ./docker/docker-compose.sh all
 
 texlive:
-	# more than 7GB
-	# too large, so I excluded this from "all"
+	# More than 7GB
 	@$(SHELL) ./tex/texlive-install.sh
 
 tlmgr:
+	# Won't work even with `sudo`. Run `sudo su` then this command
 	@tlmgr update --list
 
 tlmgr-update:
+	# Won't work even with `sudo`. Run `sudo su` then this command
 	@$(SHELL) ./tex/tlmgr-update.sh
 
 font:
