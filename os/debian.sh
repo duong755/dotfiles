@@ -28,9 +28,8 @@ function install_packages() {
     python3-apt \
     build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
     openssl \
-    zip unzip gunzip \
+    zip unzip \
     curl wget \
-    vimdiff \
     tree \
     xclip \
     jq \

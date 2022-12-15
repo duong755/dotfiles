@@ -10,6 +10,7 @@ all:
 
 common:
 	@$(CP) ./wgetrc ~/.wgetrc
+	@$(MKDIR) -p ~/.config/nvim
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 	@$(CP) ./neovim/init.lua ~/.config/nvim/init.lua
 	@$(CP) ./tmux.conf ~/.tmux.conf

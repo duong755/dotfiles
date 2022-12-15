@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -eux
 # git-x.y.z.tar.gz
 CURRENT_FILE_PATH=$(realpath "$0")
 CURRENT_DIR_PATH=$(dirname "$CURRENT_FILE_PATH")
