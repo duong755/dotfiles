@@ -6,6 +6,7 @@ Plug('editorconfig/editorconfig-vim')
 Plug('sheerun/vim-polyglot')
 Plug('christoomey/vim-tmux-navigator')
 Plug('tpope/vim-fugitive')
+Plug('airblade/vim-gitgutter')
 Plug('preservim/nerdtree')
 Plug('Xuyuanp/nerdtree-git-plugin')
 Plug('jistr/vim-nerdtree-tabs')
@@ -14,6 +15,7 @@ Plug('preservim/nerdcommenter')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
 Plug('ryanoasis/vim-devicons')
+Plug('autozimu/LanguageClient-neovim', { ['branch'] = 'next', ['do'] = 'bash install.sh' })
 Plug('dense-analysis/ale')
 Plug('Shougo/neco-vim')
 Plug('neoclide/jsonc.vim')
@@ -64,8 +66,19 @@ vim.wo.colorcolumn = '120'
 vim.g.mapleader = ' '
 
 -- editorconfig
-vim.g['EditorConfig_exclude_patterns'] = {'fugitive://.*', 'scp://.*'}
+vim.g['EditorConfig_exclude_patterns'] = { 'fugitive://.*', 'scp://.*' }
 vim.g['loaded_EditorConfig'] = 1
+
+-- LanguageClient-neovim
+vim.g['LanguageClient_serverCommands'] = {
+    ['rust'] = { 'rust-analyzer' },
+    ['tex'] = { 'texlab' },
+    ['python'] = { 'pyls' },
+    ['javascript'] = { 'typescript-language-server', '--stdio' },
+    ['typescript'] = { 'typescript-language-server', '--stdio' },
+    ['c'] = { 'ccls' },
+    ['cpp'] = { 'ccls' }
+}
 
 -- nerdtree
 vim.g['NERDTreeWinSize'] = 24
@@ -78,7 +91,7 @@ vim.g['tmux_navigator_save_on_switch'] = 2
 vim.g['NERDSpaceDelims'] = 1
 
 -- airline
-vim.g['airline_theme'] =  'onedark'
+vim.g['airline_theme'] = 'onedark'
 vim.g['airline#extensions#tabline#enabled'] = 1
 vim.g['airline#extensions#tabline#formatter'] = 'default'
 vim.g['airline#extensions#ale#enabled'] = 1
@@ -91,8 +104,8 @@ vim.g['tex_flavor'] = 'latex'
 vim.g['ale_completion_enabled'] = 1
 vim.g['ale_completion_autoimport'] = 1
 vim.g['ale_linters'] = {
- ['javascript'] = {'eslint', 'prettier'},
- ['python'] = {'black'}
+    ['javascript'] = { 'eslint', 'prettier' },
+    ['python'] = { 'black' }
 }
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -113,10 +126,17 @@ vim.api.nvim_create_autocmd('BufNewFile,BufRead', {
 })
 
 vim.keymap.set('', '<F3>', ':let @/ = ""<CR>')
+
 vim.keymap.set('n', '<leader>ntf', ':<C-u>NERDTreeFocus<CR>')
 vim.keymap.set('n', '<leader>nto', ':<C-u>NERDTree<CR>')
 vim.keymap.set('n', '<leader>ntc', ':<C-u>NERDTreeClose<CR>')
 vim.keymap.set('n', '<leader>nta', ':<C-u>NERDTreeToggle<CR>')
+
 vim.keymap.set('n', '<leader>ntto', ':<C-u>NERDTreeTabsOpen<CR>')
 vim.keymap.set('n', '<leader>nttc', ':<C-u>NERDTreeTabsClose<CR>')
 vim.keymap.set('n', '<leader>nttt', ':<C-u>NERDTreeTabsToggle<CR>)')
+
+vim.keymap.set('n', '<leader><C-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<leader><C-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<leader><C-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<leader><C-l>', ':wincmd l<CR>')

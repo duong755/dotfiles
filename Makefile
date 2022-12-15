@@ -10,6 +10,9 @@ all:
 
 common:
 	@$(CP) ./wgetrc ~/.wgetrc
+	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
+	@$(CP) ./neovim/init.lua ~/.config/nvim/init.lua
+	@$(CP) ./tmux.conf ~/.tmux.conf
 
 apt-update:
 	@apt-get -y update
@@ -90,16 +93,11 @@ font:
 
 ### vim and neovim
 
-__editor__:
-	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
-	@$(CP) ./neovim/init.lua ~/.config/nvim/init.lua
-	@$(CP) ./tmux.conf ~/.tmux.conf
-
-vim-all: __editor__
+vim-all: common
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim all
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 
-vim-basic: __editor__
+vim-basic: common
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
 	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 
@@ -109,7 +107,7 @@ neovim-stable:
 neovim-nightly:
 	@$(SHELL) ./neovim/install.sh nightly
 
-neovim-all: __editor__
+neovim-all: common
 	@$(SHELL) ./neovim/vim-plug.sh
 	@$(NEOVIM) +PlugUpdate +qall
 
