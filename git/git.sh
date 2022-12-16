@@ -37,7 +37,7 @@ function install_git_dependencies() {
       perl-devel \
       zlib-devel \
       asciidoc xmlto docbook2X
-    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2texi
+    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
   elif command -v yum &> /dev/null; then
     # no test yet
     yum install -y \
@@ -48,8 +48,8 @@ function install_git_dependencies() {
       openssl-devel \
       perl-devel \
       zlib-devel \
-      asciidoc xmlto docbook2X getopt
-    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2texi
+      asciidoc xmlto docbook2X
+    ln -sf /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
   else
     package_manager_warning
   fi
