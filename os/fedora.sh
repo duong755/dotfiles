@@ -16,13 +16,12 @@ function install_packages() {
   dnf install -y \
     automake \
     autoconf \
-    gnupg gnupg-agent \
+    gnupg \
     ca-certificates \
     gettext \
     python3-pip \
-    build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
     openssl \
-    zip unzip gunzip \
+    zip unzip \
     curl wget \
     tree \
     xclip \
