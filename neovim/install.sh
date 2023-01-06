@@ -5,15 +5,20 @@ if [ $UID != "0" ]; then
   exit
 fi
 
+NIGHTLY_RELEASE_DOWNLOAD_URL=https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+STABLE_RELEASE_DOWNLOAD_URL=https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+
+NEOVIM_EXECUTABLE=/usr/bin/nvim
+
 function install() {
   case "$1" in
     nightly | unstable)
-      curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o /usr/bin/nvim
-      chmod a+x /usr/bin/nvim
+      curl -L "$NIGHTLY_RELEASE_DOWNLOAD_URL" -o "$NEOVIM_EXECUTABLE"
+      chmod a+x "$NEOVIM_EXECUTABLE"
       ;;
     stable)
-      curl -L https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -o /usr/local/nvim
-      chmod a+x /usr/bin/nvim
+      curl -L "$STABLE_RELEASE_DOWNLOAD_URL" -o "$NEOVIM_EXECUTABLE"
+      chmod a+x "$NEOVIM_EXECUTABLE"
       ;;
     *)
       echo "'$1' is invalid. Please choose 'stable' or 'nightly' release."

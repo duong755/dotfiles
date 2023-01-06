@@ -17,7 +17,6 @@ Plug('vim-airline/vim-airline-themes')
 Plug('ryanoasis/vim-devicons')
 Plug('autozimu/LanguageClient-neovim', { ['branch'] = 'next', ['do'] = 'bash install.sh' })
 Plug('dense-analysis/ale')
-Plug('Shougo/neco-vim')
 Plug('neoclide/jsonc.vim')
 Plug('sbdchd/neoformat')
 Plug('prettier/vim-prettier')
@@ -63,7 +62,7 @@ set.omnifunc = 'ale#completion#OmniFunc'
 
 vim.wo.colorcolumn = '120'
 
-vim.g.mapleader = ' '
+vim.g.mapleader = ' ' -- space
 
 -- editorconfig
 vim.g['EditorConfig_exclude_patterns'] = { 'fugitive://.*', 'scp://.*' }
@@ -108,6 +107,9 @@ vim.g['ale_linters'] = {
     ['python'] = { 'black' }
 }
 
+vim.g['loaded_ruby_provider'] = 0
+vim.g['loaded_perl_provider'] = 0
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'makefile',
     command = 'setlocal expandtab=0'
@@ -124,8 +126,6 @@ vim.api.nvim_create_autocmd('BufNewFile,BufRead', {
     pattern = '*.sty',
     command = 'set filetype=tex'
 })
-
-vim.keymap.set('', '<F3>', ':let @/ = ""<CR>')
 
 vim.keymap.set('n', '<leader>ntf', ':<C-u>NERDTreeFocus<CR>')
 vim.keymap.set('n', '<leader>nto', ':<C-u>NERDTree<CR>')

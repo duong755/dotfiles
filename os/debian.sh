@@ -27,6 +27,7 @@ function install_packages() {
     python3-pip \
     python3-apt \
     build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
+    libtool \
     openssl \
     zip unzip \
     curl wget \
@@ -34,6 +35,7 @@ function install_packages() {
     xclip \
     jq \
     rsync \
+    tmux \
     snapd
 }
 
