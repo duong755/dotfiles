@@ -9,9 +9,9 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:prettier/recommended"
+    "plugin:import/recommended",
+    "plugin:prettier/recommended",
+    "plugin:security/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -22,7 +22,7 @@
     "sourceType": "module",
     "requireConfigFile": false
   },
-  "plugins": ["prettier", "import"],
+  "plugins": ["prettier", "import", "security"],
   "rules": {
     "indent": [
       "error",
