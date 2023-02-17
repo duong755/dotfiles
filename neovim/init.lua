@@ -14,6 +14,7 @@ Plug('easymotion/vim-easymotion')
 Plug('preservim/nerdcommenter')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
+Plug('vim-test/vim-test')
 Plug('ryanoasis/vim-devicons')
 Plug('autozimu/LanguageClient-neovim', { ['branch'] = 'next', ['do'] = 'bash install.sh' })
 Plug('dense-analysis/ale')
@@ -107,6 +108,9 @@ vim.g['ale_linters'] = {
     ['python'] = { 'black' }
 }
 
+-- vim-test
+vim.cmd("let test#strategy = 'neovim'")
+
 vim.g['loaded_ruby_provider'] = 0
 vim.g['loaded_perl_provider'] = 0
 
@@ -135,6 +139,12 @@ vim.keymap.set('n', '<leader>nta', ':<C-u>NERDTreeToggle<CR>')
 vim.keymap.set('n', '<leader>ntto', ':<C-u>NERDTreeTabsOpen<CR>')
 vim.keymap.set('n', '<leader>nttc', ':<C-u>NERDTreeTabsClose<CR>')
 vim.keymap.set('n', '<leader>nttt', ':<C-u>NERDTreeTabsToggle<CR>)')
+
+vim.keymap.set('n', '<leader>tn', ':<C-u>TestNearest<CR>')
+vim.keymap.set('n', '<leader>tf', ':<C-u>TestFile<CR>')
+vim.keymap.set('n', '<leader>ts', ':<C-u>TestSuite<CR>')
+vim.keymap.set('n', '<leader>tl', ':<C-u>TestLast<CR>')
+vim.keymap.set('n', '<leader>tv', ':<C-u>TestVisit<CR>')
 
 vim.keymap.set('n', '<leader><C-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<leader><C-j>', ':wincmd j<CR>')

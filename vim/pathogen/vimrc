@@ -61,6 +61,9 @@ let g:ale_linters = {
 \ 'python': ['black']
 \}
 
+" vim-test
+let test#strategy = 'vimterminal';
+
 autocmd FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 autocmd FileType makefile setlocal expandtab=0
 autocmd BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
@@ -77,6 +80,13 @@ nnoremap <silent>nta  :<C-u>NERDTreeToggle<CR>
 nnoremap <silent>ntto :<C-u>NERDTreeTabsOpen<CR>
 nnoremap <silent>nttc :<C-u>NERDTreeTabsClose<CR>
 nnoremap <silent>nttt :<C-u>NERDTreeTabsToggle<CR>
+
+" keymap for vim-itest
+nnoremap <silent> <leader>tn :<C-u>TestNearest<CR>
+nnoremap <silent> <leader>tf :<C-u>TestFile<CR>
+nnoremap <silent> <leader>ts :<C-u>TestSuite<CR>
+nnoremap <silent> <leader>tl :<C-u>TestLast<CR>
+nnoremap <silent> <leader>tv :<C-u>TestVisit<CR>
 
 highlight Normal guibg=NONE ctermbg=NONE
 
