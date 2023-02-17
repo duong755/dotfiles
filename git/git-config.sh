@@ -8,3 +8,4 @@ git config --global merge.ff true
 git config --global init.defaultbranch master
 git config --global push.autosetupremote true
 git config --global gpg.program gpg
+git config --global rerere.enabled true

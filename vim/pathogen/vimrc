@@ -62,7 +62,7 @@ let g:ale_linters = {
 \}
 
 " vim-test
-let test#strategy = 'vimterminal';
+let test#strategy = 'vimterminal'
 
 autocmd FileType cs,java,python,tex,makefile,xml setlocal shiftwidth=4 tabstop=4
 autocmd FileType makefile setlocal expandtab=0
