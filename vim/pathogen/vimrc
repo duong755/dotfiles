@@ -70,8 +70,6 @@ autocmd BufNewFile,BufRead *.latexmkrc,latexmkrc set filetype=perl
 autocmd BufNewFile,BufRead *.cls set filetype=tex
 autocmd BufNewFile,BufRead *.sty set filetype=tex
 
-map <F3> :let @/ = ""<CR>
-
 " keymap for nerdtree and nerdtree tab
 nnoremap <silent>ntf  :<C-u>NERDTreeFocus<CR>
 nnoremap <silent>nto  :<C-u>NERDTreeOpen<CR>
