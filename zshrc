@@ -4,7 +4,7 @@
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
-setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt magicequalsubst     # enable filename expansion for arguments of the form 'anything=expression'
 setopt nonomatch           # hide error message if there is no match for the pattern
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
@@ -260,6 +260,13 @@ fi
 ####################
 ####################
 
+
+alias wap='curl https://www.cloudflare.com/cdn-cgi/trace/'
+alias wac='warp-cli connect'
+alias wad='warp-cli disconnect'
+alias docker-compose='docker compose'
+alias sbcl='rlwrap sbcl'
+
 export PATH="$PATH:$HOME/.local/bin"
 
 export NVM_DIR="$HOME/.nvm"
@@ -269,14 +276,17 @@ export NVM_DIR="$HOME/.nvm"
 export MANPATH="$(manpath -g):/usr/local/texlive/2022/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
 
-export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux:$HOME/.cargo/bin:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export GOPATH="$HOME/go"
-
-export PATH="$PATH:$GOPATH/bin:/usr/local/go/bin"
+export GOPATH="$HOME/devtools/go"
+export GOOS="linux"
+export GOARCH="amd64"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -314,3 +324,25 @@ function load_ssh_private_keys() {
   done
 }
 load_ssh_private_keys
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export PATH="$PATH:/snap/bin"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
+# testing-library
+export DEBUG_PRINT_LIMIT=1000000
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
