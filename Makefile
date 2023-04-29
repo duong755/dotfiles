@@ -29,13 +29,13 @@ dnf-upgrade:
 	@dnf clean all
 
 debian-init:
-	@$(SHELL) ./os/debian.sh
+	@$(SHELL) ./package-managers/debian.sh
 	@$(MAKE) git-update
 
 debian-chore: apt-update apt-upgrade git-version vim-all neovim-all
 
 fedora-init:
-	@$(SHELL) ./os/fedora.sh
+	@$(SHELL) ./package-managers/fedora.sh
 	@$(MAKE) git-update
 
 fedora-chore: dnf-upgrade git-version vim-all neovim-all
