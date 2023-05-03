@@ -26,4 +26,4 @@ function install() {
   esac
 }
 
-install $*
+install "$@"

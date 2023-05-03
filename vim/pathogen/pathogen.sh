@@ -21,6 +21,7 @@ full_repos+=('editorconfig/editorconfig-vim')
 full_repos+=('sheerun/vim-polyglot')
 full_repos+=('christoomey/vim-tmux-navigator')
 full_repos+=('tpope/vim-fugitive')
+full_repos+=('tpope/vim-surround')
 full_repos+=('airblade/vim-gitgutter')
 full_repos+=('preservim/nerdtree')
 full_repos+=('Xuyuanp/nerdtree-git-plugin')
@@ -47,6 +48,7 @@ basic_repos+=('joshdick/onedark.vim')
 basic_repos+=('sheerun/vim-polyglot')
 basic_repos+=('christoomey/vim-tmux-navigator')
 basic_repos+=('tpope/vim-fugitive')
+basic_repos+=('tpope/vim-surround')
 basic_repos+=('airblade/vim-gitgutter')
 basic_repos+=('preservim/nerdtree')
 basic_repos+=('Xuyuanp/nerdtree-git-plugin')
@@ -65,7 +67,7 @@ function clone_or_pull() {
   repo="$2"
 
   PATHOGEN_LOCATION=""
-  case "$1" in
+  case "$editor" in
     vim)
       PATHOGEN_LOCATION=~/.vim/bundle
       ;;
@@ -142,4 +144,4 @@ function install_and_update_plugins() {
   done
 }
 
-install_and_update_plugins $*
+install_and_update_plugins "$@"
