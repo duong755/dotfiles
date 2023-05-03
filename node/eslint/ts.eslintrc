@@ -30,6 +30,21 @@
   "plugins": ["@typescript-eslint", "prettier", "import", "security"],
   "rules": {
     "no-var": ["error"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "lodash",
+            "message": "Import [function] from 'lodash/[function]' instead."
+          },
+          {
+            "name": "lodash/fp",
+            "message": "Import [function] from 'lodash/fp/[function]' instead."
+          }
+        ]
+      }
+    ],
     "prefer-const": [
       "error",
       {
@@ -78,7 +93,7 @@
       }
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {},
       {
         "usePretierrc": true

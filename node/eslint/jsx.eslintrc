@@ -43,9 +43,22 @@
         "SwitchCase": 1
       }
     ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "lodash",
+            "message": "Import [function] from 'lodash/[function]' instead."
+          },
+          {
+            "name": "lodash/fp",
+            "message": "Import [function] from 'lodash/fp/[function]' instead."
+          }
+        ]
+      }
+    ],
     "no-var": ["error"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"],
     "prefer-const": [
       "error",
       {
@@ -64,7 +77,7 @@
       }
     ],
     "prettier/prettier": [
-      "error",
+      "warn",
       {},
       {
         "usePretierrc": true
