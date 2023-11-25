@@ -1,2 +1,2 @@
 import settings;
-pdfviewer="evince";
+pdfviewer="atril";

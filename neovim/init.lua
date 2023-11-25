@@ -119,16 +119,20 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = 'makefile',
     command = 'setlocal expandtab=0'
 })
-vim.api.nvim_create_autocmd('BufNewFile,BufRead', {
+vim.api.nvim_create_autocmd('BufNewFile', {
     pattern = '*.latexmkrc,latexmkrc',
     command = 'set filetype=perl'
 })
-vim.api.nvim_create_autocmd('BufNewFile,BufRead', {
-    pattern = '*.cls',
+vim.api.nvim_create_autocmd('BufRead', {
+    pattern = '*.latexmkrc,latexmkrc',
+    command = 'set filetype=perl'
+})
+vim.api.nvim_create_autocmd('BufNewFile', {
+    pattern = '*.cls,*.sty',
     command = 'set filetype=tex'
 })
-vim.api.nvim_create_autocmd('BufNewFile,BufRead', {
-    pattern = '*.sty',
+vim.api.nvim_create_autocmd('BufRead', {
+    pattern = '*.cls,*.sty',
     command = 'set filetype=tex'
 })
 

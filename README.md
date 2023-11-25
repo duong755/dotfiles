@@ -8,16 +8,16 @@
 
 ## Directories
 
-| Directory    | Content                                                                      |
-|:-------------|:-----------------------------------------------------------------------------|
-| `git`        | Installation script for git                                                  |
-| `docker`     | Installation script for Docker Compose                                       |
-| `node`       | Installation/Update script for Node, NVM; ESLint configuration collection    |
-| `python`     | Installation script for pip, pipenv, pyenv                                   |
-| `tex`        | Installation script, configuration files for TeX Live                        |
-| `vim`        | Vim configuration                                                            |
-| `neovim`     | Neovim installation script, configuration                                    |
-| `os`         | OS-dependent scripts                                                         |
+| Directory          | Content                                                                      |
+|:-------------------|:-----------------------------------------------------------------------------|
+| `git`              | Installation script for git                                                  |
+| `docker`           | Installation script for Docker Compose                                       |
+| `node`             | Installation/Update script for Node, NVM; ESLint configuration collection    |
+| `python`           | Installation script for pip, pipenv, pyenv                                   |
+| `tex`              | Installation script, configuration files for TeX Live                        |
+| `vim`              | Vim configuration                                                            |
+| `neovim`           | Neovim installation script, configuration                                    |
+| `package-managers` | Linux-package-manager-dependent scripts                                                         |
 
 ## Targets
 
@@ -27,7 +27,7 @@ This list does not document all targets. For the entire list, see `Makefile`.
 <p>
 
 ```bash
-make tex # install TeX Live (scheme: full)
+make texlive # install TeX Live (scheme: full)
 ```
 
 </p>
@@ -78,31 +78,6 @@ make neovim-nightly # install latest nightly release of Neovim
 
 make neovim-all # install/update vim-plug and Neovim plugins
 ```
-
-</p>
-</details>
-
-
-## Post installation
-
-<details><summary>Devtools</summary>
-<p>
-
-- [VSCode](https://code.visualstudio.com)
-- [Postman](https://getpostman.com)
-- [Docker](https://docs.docker.com/engine/install/debian/)
-- AWS CLI
-- Chromium Browser
-- Tor Browser
-
-</p>
-</details>
-
-<details><summary>Programming languages</summary>
-<p>
-
-- [go](https://go.dev/dl)
-- [rust](https://rust-lang.org)
 
 </p>
 </details>
