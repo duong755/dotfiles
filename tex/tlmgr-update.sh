@@ -5,7 +5,7 @@ if [ $UID -ne "0" ]; then
   exit
 fi
 
-TEX_HOME=/usr/local/texlive/2022/bin/x86_64-linux
+TEX_HOME=/usr/local/texlive/2024/bin/x86_64-linux
 
 wget -q --show-progress -O "$TEX_HOME"/update-tlmgr-latest.sh http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
 chmod +x "$TEX_HOME"/update-tlmgr-latest.sh

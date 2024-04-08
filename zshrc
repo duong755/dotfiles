@@ -273,21 +273,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export MANPATH="$(manpath -g):/usr/local/texlive/2022/texmf-dist/doc/man"
-export INFOPATH="$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
-
-export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-export GOPATH="$HOME/devtools/go"
-export GOOS="linux"
-export GOARCH="amd64"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$(go env GOPATH)/bin"
-
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
@@ -335,12 +320,6 @@ export PATH="$PATH:/snap/bin"
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-
-# testing-library
-export DEBUG_PRINT_LIMIT=1000000
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
