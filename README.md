@@ -13,7 +13,6 @@
 | `git`              | Installation script for git                                                  |
 | `docker`           | Installation script for Docker Compose                                       |
 | `node`             | Installation/Update script for Node, NVM; ESLint configuration collection    |
-| `python`           | Installation script for pip, pipenv, pyenv                                   |
 | `tex`              | Installation script, configuration files for TeX Live                        |
 | `vim`              | Vim configuration                                                            |
 | `neovim`           | Neovim installation script, configuration                                    |
@@ -39,16 +38,6 @@ make texlive # install TeX Live (scheme: full)
 ```bash
 make node # install node with nvm (lts version)
 make node-update # install latest version of node, update g:coc_node_path in ~/.vimrc
-```
-
-</p>
-</details>
-
-<details><summary>Python</summary>
-<p>
-
-```bash
-make python # install python, pip
 ```
 
 </p>

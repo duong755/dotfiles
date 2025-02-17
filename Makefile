@@ -56,16 +56,6 @@ node:
 node-update:
 	@$(SHELL) ./node/update.sh
 
-python:
-	@$(SHELL) ./python/python-install.sh
-	@$(SHELL) ./python/env.sh
-
-docker-compose-latest:
-	@$(SHELL) ./docker/docker-compose.sh latest
-
-docker-compose-all:
-	@$(SHELL) ./docker/docker-compose.sh all
-
 texlive:
 	# More than 7GB
 	@$(SHELL) ./tex/texlive-install.sh

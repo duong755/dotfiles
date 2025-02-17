@@ -1,15 +1,9 @@
 {
   "recommendations": [
-    "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
-    "esbenp.prettier-vscode",
     "EditorConfig.EditorConfig",
     "efoerster.texlab",
-    "esbenp.prettier-vscode",
-    "golang.go",
     "jdinhlife.gruvbox",
-    "mhutchie.git-graph",
     "ms-python.debugpy",
     "ms-python.python",
     "ms-python.vscode-pylance",
