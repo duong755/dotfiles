@@ -24,7 +24,7 @@ set magic
 set incsearch
 set hlsearch
 
-set guifont=Ubuntu_Mono_Nerd_Font_Complete:h12
+set guifont=JetBrainsMono\ Nerd\ Font\ 12
 
 colorscheme onedark
 
@@ -47,7 +47,7 @@ let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:ariline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 " latex
 let g:tex_flavor = 'latex'

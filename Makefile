@@ -50,7 +50,7 @@ git-update:
 git-config:
 	@$(SHELL) ./git/git-config.sh
 
-node:
+nvm:
 	@$(SHELL) ./node/install.sh
 
 node-update:
@@ -68,18 +68,13 @@ tlmgr-update:
 	# Won't work even with `sudo`. Run `sudo su` then this command
 	@$(SHELL) ./tex/tlmgr-update.sh
 
-font:
-	@$(SHELL) ./vim/font.sh
-
 ### vim and neovim
 
 vim-all: common
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim all
-	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 
 vim-basic: common
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
-	@$(CP) ./vim/pathogen/vimrc ~/.vimrc
 
 neovim-stable:
 	@$(SHELL) ./neovim/install.sh stable
@@ -91,4 +86,3 @@ neovim-all: common
 	@$(SHELL) ./neovim/vim-plug.sh
 	@$(NEOVIM) +PlugUpdate +qall
 
-.PHONY: python node

@@ -1,9 +1,9 @@
-TEXDIR /usr/local/texlive/2024
+TEXDIR /usr/local/texlive/2025
 TEXMFCONFIG ~/.texlive/texmf-config
 TEXMFHOME ~/texmf
-TEXMFLOCAL /usr/local/texlive/2024/texmf-local
-TEXMFSYSCONFIG /usr/local/texlive/2024/texmf-config
-TEXMFSYSVAR /usr/local/texlive/2024/texmf-var
+TEXMFLOCAL /usr/local/texlive/2025/texmf-local
+TEXMFSYSCONFIG /usr/local/texlive/2025/texmf-config
+TEXMFSYSVAR /usr/local/texlive/2025/texmf-var
 TEXMFVAR ~/.texlive/texmf-var
 binary_x86_64-linux 1
 instopt_adjustpath 0
