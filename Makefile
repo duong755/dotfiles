@@ -30,7 +30,6 @@ dnf-upgrade:
 
 debian-init:
 	@$(SHELL) ./package-managers/debian.sh
-	@$(MAKE) git-update
 
 debian-chore: apt-update apt-upgrade git-version vim-all neovim-all
 
