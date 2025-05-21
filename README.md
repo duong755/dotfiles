@@ -8,15 +8,15 @@
 
 ## Directories
 
-| Directory          | Content                                                                      |
-|:-------------------|:-----------------------------------------------------------------------------|
-| `git`              | Installation script for git                                                  |
-| `docker`           | Installation script for Docker Compose                                       |
-| `node`             | Installation/Update script for Node, NVM; ESLint configuration collection    |
-| `tex`              | Installation script, configuration files for TeX Live                        |
-| `vim`              | Vim configuration                                                            |
-| `neovim`           | Neovim installation script, configuration                                    |
-| `package-managers` | Linux-package-manager-dependent scripts                                                         |
+| Directory          | Content                                               |
+|:-------------------|:------------------------------------------------------|
+| `git`              | Installation script for git                           |
+| `docker`           | Installation script for Docker Compose                |
+| `node`             | Installation/Update script for Node, NVM              |
+| `tex`              | Installation script, configuration files for TeX Live |
+| `vim`              | Vim configuration                                     |
+| `neovim`           | Neovim installation script, configuration             |
+| `package-managers` | Linux-package-manager-dependent scripts               |
 
 ## Targets
 
@@ -47,12 +47,8 @@ make node-update # install latest version of node, update g:coc_node_path in ~/.
 <p>
 
 ```bash
-make vim-all # install/update every plugins listed in this repo
+make vim-all # install/update all plugins listed in this repo
 make vim-basic # install/update some plugins listed in this repo
-```
-
-```bash
-make font # install Ubuntu Nerd Font
 ```
 
 </p>
