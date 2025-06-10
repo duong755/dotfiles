@@ -17,6 +17,7 @@ function install_packages() {
   apt-get install -y \
     software-properties-common \
     apt-transport-https \
+    build-essential \
     automake \
     autoconf \
     gnupg gnupg-agent \
@@ -34,9 +35,7 @@ function install_packages() {
     tree \
     xclip \
     jq \
-    rsync \
-    tmux \
-    snapd
+    tmux
 }
 
 prepare

@@ -23,21 +23,10 @@ apt-upgrade:
 	@apt-get -y autoremove
 	@apt-get -y autoclean
 
-dnf-upgrade:
-	@dnf -y upgrade
-	@dnf -y autoremove
-	@dnf clean all
-
 debian-init:
 	@$(SHELL) ./package-managers/debian.sh
 
 debian-chore: apt-update apt-upgrade git-version vim-all neovim-all
-
-fedora-init:
-	@$(SHELL) ./package-managers/fedora.sh
-	@$(MAKE) git-update
-
-fedora-chore: dnf-upgrade git-version vim-all neovim-all
 
 git-version:
 	@$(SHELL) ./git/git-version.sh

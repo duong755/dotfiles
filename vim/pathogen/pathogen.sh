@@ -57,6 +57,8 @@ basic_repos+=('jistr/vim-nerdtree-tabs')
 basic_repos+=('preservim/nerdcommenter')
 basic_repos+=('vim-airline/vim-airline')
 basic_repos+=('vim-airline/vim-airline-themes')
+basic_repos+=('prabirshrestha/vim-lsp')
+basic_repos+=('mattn/vim-lsp-settings')
 
 ### install
 function clone_or_pull() {
@@ -104,7 +106,7 @@ function clone_or_pull() {
       echo ""
     fi
   else
-    echo "Cannot extract plugin's name"
+    echo "Cannot extract plugin's name from $repo"
   fi
 }
 
