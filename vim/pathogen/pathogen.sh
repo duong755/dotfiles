@@ -36,6 +36,7 @@ full_repos+=('Shougo/neco-vim')
 full_repos+=('neoclide/jsonc.vim')
 full_repos+=('sbdchd/neoformat')
 full_repos+=('vim-test/vim-test')
+full_repos+=('junegunn/seoul256.vim')
 # full_repos+=('prettier/vim-prettier')
 # full_repos+=('pangloss/vim-javascript')
 # full_repos+=('leafgarland/typescript-vim')
@@ -59,6 +60,7 @@ basic_repos+=('vim-airline/vim-airline')
 basic_repos+=('vim-airline/vim-airline-themes')
 basic_repos+=('prabirshrestha/vim-lsp')
 basic_repos+=('mattn/vim-lsp-settings')
+basic_repos+=('junegunn/seoul256.vim')
 
 ### install
 function clone_or_pull() {
@@ -69,7 +71,7 @@ function clone_or_pull() {
   editor="$1"
   repo="$2"
 
-  PATHOGEN_LOCATION=""
+  local PATHOGEN_LOCATION=""
   case "$editor" in
     vim)
       PATHOGEN_LOCATION=~/.vim/bundle
