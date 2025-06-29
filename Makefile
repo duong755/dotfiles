@@ -4,7 +4,7 @@ MKDIR=/bin/mkdir
 RM=/bin/rm -f
 RMRF=/bin/rm -rf
 LN=/bin/ln -sf
-NEOVIM=/usr/bin/nvim
+NEOVIM=nvim
 
 all:
 
@@ -63,12 +63,6 @@ vim-all: common
 
 vim-basic: common
 	@$(SHELL) ./vim/pathogen/pathogen.sh vim basic
-
-neovim-stable:
-	@$(SHELL) ./neovim/install.sh stable
-
-neovim-nightly:
-	@$(SHELL) ./neovim/install.sh nightly
 
 neovim-all: common
 	@$(SHELL) ./neovim/vim-plug.sh

@@ -15,23 +15,17 @@ Plug('easymotion/vim-easymotion')
 Plug('preservim/nerdcommenter')
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
-Plug('vim-test/vim-test')
 Plug('ryanoasis/vim-devicons')
-Plug('autozimu/LanguageClient-neovim', { ['branch'] = 'next', ['do'] = 'bash install.sh' })
 Plug('dense-analysis/ale')
-Plug('neoclide/jsonc.vim')
-Plug('sbdchd/neoformat')
-Plug('prettier/vim-prettier')
-Plug('pangloss/vim-javascript')
-Plug('leafgarland/typescript-vim')
-Plug('peitalin/vim-jsx-typescript')
-Plug('tpope/vim-fireplace')
-Plug('rust-lang/rust.vim')
+Plug('prabirshrestha/vim-lsp')
+Plug('mattn/vim-lsp-settings')
+Plug('prabirshrestha/asyncomplete.vim')
+Plug('junegunn/seoul256.vim')
 
 vim.call('plug#end')
 
 vim.cmd [[
-    colorscheme onedark
+    colorscheme seoul256
     syntax on
     filetype plugin indent on
 ]]
@@ -58,7 +52,7 @@ set.magic = true
 set.incsearch = true
 set.hlsearch = true
 set.foldmethod = 'manual'
-set.guifont = 'Ubuntu_Mono_Nerd_Font_Complete:h12'
+set.guifont = 'JetBrainsMono_Nerd_Font:h12'
 set.background = 'light'
 set.omnifunc = 'ale#completion#OmniFunc'
 
@@ -69,17 +63,6 @@ vim.g.mapleader = ' ' -- space
 -- editorconfig
 vim.g['EditorConfig_exclude_patterns'] = { 'fugitive://.*', 'scp://.*' }
 vim.g['loaded_EditorConfig'] = 1
-
--- LanguageClient-neovim
-vim.g['LanguageClient_serverCommands'] = {
-    ['rust'] = { 'rust-analyzer' },
-    ['tex'] = { 'texlab' },
-    ['python'] = { 'pyls' },
-    ['javascript'] = { 'typescript-language-server', '--stdio' },
-    ['typescript'] = { 'typescript-language-server', '--stdio' },
-    ['c'] = { 'ccls' },
-    ['cpp'] = { 'ccls' }
-}
 
 -- nerdtree
 vim.g['NERDTreeWinSize'] = 24
